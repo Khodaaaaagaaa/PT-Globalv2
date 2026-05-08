@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT Global — Tax-Ready Talent for CPA Firms</title>
+  <meta name="description" content="PT Global provides pre-screened tax preparers, bookkeepers, and accounting support so your CPA firm scales capacity during tax season — without the hiring headache." />
+
+  <!-- Google Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Inter:wght@400;500&family=DM+Mono:wght@400&display=swap');
+  </style>
+
+  <style>
+    /* ===================================================
+       CSS CUSTOM PROPERTIES — PT GLOBAL BRAND SYSTEM
+    =================================================== */
+    :root {
+      --navy:        #1B3A5C;
+      --teal:        #0D6E6E;
+      --bright-teal: #1A9C9C;
+      --warm:        #F5F0E8;
+      --white:       #FFFFFF;
+      --charcoal:    #2D2D2D;
+      --border-subtle: #E2E8F0;
+      --teal-line: #0D6E6E;
+
+      --font-heading: 'Sora', sans-serif;
+      --font-body:    'Inter', sans-serif;
+      --font-mono:    'DM Mono', monospace;
+    }
+
+    /* ===================================================
+       RESET & BASE
+    =================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 28px;
+      color: var(--charcoal);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===================================================
+       TYPOGRAPHY SCALE
+    =================================================== */
+    h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 56px;
+      color: var(--navy);
+    }
+    h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 44px;
+      color: var(--navy);
+    }
+    h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
+      color: var(--navy);
+    }
+    .label {
+      font-family: var(--font-mono);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+    .caption {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    /* ===================================================
+       LAYOUT UTILITIES
+    =================================================== */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    .section-pad { padding: 96px 0; }
+    .section-pad-sm { padding: 72px 0; }
+
+    /* ===================================================
+       BUTTONS
+    =================================================== */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 14px 28px;
+      border-radius: 0;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      border: 2px solid transparent;
+      white-space: nowrap;
+    }
+    /* Primary: Navy bg, white text */
+    .btn-primary {
+      background-color: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+    .btn-primary:hover {
+      background-color: var(--bright-teal);
+      border-color: var(--bright-teal);
+    }
+    /* Secondary outline navy */
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+    .btn-secondary:hover {
+      background-color: var(--navy);
+      color: var(--white);
+    }
+    /* Secondary outline white (on dark bg) */
+    .btn-outline-white {
+      background-color: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+    .btn-outline-white:hover {
+      background-color: var(--white);
+      color: var(--navy);
+    }
+    /* Hero primary (white bg, charcoal text) */
+    .btn-hero-primary {
+      background-color: var(--white);
+      color: var(--charcoal);
+      border-color: var(--white);
+    }
+    .btn-hero-primary:hover {
+      background-color: var(--warm);
+      border-color: var(--warm);
+    }
+
+    /* ===================================================
+       LOGO COMPONENT
+    =================================================== */
+    .logo-lockup {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .logo-bracket-left,
+    .logo-bracket-right {
+      display: inline-block;
+      width: 8px;
+      height: 36px;
+      border-top: 3px solid var(--teal);
+      border-bottom: 3px solid var(--teal);
+    }
+    .logo-bracket-left {
+      border-left: 3px solid var(--teal);
+      border-right: none;
+      margin-right: 4px;
+    }
+    .logo-bracket-right {
+      border-right: 3px solid var(--teal);
+      border-left: none;
+      margin-left: 4px;
+    }
+    .logo-pt {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+    .logo-wordmark-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .logo-wordmark {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      color: var(--navy);
+    }
+    .logo-descriptor {
+      font-family: var(--font-mono);
+      font-weight: 400;
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      line-height: 1;
+    }
+    /* White logo variant */
+    .logo-lockup.logo-white .logo-bracket-left,
+    .logo-lockup.logo-white .logo-bracket-right {
+      border-color: var(--white);
+    }
+    .logo-lockup.logo-white .logo-pt,
+    .logo-lockup.logo-white .logo-wordmark {
+      color: var(--white);
+    }
+    .logo-lockup.logo-white .logo-descriptor {
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* Footer mark-only */
+    .logo-mark-only .logo-bracket-left,
+    .logo-mark-only .logo-bracket-right {
+      border-color: var(--teal);
+    }
+    .logo-mark-only .logo-pt {
+      color: var(--white);
+      font-size: 16px;
+    }
+    .logo-mark-only .logo-bracket-left { height: 28px; }
+    .logo-mark-only .logo-bracket-right { height: 28px; }
+
+    /* ===================================================
+       TEAL DIVIDER LINE
+    =================================================== */
+    .teal-line {
+      width: 48px;
+      height: 1.5px;
+      background-color: var(--teal);
+      margin: 16px 0 24px;
+    }
+    .teal-line-full {
+      width: 100%;
+      height: 1px;
+      background-color: var(--teal);
+    }
+
+    /* ===================================================
+       BRACKET CORNER UTILITY (CSS brackets)
+    =================================================== */
+    .bracket-panel {
+      position: relative;
+      padding: 32px;
+    }
+    .bracket-panel::before,
+    .bracket-panel::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+    }
+    .bracket-panel::before {
+      top: 0; left: 0;
+      border-top: 2px solid var(--teal);
+      border-left: 2px solid var(--teal);
+    }
+    .bracket-panel::after {
+      bottom: 0; right: 0;
+      border-bottom: 2px solid var(--teal);
+      border-right: 2px solid var(--teal);
+    }
+
+    /* ===================================================
+       NAV / HEADER  (sticky)
+    =================================================== */
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border-bottom: 1px solid var(--teal);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 32px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 16px;
+      color: var(--charcoal);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { margin-left: 16px; }
+
+    /* Mobile hamburger */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      margin: 5px 0;
+      transition: transform 0.2s;
+    }
+
+    /* ===================================================
+       HERO SECTION
+    =================================================== */
+    #hero {
+      position: relative;
+      background-color: var(--navy);
+      overflow: hidden;
+      padding: 120px 0 96px;
+    }
+    /* Subtle bracket pattern overlay */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 80px,
+          rgba(13,110,110,0.04) 80px,
+          rgba(13,110,110,0.04) 81px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 80px,
+          rgba(13,110,110,0.04) 80px,
+          rgba(13,110,110,0.04) 81px
+        );
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-content {}
+    .hero-label {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+    #hero h1 {
+      color: var(--white);
+      font-size: 52px;
+      line-height: 60px;
+      margin-bottom: 24px;
+    }
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: 20px;
+      line-height: 30px;
+      color: rgba(255,255,255,0.90);
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    /* Trust strip */
+    .trust-strip {
+      margin-top: 72px;
+      border-top: 1px solid rgba(13,110,110,0.4);
+      padding-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .trust-badge {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--teal);
+      border: 1px solid rgba(13,110,110,0.5);
+      padding: 8px 14px;
+      white-space: nowrap;
+    }
+    /* Hero visual panel */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(13,110,110,0.3);
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+    }
+    .hero-card-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 24px;
+    }
+    .hero-stat {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-stat:last-child { border-bottom: none; }
+    .hero-stat-label {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+    }
+    .hero-stat-val {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .hero-stat-val .teal { color: var(--teal); }
+
+    /* ===================================================
+       PROBLEM SECTION
+    =================================================== */
+    #problem {
+      background: var(--warm);
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .problem-copy h2 { margin-bottom: 24px; }
+    .problem-copy p { color: var(--charcoal); }
+    .pain-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .pain-card {
+      background: var(--white);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--teal);
+      padding: 24px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .pain-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pain-card h3 { font-size: 18px; line-height: 26px; margin-bottom: 6px; }
+    .pain-card p { font-size: 15px; line-height: 22px; color: var(--charcoal); }
+
+    /* ===================================================
+       WHO WE HELP
+    =================================================== */
+    #who {
+      background: var(--white);
+    }
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header .label { margin-bottom: 12px; }
+    .section-header h2 { margin-bottom: 0; }
+    .who-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .who-card {
+      border: 1px solid var(--border-subtle);
+      border-top: 3px solid var(--teal);
+      padding: 32px;
+      background: var(--white);
+    }
+    .who-card-icon {
+      margin-bottom: 20px;
+      width: 48px;
+      height: 48px;
+    }
+    .who-card h3 { margin-bottom: 12px; }
+    .who-card p { font-size: 16px; line-height: 24px; color: var(--charcoal); }
+
+    /* ===================================================
+       SERVICES OVERVIEW
+    =================================================== */
+    #services {
+      background: var(--white);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border-subtle);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .service-card-icon { width: 40px; height: 40px; }
+    .service-card h3 { font-size: 22px; line-height: 30px; margin: 0; }
+    .service-card p { font-size: 15px; line-height: 24px; color: var(--charcoal); margin: 0; }
+    .forms-block {
+      background: var(--warm);
+      padding: 32px;
+    }
+    .forms-block .label { margin-bottom: 20px; display: block; }
+    .forms-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .form-badge {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--white);
+      border: 1px solid var(--teal);
+      padding: 6px 12px;
+    }
+
+    /* ===================================================
+       SOFTWARE COMPATIBILITY
+    =================================================== */
+    #software {
+      background: var(--warm);
+    }
+    .software-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin: 40px 0;
+    }
+    .sw-badge {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--white);
+      border: 1px solid rgba(13,110,110,0.3);
+      padding: 14px 10px;
+      text-align: center;
+    }
+    .software-tagline {
+      text-align: center;
+      font-size: 16px;
+      color: var(--charcoal);
+    }
+    .software-tagline strong {
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    /* ===================================================
+       HOW WE WORK
+    =================================================== */
+    #process {
+      background: var(--white);
+    }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .process-connector {
+      position: absolute;
+      top: 36px;
+      left: calc(25% - 12px);
+      width: calc(50% + 24px);
+      height: 1px;
+      background: var(--teal);
+      z-index: 0;
+    }
+    .step-card {
+      position: relative;
+      z-index: 1;
+      background: var(--white);
+      border: 1px solid var(--border-subtle);
+      padding: 28px 24px;
+    }
+    .step-card::before,
+    .step-card::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+    }
+    .step-card::before { top: 0; left: 0; border-top: 2px solid var(--teal); border-left: 2px solid var(--teal); }
+    .step-card::after  { bottom: 0; right: 0; border-bottom: 2px solid var(--teal); border-right: 2px solid var(--teal); }
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .step-icon { margin-bottom: 16px; width: 36px; height: 36px; }
+    .step-card h3 { font-size: 18px; line-height: 26px; margin-bottom: 10px; }
+    .step-card p { font-size: 14px; line-height: 22px; color: var(--charcoal); }
+
+    /* ===================================================
+       WHAT STAYS WITH YOUR FIRM
+    =================================================== */
+    #control {
+      background: var(--navy);
+    }
+    .control-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    #control h2 { color: var(--white); margin-bottom: 16px; }
+    #control .intro-text {
+      color: rgba(255,255,255,0.85);
+      font-size: 17px;
+      line-height: 26px;
+      margin-bottom: 40px;
+    }
+    .control-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .control-col h3 {
+      color: var(--teal);
+      font-size: 16px;
+      line-height: 24px;
+      font-family: var(--font-mono);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .control-col li {
+      color: rgba(255,255,255,0.88);
+      font-size: 15px;
+      line-height: 22px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .control-col li::before {
+      content: '';
+      display: inline-block;
+      flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      margin-top: 8px;
+    }
+    .control-shield {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===================================================
+       SAMPLE ROLES
+    =================================================== */
+    #roles {
+      background: var(--white);
+    }
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    .role-card {
+      background: var(--white);
+      border: 1px solid var(--border-subtle);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .role-icon { margin: 0 auto 16px; width: 44px; height: 44px; }
+    .role-card h3 { font-size: 18px; line-height: 26px; margin-bottom: 12px; }
+    .role-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+    .skill-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--warm);
+      border: 1px solid rgba(13,110,110,0.2);
+      padding: 4px 8px;
+    }
+
+    /* ===================================================
+       PRICING PREVIEW
+    =================================================== */
+    #pricing {
+      background: var(--warm);
+    }
+    .pricing-intro {
+      max-width: 640px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+    .pricing-intro p {
+      font-size: 17px;
+      line-height: 26px;
+      color: var(--charcoal);
+      margin-top: 16px;
+    }
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .pricing-card {
+      background: var(--white);
+      border: 1px solid var(--border-subtle);
+      padding: 32px;
+      position: relative;
+    }
+    .pricing-card::before,
+    .pricing-card::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+    }
+    .pricing-card::before { top: 0; left: 0; border-top: 2px solid var(--teal); border-left: 2px solid var(--teal); }
+    .pricing-card::after  { bottom: 0; right: 0; border-bottom: 2px solid var(--teal); border-right: 2px solid var(--teal); }
+    .pricing-card .label { margin-bottom: 16px; display: block; color: var(--teal); }
+    .pricing-card h3 { font-size: 20px; margin-bottom: 12px; }
+    .pricing-card p { font-size: 15px; line-height: 22px; color: var(--charcoal); }
+    .pricing-cta { text-align: center; }
+
+    /* ===================================================
+       SECURITY & COMPLIANCE
+    =================================================== */
+    #security {
+      background: var(--white);
+      border-top: 2px solid var(--teal);
+    }
+    .security-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .security-items { display: flex; flex-direction: column; gap: 16px; }
+    .security-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .check-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .security-item p { font-size: 16px; line-height: 24px; }
+    .security-badge {
+      background: var(--warm);
+      border: 1px solid var(--border-subtle);
+      padding: 32px;
+      margin-top: 24px;
+    }
+    .security-badge .label { margin-bottom: 8px; display: block; }
+    .security-badge p { font-size: 14px; line-height: 20px; color: var(--charcoal); }
+
+    /* ===================================================
+       TESTIMONIALS
+    =================================================== */
+    #testimonials {
+      background: var(--white);
+      border-top: 1px solid var(--border-subtle);
+    }
+    .testimonial-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      border: 1px solid var(--border-subtle);
+      padding: 32px;
+      position: relative;
+    }
+    .quote-mark {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      line-height: 1;
+      color: var(--teal);
+      margin-bottom: 16px;
+      display: block;
+    }
+    .testimonial-card p {
+      font-size: 16px;
+      line-height: 26px;
+      color: var(--charcoal);
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--warm);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .author-avatar span {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--navy);
+    }
+    .author-name {
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--navy);
+      display: block;
+    }
+    .author-title { font-size: 13px; color: var(--charcoal); opacity: 0.7; }
+
+    /* ===================================================
+       BLOG / RESOURCES
+    =================================================== */
+    #resources {
+      background: var(--warm);
+    }
+    .blog-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .blog-card {
+      background: var(--white);
+      border: 1px solid var(--border-subtle);
+      padding: 32px;
+    }
+    .blog-card .label { margin-bottom: 8px; display: block; color: var(--teal); }
+    .blog-card h3 { font-size: 19px; line-height: 27px; margin-bottom: 12px; }
+    .blog-card p { font-size: 15px; line-height: 22px; color: var(--charcoal); margin-bottom: 20px; }
+    .blog-link {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--teal);
+      border-bottom: 1px solid var(--teal);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+      display: inline-block;
+    }
+    .blog-link:hover { color: var(--navy); border-color: var(--navy); }
+    .resources-cta { text-align: center; }
+
+    /* ===================================================
+       FINAL CTA SECTION
+    =================================================== */
+    #cta-final {
+      background: var(--navy);
+      padding: 96px 0;
+    }
+    .cta-final-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 32px;
+    }
+    #cta-final .label { margin-bottom: 16px; display: block; color: var(--teal); }
+    #cta-final h2 { color: var(--white); margin-bottom: 20px; }
+    #cta-final .cta-desc {
+      color: rgba(255,255,255,0.85);
+      font-size: 18px;
+      line-height: 28px;
+      margin-bottom: 40px;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .cta-phone {
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+    }
+    .cta-phone a { color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.3); }
+
+    /* ===================================================
+       FOOTER
+    =================================================== */
+    #footer {
+      background: var(--charcoal);
+      padding: 64px 0 32px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-brand-tagline {
+      font-size: 14px;
+      line-height: 20px;
+      color: rgba(245,240,232,0.7);
+      margin-top: 12px;
+    }
+    .footer-col h4 {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a {
+      font-size: 14px;
+      color: rgba(245,240,232,0.8);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--warm); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-legal {
+      font-size: 13px;
+      color: rgba(245,240,232,0.5);
+    }
+    .footer-legal a { color: rgba(245,240,232,0.6); border-bottom: 1px solid rgba(245,240,232,0.2); }
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s;
+    }
+    .social-link:hover { border-color: var(--teal); }
+
+    /* ===================================================
+       RESPONSIVE
+    =================================================== */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { display: none; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .roles-grid { grid-template-columns: repeat(3, 1fr); }
+      .software-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; line-height: 44px; }
+      h2 { font-size: 28px; line-height: 36px; }
+      .section-pad { padding: 64px 0; }
+
+      .nav-links, .nav-cta { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 16px 32px 24px;
+        border-bottom: 1px solid var(--teal);
+        gap: 16px;
+      }
+      .nav-links.open .nav-cta-mobile { display: block; }
+
+      .problem-grid { grid-template-columns: 1fr; gap: 40px; }
+      .who-cards { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .control-inner { grid-template-columns: 1fr; gap: 40px; }
+      .control-columns { grid-template-columns: 1fr; }
+      .roles-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-cards { grid-template-columns: 1fr; }
+      .security-grid { grid-template-columns: 1fr; gap: 40px; }
+      .testimonial-cards { grid-template-columns: 1fr; }
+      .blog-cards { grid-template-columns: 1fr; }
+      .software-grid { grid-template-columns: repeat(3, 1fr); }
+      .process-steps { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .trust-strip { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 20px; }
+      .nav-inner { padding: 14px 20px; }
+      .hero-inner { padding: 0 20px; }
+      .cta-final-inner { padding: 0 20px; }
+      .roles-grid { grid-template-columns: 1fr; }
+      .software-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ===================================================
+     HEADER / NAV
+=================================================== -->
+<header id="site-header" role="banner">
+  <nav class="nav-inner" aria-label="Main navigation">
+    <!-- Logo -->
+    <a href="/" class="logo-lockup" aria-label="PT Global – Tax-Ready Talent">
+      <div class="logo-mark">
+        <span class="logo-bracket-left" aria-hidden="true"></span>
+        <span class="logo-pt">PT</span>
+        <span class="logo-bracket-right" aria-hidden="true"></span>
+      </div>
+      <div class="logo-wordmark-wrap">
+        <span class="logo-wordmark">PT Global</span>
+        <span class="logo-descriptor">Tax-Ready Talent</span>
+      </div>
+    </a>
+
+    <!-- Nav links -->
+    <ul class="nav-links" id="nav-menu" role="list">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#control">Why PT Global</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#cta-final">Contact Us</a></li>
+    </ul>
+
+    <!-- CTA button -->
+    <a href="#cta-final" class="btn btn-primary nav-cta" aria-label="Book a free consultation">Book a Free Consultation</a>
+
+    <!-- Hamburger -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+
+<!-- ===================================================
+     HERO SECTION
+=================================================== -->
+<section id="hero" aria-labelledby="hero-heading">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <p class="hero-label" aria-hidden="true">Tax-Ready Talent · CPA Firms · Since 2023</p>
+      <h1 id="hero-heading">Tax-Ready Talent Built for CPA Firms.</h1>
+      <p class="hero-sub">PT Global provides pre-screened tax preparers, bookkeepers, and accounting support so your firm scales capacity — without the hiring headache.</p>
+      <div class="hero-ctas">
+        <a href="#cta-final" class="btn btn-hero-primary">Request Tax Staff</a>
+        <a href="#cta-final" class="btn btn-outline-white">Join Our Talent Pool</a>
+      </div>
+
+      <!-- Trust strip -->
+      <div class="trust-strip" aria-label="Firm credentials">
+        <span class="trust-badge">[ 80+ Placements ]</span>
+        <span class="trust-badge">[ 7+ CPA Firms Served ]</span>
+        <span class="trust-badge">[ Tax Season Ready ]</span>
+        <span class="trust-badge">[ Bilingual ENG / SPA ]</span>
+      </div>
+    </div>
+
+    <!-- Hero visual card -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card">
+        <p class="hero-card-label">Current Deployment Overview</p>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Active Placements</span>
+          <span class="hero-stat-val"><span class="teal">80+</span> Professionals</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Forms Supported</span>
+          <span class="hero-stat-val">1040 · 1065 · 1120-S</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Software Proficiency</span>
+          <span class="hero-stat-val">Drake · Lacerte · CCH</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Avg. Onboarding Time</span>
+          <span class="hero-stat-val"><span class="teal">3–5</span> Business Days</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-label">Languages</span>
+          <span class="hero-stat-val">English · Spanish</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     PROBLEM SECTION
+=================================================== -->
+<section id="problem" class="section-pad" aria-labelledby="problem-heading">
+  <div class="container">
+    <div class="problem-grid">
+      <div class="problem-copy">
+        <span class="label">The Challenge</span>
+        <div class="teal-line"></div>
+        <h2 id="problem-heading">Tax Season Overload Shouldn't Mean CPA Burnout.</h2>
+        <p style="margin-top: 20px;">Finding qualified tax staff takes time you don't have. Generic staffing agencies don't understand Drake, Lacerte, or 1040 workflows. You need capacity that fits your existing process — fast.</p>
+      </div>
+      <div class="pain-cards">
+        <!-- Pain 1 -->
+        <div class="pain-card">
+          <div class="pain-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="18" cy="18" r="15" stroke="#0D6E6E" stroke-width="1.5"/>
+              <path d="M18 10V18L23 21" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Slow Hiring</h3>
+            <p>Weeks spent posting, interviewing, and onboarding tax staff who may not understand your workflow.</p>
+          </div>
+        </div>
+        <!-- Pain 2 -->
+        <div class="pain-card">
+          <div class="pain-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="6" width="24" height="28" rx="0" stroke="#0D6E6E" stroke-width="1.5"/>
+              <path d="M12 14H24M12 20H20M12 26H16" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Missed Deadlines</h3>
+            <p>Capacity gaps during peak season put returns at risk, damage client relationships, and add stress.</p>
+          </div>
+        </div>
+        <!-- Pain 3 -->
+        <div class="pain-card">
+          <div class="pain-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6 28L13 20L18 24L25 14L30 18" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M26 10H30V14" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Generic Talent</h3>
+            <p>Candidates who don't know the difference between a 1065 and a 1120-S cost your firm time, not save it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     WHO WE HELP
+=================================================== -->
+<section id="who" class="section-pad" aria-labelledby="who-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Who We Serve</span>
+      <div class="teal-line" style="margin: 12px auto 0;"></div>
+      <h2 id="who-heading" style="margin-top: 12px;">Built Exclusively for Tax &amp; Accounting Firms.</h2>
+    </div>
+    <div class="who-cards">
+      <!-- Card 1 -->
+      <div class="who-card">
+        <div class="who-card-icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 40V20L24 8L40 20V40" stroke="#0D6E6E" stroke-width="1.5" stroke-linejoin="round"/>
+            <rect x="18" y="28" width="12" height="12" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M16 20H32" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>CPA Firms</h3>
+        <p>Scale tax prep capacity during busy season with trained professionals who know your software and forms from day one.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="who-card">
+        <div class="who-card-icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="10" width="32" height="28" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M15 22H33M15 28H25" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M15 16H22" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>EA Practices</h3>
+        <p>Dedicated support for 1040, 1065, 1120-S and multi-state filings — professionals who understand enrolled agent workflows.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="who-card">
+        <div class="who-card-icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="18" r="8" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M10 40C10 33.4 16.3 28 24 28C31.7 28 38 33.4 38 40" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Bookkeeping &amp; Advisory Firms</h3>
+        <p>Monthly reconciliations, clean-up projects, and client reporting delivered with accuracy and consistent communication.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     SERVICES OVERVIEW
+=================================================== -->
+<section id="services" class="section-pad" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">What We Deliver</span>
+      <div class="teal-line" style="margin: 12px auto 0;"></div>
+      <h2 id="services-heading" style="margin-top: 12px;">Tax-Ready Support That Fits Your Workflow.</h2>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card">
+        <div class="service-card-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="4" width="28" height="32" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M12 13H28M12 19H28M12 25H22" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Tax Preparation Support</h3>
+        <p>Experienced preparers handling individual and business returns across all major form types. Workpapers, multi-state returns, extensions, and amended filings prepared review-ready.</p>
+      </div>
+      <!-- Service 2 -->
+      <div class="service-card">
+        <div class="service-card-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 32V14L20 6L32 14V32" stroke="#0D6E6E" stroke-width="1.5" stroke-linejoin="round"/>
+            <rect x="14" y="22" width="12" height="10" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M8 28H32" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Bookkeeping Support</h3>
+        <p>Bank reconciliations, AP/AR processing, month-end close, and catch-up clean-up projects. Your books delivered accurate and on schedule.</p>
+      </div>
+      <!-- Service 3 -->
+      <div class="service-card">
+        <div class="service-card-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 30L15 22L22 26L30 16L36 20" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M31 10H35V14" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 36H36" stroke="#0D6E6E" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Accounting Support</h3>
+        <p>Financial statement preparation, GL review, payroll support, and trial balance work. Staff accountants who integrate into your monthly workflow.</p>
+      </div>
+      <!-- Service 4 -->
+      <div class="service-card">
+        <div class="service-card-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="8" width="28" height="24" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M6 16H34" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M14 8V16M22 8V16" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M12 24H24" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Tax Admin &amp; Document Support</h3>
+        <p>Client organizer management, document follow-up, portal administration, and TaxDome/SmartVault operations — keeping your pipeline moving.</p>
+      </div>
+    </div>
+
+    <!-- Forms We Handle -->
+    <div class="forms-block">
+      <span class="label">Forms We Handle</span>
+      <div class="forms-badges" role="list" aria-label="Supported tax forms">
+        <span class="form-badge" role="listitem">1040</span>
+        <span class="form-badge" role="listitem">1065</span>
+        <span class="form-badge" role="listitem">1120</span>
+        <span class="form-badge" role="listitem">1120-S</span>
+        <span class="form-badge" role="listitem">1041</span>
+        <span class="form-badge" role="listitem">990</span>
+        <span class="form-badge" role="listitem">Multi-State</span>
+        <span class="form-badge" role="listitem">Extensions</span>
+        <span class="form-badge" role="listitem">Amended Returns</span>
+        <span class="form-badge" role="listitem">Workpapers</span>
+        <span class="form-badge" role="listitem">Schedule C/E/K-1</span>
+        <span class="form-badge" role="listitem">FBAR / FATCA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     SOFTWARE COMPATIBILITY
+=================================================== -->
+<section id="software" class="section-pad" aria-labelledby="software-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Software Proficiency</span>
+      <div class="teal-line" style="margin: 12px auto 0;"></div>
+      <h2 id="software-heading" style="margin-top: 12px;">We Work Inside Your Existing Stack.</h2>
+    </div>
+
+    <div class="software-grid" role="list" aria-label="Compatible software platforms">
+      <div class="sw-badge" role="listitem">Drake</div>
+      <div class="sw-badge" role="listitem">ProSeries</div>
+      <div class="sw-badge" role="listitem">Lacerte</div>
+      <div class="sw-badge" role="listitem">UltraTax CS</div>
+      <div class="sw-badge" role="listitem">CCH Access</div>
+      <div class="sw-badge" role="listitem">TaxDome</div>
+      <div class="sw-badge" role="listitem">SmartVault</div>
+      <div class="sw-badge" role="listitem">QuickBooks</div>
+      <div class="sw-badge" role="listitem">Xero</div>
+      <div class="sw-badge" role="listitem">ProConnect</div>
+      <div class="sw-badge" role="listitem">Canopy</div>
+      <div class="sw-badge" role="listitem">Microsoft 365</div>
+    </div>
+
+    <p class="software-tagline"><strong>No new software to learn.</strong> Your team reviews; we prepare.</p>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     HOW WE WORK (4-step process)
+=================================================== -->
+<section id="process" class="section-pad" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">The Process</span>
+      <div class="teal-line" style="margin: 12px auto 0;"></div>
+      <h2 id="process-heading" style="margin-top: 12px;">From Discovery to Delivered Returns — in Days, Not Weeks.</h2>
+    </div>
+
+    <div class="process-steps" role="list">
+      <!-- Step 1 -->
+      <div class="step-card" role="listitem">
+        <span class="step-num">01 · DISCOVERY</span>
+        <div class="step-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="10" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M23 23L30 30" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Discovery &amp; Setup</h3>
+        <p>Define roles, confirm software access, map your review workflow, and establish communication cadence before work begins.</p>
+      </div>
+      <!-- Step 2 -->
+      <div class="step-card" role="listitem">
+        <span class="step-num">02 · INTAKE</span>
+        <div class="step-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 28H26" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M18 6V22M12 16L18 22L24 16" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Secure Document Intake</h3>
+        <p>Clients upload documents via your encrypted portal. No SSNs by email. Full compliance with IRS Publication 4557 protocols.</p>
+      </div>
+      <!-- Step 3 -->
+      <div class="step-card" role="listitem">
+        <span class="step-num">03 · PREPARE</span>
+        <div class="step-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="6" width="20" height="24" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M24 10L30 10L30 30L10 30" stroke="#0D6E6E" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M12 14H20M12 19H18" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Preparation &amp; Review</h3>
+        <p>PT Global's preparer drafts the return or completes the books inside your software. All work is flagged for your final review.</p>
+      </div>
+      <!-- Step 4 -->
+      <div class="step-card" role="listitem">
+        <span class="step-num">04 · SIGN-OFF</span>
+        <div class="step-icon" aria-hidden="true">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="18" cy="18" r="13" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M12 18L16 22L24 14" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>CPA Final Sign-Off</h3>
+        <p>Delivered review-ready to your firm. You review, advise, and sign. The client relationship and tax authority remain entirely yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     WHAT STAYS WITH YOUR FIRM
+=================================================== -->
+<section id="control" class="section-pad" aria-labelledby="control-heading">
+  <div class="container">
+    <div class="control-inner">
+      <div>
+        <span class="label" style="color: var(--teal);">Division of Responsibility</span>
+        <div class="teal-line"></div>
+        <h2 id="control-heading">You Keep Control. We Handle the Heavy Lifting.</h2>
+        <p class="intro-text">PT Global's role is preparation and execution. Your firm retains every function that requires professional judgment, licensure, and client trust. That boundary never moves.</p>
+
+        <div class="control-columns">
+          <div class="control-col">
+            <h3>PT Global Handles</h3>
+            <ul>
+              <li>Data entry &amp; workpapers</li>
+              <li>Bank reconciliations</li>
+              <li>Draft return preparation</li>
+              <li>Document follow-up</li>
+              <li>Portal &amp; admin management</li>
+              <li>Month-end close support</li>
+            </ul>
+          </div>
+          <div class="control-col">
+            <h3>Your Firm Retains</h3>
+            <ul>
+              <li>Final review &amp; sign-off</li>
+              <li>Tax planning &amp; advice</li>
+              <li>IRS representation</li>
+              <li>Client relationship</li>
+              <li>Engagement letters</li>
+              <li>All professional judgments</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shield visual -->
+      <div class="control-shield" aria-hidden="true">
+        <svg width="220" height="260" viewBox="0 0 220 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Shield outline -->
+          <path d="M110 16L20 50V130C20 178 65 218 110 244C155 218 200 178 200 130V50L110 16Z" stroke="rgba(13,110,110,0.5)" stroke-width="1.5" fill="rgba(13,110,110,0.06)"/>
+          <!-- Inner check -->
+          <path d="M76 126L96 148L148 104" stroke="#0D6E6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Label -->
+          <text x="110" y="176" font-family="DM Mono, monospace" font-size="11" fill="#0D6E6E" text-anchor="middle" letter-spacing="2" text-transform="uppercase">YOUR FIRM</text>
+          <text x="110" y="194" font-family="DM Mono, monospace" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle" letter-spacing="2">IN CONTROL</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     SAMPLE ROLES
+=================================================== -->
+<section id="roles" class="section-pad" aria-labelledby="roles-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Available Roles</span>
+      <div class="teal-line" style="margin: 12px auto 0;"></div>
+      <h2 id="roles-heading" style="margin-top: 12px;">Meet Your Extended Team.</h2>
+    </div>
+
+    <div class="roles-grid">
+      <!-- Role 1 -->
+      <div class="role-card">
+        <div class="role-icon" aria-hidden="true">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="16" r="8" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M8 38C8 30.8 14.3 25 22 25C29.7 25 36 30.8 36 38" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Tax Preparer</h3>
+        <div class="role-skills">
+          <span class="skill-tag">Drake/Lacerte</span>
+          <span class="skill-tag">1040/1065</span>
+          <span class="skill-tag">Multi-State</span>
+        </div>
+      </div>
+      <!-- Role 2 -->
+      <div class="role-card">
+        <div class="role-icon" aria-hidden="true">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="10" width="28" height="24" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M14 18H30M14 24H24" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M8 18H36" stroke="#0D6E6E" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Bookkeeper</h3>
+        <div class="role-skills">
+          <span class="skill-tag">QuickBooks</span>
+          <span class="skill-tag">Xero</span>
+          <span class="skill-tag">Month-End</span>
+        </div>
+      </div>
+      <!-- Role 3 -->
+      <div class="role-card">
+        <div class="role-icon" aria-hidden="true">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 36V14L22 6L36 14V36" stroke="#0D6E6E" stroke-width="1.5" stroke-linejoin="round"/>
+            <rect x="16" y="26" width="12" height="10" stroke="#0D6E6E" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Staff Accountant</h3>
+        <div class="role-skills">
+          <span class="skill-tag">Financial Stmts</span>
+          <span class="skill-tag">GL Review</span>
+          <span class="skill-tag">Trial Balance</span>
+        </div>
+      </div>
+      <!-- Role 4 -->
+      <div class="role-card">
+        <div class="role-icon" aria-hidden="true">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="8" width="28" height="28" stroke="#0D6E6E" stroke-width="1.5"/>
+            <path d="M16 16H28M16 22H28M16 28H22" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Tax Admin Assistant</h3>
+        <div class="role-skills">
+          <span class="skill-tag">TaxDome</span>
+          <span class="skill-tag">SmartVault</span>
+          <span class="skill-tag">Client Comms</span>
+        </div>
+      </div>
+      <!-- Role 5 -->
+      <div class="role-card">
+        <div class="role-icon" aria-hidden="true">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 32L18 22L25 27L33 16L38 20" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 38H36" stroke="#0D6E6E" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <h3>Accounting Assistant</h3>
+        <div class="role-skills">
+          <span class="skill-tag">AP/AR</span>
+          <span class="skill-tag">Payroll Supp.</span>
+          <span class="skill-tag">Recon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     PRICING PREVIEW
+=================================================== -->
+<section id="pricing" class="section-pad" aria-labelledby="pricing-heading">
+  <div class="container">
+    <div class="pricing-intro">
+      <span class="label">Engagement Models</span>
+      <div class="teal-line" style="margin: 12px auto 0;"></div>
+      <h2 id="pricing-heading" style="margin-top: 12px;">Transparent Engagement Models.</h2>
+      <p>We offer flexible pricing based on the role, volume, and duration. Most firms start with a dedicated preparer or per-return pricing. No minimum commitment, no hidden fees.</p>
+    </div>
+
+    <div class="pricing-cards">
+      <!-- Model 1 -->
+      <div class="pricing-card">
+        <span class="label">Model 01</span>
+        <h3>Dedicated Monthly Placement</h3>
+        <p>One professional assigned to your firm on a flat monthly fee. Predictable cost, consistent output, and a preparer who knows your clients.</p>
+      </div>
+      <!-- Model 2 -->
+      <div class="pricing-card">
+        <span class="label">Model 02</span>
+        <h3>Per-Return Pricing</h3>
+        <p>Pay only for completed returns. Ideal for firms that need overflow support during peak season without a long-term commitment.</p>
+      </div>
+      <!-- Model 3 -->
+      <div class="pricing-card">
+        <span class="label">Model 03</span>
+        <h3>Seasonal Surge Support</h3>
+        <p>Activate capacity for tax season and wind down after April 15th. Built for firms that need flexible, volume-based coverage.</p>
+      </div>
+    </div>
+
+    <div class="pricing-cta">
+      <a href="#cta-final" class="btn btn-secondary">See Detailed Pricing</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     SECURITY & COMPLIANCE
+=================================================== -->
+<section id="security" class="section-pad" aria-labelledby="security-heading">
+  <div class="container">
+    <div class="security-grid">
+      <div>
+        <span class="label">Data Security</span>
+        <div class="teal-line"></div>
+        <h2 id="security-heading">Your Data Security Is Non-Negotiable.</h2>
+        <p style="margin-top: 20px; margin-bottom: 40px; font-size: 17px; line-height: 26px;">Every PT Global engagement is built on secure protocols that protect your clients and your firm's reputation.</p>
+
+        <div class="security-items" role="list">
+          <div class="security-item" role="listitem">
+            <div class="check-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="10" stroke="#0D6E6E" stroke-width="1.5"/>
+                <path d="M7 11L10 14L15 9" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>IRS Publication 4557 aligned data handling procedures</p>
+          </div>
+          <div class="security-item" role="listitem">
+            <div class="check-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="10" stroke="#0D6E6E" stroke-width="1.5"/>
+                <path d="M7 11L10 14L15 9" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>Encrypted file transfer — no SSNs or sensitive data via email</p>
+          </div>
+          <div class="security-item" role="listitem">
+            <div class="check-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="10" stroke="#0D6E6E" stroke-width="1.5"/>
+                <path d="M7 11L10 14L15 9" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>Secure client portal — TaxDome and SmartVault compatible</p>
+          </div>
+          <div class="security-item" role="listitem">
+            <div class="check-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="10" stroke="#0D6E6E" stroke-width="1.5"/>
+                <path d="M7 11L10 14L15 9" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>Confidentiality agreements signed by all PT Global staff</p>
+          </div>
+          <div class="security-item" role="listitem">
+            <div class="check-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="10" stroke="#0D6E6E" stroke-width="1.5"/>
+                <path d="M7 11L10 14L15 9" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <p>Role-based access controls — staff only accesses assigned client data</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <!-- Tax workflow placeholder -->
+        <div style="background: var(--warm); height: 280px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-subtle); margin-bottom: 24px;">
+          <p style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px; color: var(--charcoal); opacity: 0.5; text-align: center; padding: 24px;">Tax workflow photography —<br>Secure document handling environment</p>
+        </div>
+
+        <div class="security-badge">
+          <span class="label">Compliance Roadmap</span>
+          <p>SOC 2 Type II and ISO 27001 certification in progress. PT Global is actively building the compliance framework required for enterprise CPA firm engagements.*</p>
+          <p style="margin-top: 10px; font-size: 12px; color: var(--charcoal); opacity: 0.6;">* Certifications are in progress as of 2026. Contact us for current status.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     TESTIMONIALS
+=================================================== -->
+<section id="testimonials" class="section-pad" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Client Feedback</span>
+      <div class="teal-line" style="margin: 12px auto 0;"></div>
+      <h2 id="testimonials-heading" style="margin-top: 12px;">Trusted by CPA Firm Owners.</h2>
+    </div>
+
+    <div class="testimonial-cards">
+      <!-- T1 -->
+      <div class="testimonial-card">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <p>PT Global helped us add reliable tax-season support without slowing down our internal team. The preparer was up to speed in days, not weeks.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true"><span>FP</span></div>
+          <div>
+            <span class="author-name">Firm Partner</span>
+            <span class="author-title caption">CPA Firm · Texas</span>
+          </div>
+        </div>
+      </div>
+      <!-- T2 -->
+      <div class="testimonial-card">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <p>The candidates understood tax workflows and communicated professionally from day one. No hand-holding required — they knew what review-ready means.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true"><span>MP</span></div>
+          <div>
+            <span class="author-name">Managing Partner</span>
+            <span class="author-title caption">Tax Practice · Florida</span>
+          </div>
+        </div>
+      </div>
+      <!-- T3 -->
+      <div class="testimonial-card">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <p>Having bilingual preparers who understand Drake was a game changer for our Hispanic clients. The quality of work matched what we expected from a senior preparer.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" aria-hidden="true"><span>EA</span></div>
+          <div>
+            <span class="author-name">EA Firm Owner</span>
+            <span class="author-title caption">Enrolled Agent Practice · California</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     BLOG / RESOURCES
+=================================================== -->
+<section id="resources" class="section-pad" aria-labelledby="resources-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Insights &amp; Guides</span>
+      <div class="teal-line" style="margin: 12px auto 0;"></div>
+      <h2 id="resources-heading" style="margin-top: 12px;">Insights for Smarter Staffing.</h2>
+    </div>
+
+    <div class="blog-cards">
+      <!-- Post 1 -->
+      <div class="blog-card">
+        <span class="label">Tax Season · May 2026</span>
+        <h3>How to Staff Your CPA Firm for Tax Season</h3>
+        <p>A practical guide to identifying capacity gaps, scoping roles, and onboarding tax staff before the deadline crunch begins.</p>
+        <a href="#" class="blog-link" aria-label="Read: How to Staff Your CPA Firm for Tax Season">Read Article →</a>
+      </div>
+      <!-- Post 2 -->
+      <div class="blog-card">
+        <span class="label">Hiring Strategy · April 2026</span>
+        <h3>Contract vs. Full-Time Tax Staff: What Works?</h3>
+        <p>Understanding when to hire full-time, when to use contract support, and how to build a hybrid model that scales with your firm.</p>
+        <a href="#" class="blog-link" aria-label="Read: Contract vs Full-Time Tax Staff">Read Article →</a>
+      </div>
+      <!-- Post 3 -->
+      <div class="blog-card">
+        <span class="label">Operations · March 2026</span>
+        <h3>5 Signs Your Firm Needs Outsourced Tax Prep Support</h3>
+        <p>From missed extension deadlines to partner burnout, these are the signals that your firm's capacity model needs attention.</p>
+        <a href="#" class="blog-link" aria-label="Read: 5 Signs Your Firm Needs Outsourced Tax Prep Support">Read Article →</a>
+      </div>
+    </div>
+
+    <div class="resources-cta" style="text-align: center;">
+      <a href="#" class="btn btn-secondary">Visit Resources</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     FINAL CTA SECTION
+=================================================== -->
+<section id="cta-final" aria-labelledby="cta-heading">
+  <div class="cta-final-inner">
+    <span class="label">Get Started</span>
+    <h2 id="cta-heading">Ready to Reclaim Your Tax Season?</h2>
+    <p class="cta-desc">Book a free 30-minute consultation. We'll learn about your firm, answer your questions, and build a staffing plan — no obligation.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-hero-primary">Book Your Free Consultation</a>
+      <a href="#" class="btn btn-outline-white">Request a Sample Return</a>
+    </div>
+    <p class="cta-phone">Or call us: <a href="tel:3051234567">(305) XXX-XXXX</a></p>
+  </div>
+</section>
+
+
+<!-- ===================================================
+     FOOTER
+=================================================== -->
+<footer id="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Brand -->
+      <div>
+        <div class="logo-mark logo-mark-only" aria-label="PT Global" style="display: flex; align-items: center; margin-bottom: 12px;">
+          <span class="logo-bracket-left" style="border-color: var(--teal); height: 28px;"></span>
+          <span class="logo-pt" style="color: var(--white); font-size: 16px;">PT</span>
+          <span class="logo-bracket-right" style="border-color: var(--teal); height: 28px;"></span>
+        </div>
+        <p class="footer-brand-tagline">PT Global — Tax-Ready Talent for CPA Firms.<br>Miami, FL · ptglobal.com</p>
+        <div class="footer-social" style="margin-top: 20px;">
+          <a href="#" class="social-link" aria-label="PT Global on LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="1" y="1" width="16" height="16" stroke="rgba(245,240,232,0.5)" stroke-width="1.2"/>
+              <path d="M4 7V14M4 4.5V5" stroke="rgba(245,240,232,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M8 14V10C8 8.9 8.9 8 10 8C11.1 8 12 8.9 12 10V14" stroke="rgba(245,240,232,0.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 7V14" stroke="rgba(245,240,232,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Tax Preparation</a></li>
+          <li><a href="#services">Bookkeeping Support</a></li>
+          <li><a href="#services">Accounting Support</a></li>
+          <li><a href="#services">Tax Admin</a></li>
+        </ul>
+      </div>
+
+      <!-- Company -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#process">How It Works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#control">Why PT Global</a></li>
+          <li><a href="#cta-final">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Talent -->
+      <div class="footer-col">
+        <h4>For Candidates</h4>
+        <ul>
+          <li><a href="#cta-final">Join Our Talent Pool</a></li>
+          <li><a href="#roles">Open Roles</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-legal">© 2026 PT Global. All rights reserved. Miami, FL. &nbsp;·&nbsp; <a href="#">Privacy Policy</a></p>
+      <p class="footer-legal" style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;">Tax-Ready Talent · CPA Firms · Since 2023</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ===================================================
+     MINIMAL JS — Mobile nav toggle only
+=================================================== -->
+<script>
+  (function() {
+    var toggle = document.getElementById('nav-toggle');
+    var menu   = document.getElementById('nav-menu');
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', function() {
+      var isOpen = menu.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close on link click
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
