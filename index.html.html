@@ -6,15 +6,23 @@
   <title>PT Global — Tax-Ready Talent for CPA Firms</title>
   <meta name="description" content="PT Global provides pre-screened tax preparers, bookkeepers, and accounting support so your CPA firm scales capacity during tax season — without the hiring headache." />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: preconnect + non-blocking load (fixes render-blocking & LCP delay) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Inter:wght@400;500&family=DM+Mono:wght@400&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Inter:wght@400;500&family=DM+Mono:wght@400&display=swap" /></noscript>
+  <!-- Fallback font stack ensures CLS stays low while Sora loads -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Inter:wght@400;500&family=DM+Mono:wght@400&display=swap');
+    @font-face {
+      font-family: 'Sora';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local('');
+    }
   </style>
 
   <style>
-    /* ===================================================
-       CSS CUSTOM PROPERTIES — PT GLOBAL BRAND SYSTEM
-    =================================================== */
     :root {
       --navy:        #1B3A5C;
       --teal:        #0D6E6E;
@@ -30,9 +38,7 @@
       --font-mono:    'DM Mono', monospace;
     }
 
-    /* ===================================================
-       RESET & BASE
-    =================================================== */
+    
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html { scroll-behavior: smooth; }
@@ -50,15 +56,14 @@
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
 
-    /* ===================================================
-       TYPOGRAPHY SCALE
-    =================================================== */
+    
     h1 {
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 48px;
       line-height: 56px;
       color: var(--navy);
+      min-height: 56px; /* Reserve space to reduce CLS during font swap */
     }
     h2 {
       font-family: var(--font-heading);
@@ -90,9 +95,7 @@
       line-height: 20px;
     }
 
-    /* ===================================================
-       LAYOUT UTILITIES
-    =================================================== */
+    
     .container {
       max-width: 1180px;
       margin: 0 auto;
@@ -101,9 +104,7 @@
     .section-pad { padding: 96px 0; }
     .section-pad-sm { padding: 72px 0; }
 
-    /* ===================================================
-       BUTTONS
-    =================================================== */
+    
     .btn {
       display: inline-block;
       font-family: var(--font-body);
@@ -158,9 +159,7 @@
       border-color: var(--warm);
     }
 
-    /* ===================================================
-       LOGO COMPONENT
-    =================================================== */
+    
     .logo-lockup {
       display: flex;
       align-items: flex-end;
@@ -244,9 +243,7 @@
     .logo-mark-only .logo-bracket-left { height: 28px; }
     .logo-mark-only .logo-bracket-right { height: 28px; }
 
-    /* ===================================================
-       TEAL DIVIDER LINE
-    =================================================== */
+    
     .teal-line {
       width: 48px;
       height: 1.5px;
@@ -259,9 +256,7 @@
       background-color: var(--teal);
     }
 
-    /* ===================================================
-       BRACKET CORNER UTILITY (CSS brackets)
-    =================================================== */
+    
     .bracket-panel {
       position: relative;
       padding: 32px;
@@ -284,9 +279,7 @@
       border-right: 2px solid var(--teal);
     }
 
-    /* ===================================================
-       NAV / HEADER  (sticky)
-    =================================================== */
+    
     #site-header {
       position: sticky;
       top: 0;
@@ -335,9 +328,7 @@
       transition: transform 0.2s;
     }
 
-    /* ===================================================
-       HERO SECTION
-    =================================================== */
+    
     #hero {
       position: relative;
       background-color: var(--navy);
@@ -390,6 +381,7 @@
       font-size: 52px;
       line-height: 60px;
       margin-bottom: 24px;
+      min-height: 180px; /* Reserve 3-line height on mobile to prevent layout shift */
     }
     .hero-sub {
       font-family: var(--font-body);
@@ -464,9 +456,7 @@
     }
     .hero-stat-val .teal { color: var(--teal); }
 
-    /* ===================================================
-       PROBLEM SECTION
-    =================================================== */
+    
     #problem {
       background: var(--warm);
     }
@@ -503,9 +493,7 @@
     .pain-card h3 { font-size: 18px; line-height: 26px; margin-bottom: 6px; }
     .pain-card p { font-size: 15px; line-height: 22px; color: var(--charcoal); }
 
-    /* ===================================================
-       WHO WE HELP
-    =================================================== */
+    
     #who {
       background: var(--white);
     }
@@ -531,9 +519,7 @@
     .who-card h3 { margin-bottom: 12px; }
     .who-card p { font-size: 16px; line-height: 24px; color: var(--charcoal); }
 
-    /* ===================================================
-       SERVICES OVERVIEW
-    =================================================== */
+    
     #services {
       background: var(--white);
       border-top: 1px solid var(--border-subtle);
@@ -576,9 +562,7 @@
       padding: 6px 12px;
     }
 
-    /* ===================================================
-       SOFTWARE COMPATIBILITY
-    =================================================== */
+    
     #software {
       background: var(--warm);
     }
@@ -609,9 +593,7 @@
       color: var(--navy);
     }
 
-    /* ===================================================
-       HOW WE WORK
-    =================================================== */
+    
     #process {
       background: var(--white);
     }
@@ -659,9 +641,7 @@
     .step-card h3 { font-size: 18px; line-height: 26px; margin-bottom: 10px; }
     .step-card p { font-size: 14px; line-height: 22px; color: var(--charcoal); }
 
-    /* ===================================================
-       WHAT STAYS WITH YOUR FIRM
-    =================================================== */
+    
     #control {
       background: var(--navy);
     }
@@ -673,7 +653,7 @@
     }
     #control h2 { color: var(--white); margin-bottom: 16px; }
     #control .intro-text {
-      color: rgba(255,255,255,0.85);
+      color: #D6DFE8;
       font-size: 17px;
       line-height: 26px;
       margin-bottom: 40px;
@@ -684,16 +664,18 @@
       gap: 32px;
     }
     .control-col h3 {
-      color: var(--teal);
+      color: #FFFFFF;
       font-size: 16px;
       line-height: 24px;
       font-family: var(--font-mono);
       letter-spacing: 0.5px;
       text-transform: uppercase;
       margin-bottom: 20px;
+      border-bottom: 1.5px solid var(--teal);
+      padding-bottom: 10px;
     }
     .control-col li {
-      color: rgba(255,255,255,0.88);
+      color: #D6DFE8;
       font-size: 15px;
       line-height: 22px;
       padding: 10px 0;
@@ -717,9 +699,7 @@
       justify-content: center;
     }
 
-    /* ===================================================
-       SAMPLE ROLES
-    =================================================== */
+    
     #roles {
       background: var(--white);
     }
@@ -753,9 +733,7 @@
       padding: 4px 8px;
     }
 
-    /* ===================================================
-       PRICING PREVIEW
-    =================================================== */
+    
     #pricing {
       background: var(--warm);
     }
@@ -796,9 +774,7 @@
     .pricing-card p { font-size: 15px; line-height: 22px; color: var(--charcoal); }
     .pricing-cta { text-align: center; }
 
-    /* ===================================================
-       SECURITY & COMPLIANCE
-    =================================================== */
+    
     #security {
       background: var(--white);
       border-top: 2px solid var(--teal);
@@ -834,9 +810,7 @@
     .security-badge .label { margin-bottom: 8px; display: block; }
     .security-badge p { font-size: 14px; line-height: 20px; color: var(--charcoal); }
 
-    /* ===================================================
-       TESTIMONIALS
-    =================================================== */
+    
     #testimonials {
       background: var(--white);
       border-top: 1px solid var(--border-subtle);
@@ -894,11 +868,9 @@
       color: var(--navy);
       display: block;
     }
-    .author-title { font-size: 13px; color: var(--charcoal); opacity: 0.7; }
+    .author-title { font-size: 13px; color: #555E6B; }
 
-    /* ===================================================
-       BLOG / RESOURCES
-    =================================================== */
+    
     #resources {
       background: var(--warm);
     }
@@ -929,9 +901,7 @@
     .blog-link:hover { color: var(--navy); border-color: var(--navy); }
     .resources-cta { text-align: center; }
 
-    /* ===================================================
-       FINAL CTA SECTION
-    =================================================== */
+    
     #cta-final {
       background: var(--navy);
       padding: 96px 0;
@@ -942,10 +912,10 @@
       text-align: center;
       padding: 0 32px;
     }
-    #cta-final .label { margin-bottom: 16px; display: block; color: var(--teal); }
+    #cta-final .label { margin-bottom: 16px; display: block; color: #1A9C9C; }
     #cta-final h2 { color: var(--white); margin-bottom: 20px; }
     #cta-final .cta-desc {
-      color: rgba(255,255,255,0.85);
+      color: #D6DFE8;
       font-size: 18px;
       line-height: 28px;
       margin-bottom: 40px;
@@ -960,13 +930,11 @@
     .cta-phone {
       font-family: var(--font-body);
       font-size: 15px;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.85);
     }
-    .cta-phone a { color: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(255,255,255,0.3); }
+    .cta-phone a { color: #FFFFFF; border-bottom: 1px solid rgba(255,255,255,0.5); }
 
-    /* ===================================================
-       FOOTER
-    =================================================== */
+    
     #footer {
       background: var(--charcoal);
       padding: 64px 0 32px;
@@ -980,15 +948,16 @@
     .footer-brand-tagline {
       font-size: 14px;
       line-height: 20px;
-      color: rgba(245,240,232,0.7);
+      color: #B8C4CE;
       margin-top: 12px;
     }
-    .footer-col h4 {
+    .footer-col h4,
+    .footer-col-title {
       font-family: var(--font-mono);
       font-size: 11px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--teal);
+      color: #1A9C9C;
       margin-bottom: 16px;
     }
     .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
@@ -1009,9 +978,9 @@
     }
     .footer-legal {
       font-size: 13px;
-      color: rgba(245,240,232,0.5);
+      color: #9BA8B4;
     }
-    .footer-legal a { color: rgba(245,240,232,0.6); border-bottom: 1px solid rgba(245,240,232,0.2); }
+    .footer-legal a { color: #B8C4CE; border-bottom: 1px solid rgba(184,196,206,0.4); }
     .footer-social {
       display: flex;
       gap: 12px;
@@ -1027,9 +996,7 @@
     }
     .social-link:hover { border-color: var(--teal); }
 
-    /* ===================================================
-       RESPONSIVE
-    =================================================== */
+    
     @media (max-width: 1024px) {
       .hero-inner { grid-template-columns: 1fr; gap: 48px; }
       .hero-visual { display: none; }
@@ -1131,9 +1098,8 @@
 </header>
 
 
-<!-- ===================================================
-     HERO SECTION
-=================================================== -->
+<!-- HERO SECTION -->
+<main id="main-content">
 <section id="hero" aria-labelledby="hero-heading">
   <div class="hero-inner">
     <div class="hero-content">
@@ -1481,7 +1447,7 @@
   <div class="container">
     <div class="control-inner">
       <div>
-        <span class="label" style="color: var(--teal);">Division of Responsibility</span>
+        <span class="label" style="color: #1A9C9C;">Division of Responsibility</span>
         <div class="teal-line"></div>
         <h2 id="control-heading">You Keep Control. We Handle the Heavy Lifting.</h2>
         <p class="intro-text">PT Global's role is preparation and execution. Your firm retains every function that requires professional judgment, licensure, and client trust. That boundary never moves.</p>
@@ -1726,13 +1692,13 @@
       <div>
         <!-- Tax workflow placeholder -->
         <div style="background: var(--warm); height: 280px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-subtle); margin-bottom: 24px;">
-          <p style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px; color: var(--charcoal); opacity: 0.5; text-align: center; padding: 24px;">Tax workflow photography —<br>Secure document handling environment</p>
+          <p style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px; color: #6B7280; text-align: center; padding: 24px;">Tax workflow photography —<br>Secure document handling environment</p>
         </div>
 
         <div class="security-badge">
           <span class="label">Compliance Roadmap</span>
           <p>SOC 2 Type II and ISO 27001 certification in progress. PT Global is actively building the compliance framework required for enterprise CPA firm engagements.*</p>
-          <p style="margin-top: 10px; font-size: 12px; color: var(--charcoal); opacity: 0.6;">* Certifications are in progress as of 2026. Contact us for current status.</p>
+        <p style="margin-top: 10px; font-size: 12px; color: var(--charcoal);">* Certifications are in progress as of 2026. Contact us for current status.</p>
         </div>
       </div>
     </div>
@@ -1852,9 +1818,8 @@
 </section>
 
 
-<!-- ===================================================
-     FOOTER
-=================================================== -->
+<!-- FOOTER -->
+</main>
 <footer id="footer" role="contentinfo">
   <div class="container">
     <div class="footer-top">
@@ -1869,10 +1834,10 @@
         <div class="footer-social" style="margin-top: 20px;">
           <a href="#" class="social-link" aria-label="PT Global on LinkedIn">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="1" y="1" width="16" height="16" stroke="rgba(245,240,232,0.5)" stroke-width="1.2"/>
-              <path d="M4 7V14M4 4.5V5" stroke="rgba(245,240,232,0.7)" stroke-width="1.2" stroke-linecap="round"/>
-              <path d="M8 14V10C8 8.9 8.9 8 10 8C11.1 8 12 8.9 12 10V14" stroke="rgba(245,240,232,0.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8 7V14" stroke="rgba(245,240,232,0.7)" stroke-width="1.2" stroke-linecap="round"/>
+              <rect x="1" y="1" width="16" height="16" stroke="#9BA8B4" stroke-width="1.2"/>
+              <path d="M4 7V14M4 4.5V5" stroke="#B8C4CE" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M8 14V10C8 8.9 8.9 8 10 8C11.1 8 12 8.9 12 10V14" stroke="#B8C4CE" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 7V14" stroke="#B8C4CE" stroke-width="1.2" stroke-linecap="round"/>
             </svg>
           </a>
         </div>
@@ -1880,7 +1845,7 @@
 
       <!-- Services -->
       <div class="footer-col">
-        <h4>Services</h4>
+        <p class="footer-col-title">Services</p>
         <ul>
           <li><a href="#services">Tax Preparation</a></li>
           <li><a href="#services">Bookkeeping Support</a></li>
@@ -1891,7 +1856,7 @@
 
       <!-- Company -->
       <div class="footer-col">
-        <h4>Company</h4>
+        <p class="footer-col-title">Company</p>
         <ul>
           <li><a href="#process">How It Works</a></li>
           <li><a href="#pricing">Pricing</a></li>
@@ -1902,7 +1867,7 @@
 
       <!-- Talent -->
       <div class="footer-col">
-        <h4>For Candidates</h4>
+        <p class="footer-col-title">For Candidates</p>
         <ul>
           <li><a href="#cta-final">Join Our Talent Pool</a></li>
           <li><a href="#roles">Open Roles</a></li>
@@ -1915,7 +1880,7 @@
     <!-- Bottom bar -->
     <div class="footer-bottom">
       <p class="footer-legal">© 2026 PT Global. All rights reserved. Miami, FL. &nbsp;·&nbsp; <a href="#">Privacy Policy</a></p>
-      <p class="footer-legal" style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase;">Tax-Ready Talent · CPA Firms · Since 2023</p>
+      <p class="footer-legal" style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #9BA8B4;">Tax-Ready Talent · CPA Firms · Since 2023</p>
     </div>
   </div>
 </footer>
