@@ -912,7 +912,7 @@
       text-align: center;
       padding: 0 32px;
     }
-    #cta-final .label { margin-bottom: 16px; display: block; color: #1A9C9C; }
+    #cta-final .label { margin-bottom: 16px; display: block; color: #FFFFFF; }
     #cta-final h2 { color: var(--white); margin-bottom: 20px; }
     #cta-final .cta-desc {
       color: #D6DFE8;
@@ -957,7 +957,7 @@
       font-size: 11px;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: #1A9C9C;
+      color: #3DD6D6;
       margin-bottom: 16px;
     }
     .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
@@ -1447,7 +1447,7 @@
   <div class="container">
     <div class="control-inner">
       <div>
-        <span class="label" style="color: #1A9C9C;">Division of Responsibility</span>
+        <span class="label" style="color: #FFFFFF;">Division of Responsibility</span>
         <div class="teal-line"></div>
         <h2 id="control-heading">You Keep Control. We Handle the Heavy Lifting.</h2>
         <p class="intro-text">PT Global's role is preparation and execution. Your firm retains every function that requires professional judgment, licensure, and client trust. That boundary never moves.</p>
@@ -1692,7 +1692,7 @@
       <div>
         <!-- Tax workflow placeholder -->
         <div style="background: var(--warm); height: 280px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-subtle); margin-bottom: 24px;">
-          <p style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px; color: #6B7280; text-align: center; padding: 24px;">Tax workflow photography —<br>Secure document handling environment</p>
+          <p style="font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px; color: #4B5563; text-align: center; padding: 24px;">Tax workflow photography —<br>Secure document handling environment</p>
         </div>
 
         <div class="security-badge">
@@ -1895,16 +1895,28 @@
     var menu   = document.getElementById('nav-menu');
     if (!toggle || !menu) return;
 
+    var isOpen = false;
+
     toggle.addEventListener('click', function() {
-      var isOpen = menu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      isOpen = !isOpen;
+      /* Batch all DOM writes in rAF — avoids forced synchronous reflow */
+      requestAnimationFrame(function() {
+        if (isOpen) {
+          menu.classList.add('open');
+        } else {
+          menu.classList.remove('open');
+        }
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
     });
 
-    // Close on link click
     menu.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
-        menu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
+        isOpen = false;
+        requestAnimationFrame(function() {
+          menu.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
       });
     });
   })();
