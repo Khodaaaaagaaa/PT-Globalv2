@@ -1054,22 +1054,23 @@
     }
 
     /* ===== SCROLL ANIMATIONS ===== */
-    .anim {
+    /* Elements are VISIBLE by default - JS enhances with animation if supported */
+    .anim-ready .anim {
       opacity: 0;
       transition: opacity 0.65s cubic-bezier(.4,0,.2,1), transform 0.65s cubic-bezier(.4,0,.2,1);
       will-change: opacity, transform;
     }
-    .anim.fade-up     { transform: translateY(28px); }
-    .anim.slide-left  { transform: translateX(-28px); }
-    .anim.slide-right { transform: translateX(28px); }
-    .anim.scale-in    { transform: scale(0.94); }
-    .anim.visible     { opacity: 1 !important; transform: none !important; }
-    .anim.d1 { transition-delay: 0.08s; }
-    .anim.d2 { transition-delay: 0.16s; }
-    .anim.d3 { transition-delay: 0.24s; }
-    .anim.d4 { transition-delay: 0.32s; }
-    .anim.d5 { transition-delay: 0.40s; }
-    .anim.d6 { transition-delay: 0.48s; }
+    .anim-ready .anim.fade-up     { transform: translateY(28px); }
+    .anim-ready .anim.slide-left  { transform: translateX(-28px); }
+    .anim-ready .anim.slide-right { transform: translateX(28px); }
+    .anim-ready .anim.scale-in    { transform: scale(0.94); }
+    .anim-ready .anim.visible     { opacity: 1 !important; transform: none !important; }
+    .anim-ready .anim.d1 { transition-delay: 0.08s; }
+    .anim-ready .anim.d2 { transition-delay: 0.16s; }
+    .anim-ready .anim.d3 { transition-delay: 0.24s; }
+    .anim-ready .anim.d4 { transition-delay: 0.32s; }
+    .anim-ready .anim.d5 { transition-delay: 0.40s; }
+    .anim-ready .anim.d6 { transition-delay: 0.48s; }
     .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
     @media (max-width: 1024px) { .team-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 480px)  { .team-grid { grid-template-columns: 1fr; } }
@@ -2215,6 +2216,19 @@
 
   /* ===== SCROLL ANIMATIONS ===== */
   (function() {
+    // Only activate animations if IntersectionObserver is supported
+    if (!('IntersectionObserver' in window)) return;
+
+    // Mark body as animation-ready (this makes .anim elements go invisible)
+    document.body.classList.add('anim-ready');
+
+    // Safety net: after 2.5s, make ALL anim elements visible regardless
+    var safetyTimer = setTimeout(function() {
+      document.querySelectorAll('.anim').forEach(function(el) {
+        el.classList.add('visible');
+      });
+    }, 2500);
+
     var ao = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -2222,8 +2236,22 @@
           ao.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
     document.querySelectorAll('.anim').forEach(function(el) { ao.observe(el); });
+
+    // If all elements visible quickly, clear safety timer
+    var visibleCount = 0;
+    var total = document.querySelectorAll('.anim').length;
+    document.querySelectorAll('.anim').forEach(function(el) {
+      var localObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { visibleCount++; localObs.unobserve(e.target); }
+          if (visibleCount >= total) clearTimeout(safetyTimer);
+        });
+      });
+      localObs.observe(el);
+    });
   })();
 
   function switchContactTab(tab) {
