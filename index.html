@@ -1053,6 +1053,28 @@
       .software-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
+    /* ===== HERO PAGE-LOAD ENTRANCE ===== */
+    .hero-enter {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
+    }
+    /* card slides in from the right */
+    .hero-enter.e6 {
+      transform: translateX(32px);
+    }
+    .hero-enter.in {
+      opacity: 1;
+      transform: none;
+    }
+    /* staggered delays for each element */
+    .hero-enter.e1 { transition-delay: .05s; }
+    .hero-enter.e2 { transition-delay: .18s; }
+    .hero-enter.e3 { transition-delay: .32s; }
+    .hero-enter.e4 { transition-delay: .46s; }
+    .hero-enter.e5 { transition-delay: .60s; }
+    .hero-enter.e6 { transition-delay: .25s; }
+
     /* ===== SCROLL ANIMATIONS — same pattern as reference ===== */
     .fade-up {
       opacity: 0;
@@ -1204,16 +1226,16 @@
 <section id="hero" aria-labelledby="hero-heading">
   <div class="hero-inner">
     <div class="hero-content">
-      <p class="hero-label" aria-hidden="true">Tax-Ready Talent · CPA Firms · Since 2023</p>
-      <h1 id="hero-heading">Tax-Ready Talent Built for CPA Firms.</h1>
-      <p class="hero-sub">PT Global provides pre-screened tax preparers, bookkeepers, and accounting support so your firm scales capacity — without the hiring headache.</p>
-      <div class="hero-ctas">
+      <p class="hero-label hero-enter e1" aria-hidden="true">Tax-Ready Talent · CPA Firms · Since 2023</p>
+      <h1 id="hero-heading" class="hero-enter e2">Tax-Ready Talent Built for CPA Firms.</h1>
+      <p class="hero-sub hero-enter e3">PT Global provides pre-screened tax preparers, bookkeepers, and accounting support so your firm scales capacity — without the hiring headache.</p>
+      <div class="hero-ctas hero-enter e4">
         <a href="#cta-final" class="btn btn-hero-primary">Request Tax Staff</a>
         <a href="#cta-final" onclick="setTimeout(function(){switchContactTab('candidate')},100)" class="btn btn-outline-white">Join Our Talent Pool</a>
       </div>
 
       <!-- Trust strip -->
-      <div class="trust-strip" aria-label="Firm credentials">
+      <div class="trust-strip hero-enter e5" aria-label="Firm credentials">
         <span class="trust-badge">[ 90+ Placements ]</span>
         <span class="trust-badge">[ 7+ CPA Firms Served ]</span>
         <span class="trust-badge">[ Tax Season Ready ]</span>
@@ -1222,7 +1244,7 @@
     </div>
 
     <!-- Hero visual card -->
-    <div class="hero-visual" aria-hidden="true">
+    <div class="hero-visual hero-enter e6" aria-hidden="true">
       <div class="hero-card">
         <p class="hero-card-label">Current Deployment Overview</p>
         <div class="hero-stat">
@@ -2247,13 +2269,24 @@
     });
   })();
 
-  /* SCROLL ANIMATIONS */
+  /* SCROLL ANIMATIONS + HERO PAGE-LOAD ENTRANCE */
   (function() {
-    setTimeout(function() {
-      document.querySelectorAll('#hero .fade-up, #hero .scale-in').forEach(function(el) {
-        el.classList.add('visible');
+    /* --- HERO: fire on DOMContentLoaded, stagger via CSS delays --- */
+    function runHeroEntrance() {
+      document.querySelectorAll('.hero-enter').forEach(function(el) {
+        el.classList.add('in');
       });
-    }, 80);
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', runHeroEntrance);
+    } else {
+      /* already parsed — small rAF so browser has painted the initial state */
+      requestAnimationFrame(function() {
+        requestAnimationFrame(runHeroEntrance);
+      });
+    }
+
+    /* --- SCROLL: IntersectionObserver for everything else --- */
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(e) {
         if (e.isIntersecting) {
@@ -2262,6 +2295,7 @@
         }
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
     document.querySelectorAll('.fade-up, .scale-in').forEach(function(el) {
       obs.observe(el);
     });
