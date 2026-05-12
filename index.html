@@ -292,24 +292,26 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 32px;
-      max-width: 1180px;
+      padding: 14px 32px;
+      max-width: 1280px;
       margin: 0 auto;
     }
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 20px;
     }
     .nav-links a {
       font-family: var(--font-body);
       font-weight: 400;
-      font-size: 16px;
+      font-size: 14px;
       color: var(--charcoal);
       transition: color 0.2s;
+      white-space: nowrap;
     }
     .nav-links a:hover { color: var(--teal); }
-    .nav-cta { margin-left: 16px; }
+    .nav-cta { margin-left: 12px; }
+    .nav-cta.btn { padding: 10px 20px; font-size: 14px; }
 
     /* Mobile hamburger */
     .nav-toggle {
@@ -1051,7 +1053,23 @@
       .software-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    /* TEAM GRID */
+    /* ===== SCROLL ANIMATIONS ===== */
+    .anim {
+      opacity: 0;
+      transition: opacity 0.65s cubic-bezier(.4,0,.2,1), transform 0.65s cubic-bezier(.4,0,.2,1);
+      will-change: opacity, transform;
+    }
+    .anim.fade-up     { transform: translateY(28px); }
+    .anim.slide-left  { transform: translateX(-28px); }
+    .anim.slide-right { transform: translateX(28px); }
+    .anim.scale-in    { transform: scale(0.94); }
+    .anim.visible     { opacity: 1 !important; transform: none !important; }
+    .anim.d1 { transition-delay: 0.08s; }
+    .anim.d2 { transition-delay: 0.16s; }
+    .anim.d3 { transition-delay: 0.24s; }
+    .anim.d4 { transition-delay: 0.32s; }
+    .anim.d5 { transition-delay: 0.40s; }
+    .anim.d6 { transition-delay: 0.48s; }
     .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
     @media (max-width: 1024px) { .team-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 480px)  { .team-grid { grid-template-columns: 1fr; } }
@@ -1103,11 +1121,31 @@
     .form-success-msg p  { font-size: 14px; color: var(--charcoal); }
 
     /* PHOTO GALLERY */
-    .photo-gallery { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .photo-gallery { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     @media (max-width: 768px) { .photo-gallery { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 480px) { .photo-gallery { grid-template-columns: 1fr; } }
-    .photo-placeholder { background: var(--warm); border: 1px solid var(--border-subtle); height: 200px; display: flex; align-items: center; justify-content: center; }
-    .photo-placeholder span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; color: #4B5563; text-align: center; padding: 16px; line-height: 1.8; }
+    .photo-placeholder {
+      background: linear-gradient(135deg, #E8E4DC 0%, #DDD8CF 100%);
+      border: 1px solid rgba(13,110,110,0.12);
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .photo-placeholder:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(27,58,92,0.12); }
+    .photo-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(13,110,110,0.03) 40px, rgba(13,110,110,0.03) 41px),
+                        repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(13,110,110,0.03) 40px, rgba(13,110,110,0.03) 41px);
+    }
+    .photo-placeholder-icon { color: rgba(13,110,110,0.3); margin-bottom: 12px; position: relative; z-index: 1; }
+    .photo-placeholder span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.8px; color: #5A5550; text-align: center; padding: 0 20px; line-height: 1.9; position: relative; z-index: 1; }
   </style>
 </head>
 
@@ -1208,20 +1246,21 @@
 
 
 <!-- TRUSTED BY STRIP -->
-<section id="trusted-by" aria-label="Companies PT Global works with" style="background: var(--warm); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 28px 0;">
+<section id="trusted-by" aria-label="Companies PT Global works with" style="background: var(--navy); border-top: none; border-bottom: none; padding: 36px 0;">
   <div class="container">
     <div style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap; justify-content: center;">
-      <span style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--charcoal); opacity: 0.5; white-space: nowrap; flex-shrink: 0;">Trusted by</span>
-      <div style="display: flex; align-items: center; gap: 40px; flex-wrap: wrap; justify-content: center;">
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: var(--navy); letter-spacing: -0.3px;">Parsi &amp; Company</span>
-        <span style="color: var(--border-subtle);">|</span>
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: var(--navy); letter-spacing: -0.3px;">MLS Tax Group</span>
-        <span style="color: var(--border-subtle);">|</span>
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: var(--navy); letter-spacing: -0.3px;">Foster CPA</span>
-        <span style="color: var(--border-subtle);">|</span>
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: var(--navy); letter-spacing: -0.3px;">Summit ATS</span>
-        <span style="color: var(--border-subtle);">|</span>
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: var(--navy); letter-spacing: -0.3px;">U.S. CPA Firms Nationwide</span>
+      <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.45); white-space: nowrap; flex-shrink: 0;">Trusted By</span>
+      <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); flex-shrink: 0;"></div>
+      <div style="display: flex; align-items: center; gap: 36px; flex-wrap: wrap; justify-content: center;">
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: -0.2px; transition: color 0.2s;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">Parsi &amp; Company</span>
+        <span style="color: rgba(255,255,255,0.15); font-size: 18px; font-weight: 300;">|</span>
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: -0.2px; transition: color 0.2s;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">MLS Tax Group</span>
+        <span style="color: rgba(255,255,255,0.15); font-size: 18px; font-weight: 300;">|</span>
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: -0.2px; transition: color 0.2s;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">Foster CPA</span>
+        <span style="color: rgba(255,255,255,0.15); font-size: 18px; font-weight: 300;">|</span>
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: -0.2px; transition: color 0.2s;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">Summit ATS</span>
+        <span style="color: rgba(255,255,255,0.15); font-size: 18px; font-weight: 300;">|</span>
+        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: -0.2px; transition: color 0.2s;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">U.S. CPA Firms Nationwide</span>
       </div>
     </div>
   </div>
@@ -1240,7 +1279,7 @@
       </div>
       <div class="pain-cards">
         <!-- Pain 1 -->
-        <div class="pain-card">
+        <div class="pain-card anim fade-up d1">
           <div class="pain-icon" aria-hidden="true">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <circle cx="18" cy="18" r="15" stroke="#0D6E6E" stroke-width="1.5"/>
@@ -1253,7 +1292,7 @@
           </div>
         </div>
         <!-- Pain 2 -->
-        <div class="pain-card">
+        <div class="pain-card anim fade-up d2">
           <div class="pain-icon" aria-hidden="true">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <rect x="6" y="6" width="24" height="28" rx="0" stroke="#0D6E6E" stroke-width="1.5"/>
@@ -1266,7 +1305,7 @@
           </div>
         </div>
         <!-- Pain 3 -->
-        <div class="pain-card">
+        <div class="pain-card anim fade-up d3">
           <div class="pain-icon" aria-hidden="true">
             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M6 28L13 20L18 24L25 14L30 18" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1289,7 +1328,7 @@
 =================================================== -->
 <section id="who" class="section-pad" aria-labelledby="who-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header anim fade-up">
       <span class="label">Who We Serve</span>
       <div class="teal-line" style="margin: 12px auto 0;"></div>
       <h2 id="who-heading" style="margin-top: 12px;">Built Exclusively for Tax &amp; Accounting Firms.</h2>
@@ -1340,7 +1379,7 @@
 =================================================== -->
 <section id="services" class="section-pad" aria-labelledby="services-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header anim fade-up">
       <span class="label">What We Deliver</span>
       <div class="teal-line" style="margin: 12px auto 0;"></div>
       <h2 id="services-heading" style="margin-top: 12px;">Tax-Ready Support That Fits Your Workflow.</h2>
@@ -1348,7 +1387,7 @@
 
     <div class="services-grid">
       <!-- Service 1 -->
-      <div class="service-card">
+      <div class="service-card anim fade-up d1">
         <div class="service-card-icon" aria-hidden="true">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="4" width="28" height="32" stroke="#0D6E6E" stroke-width="1.5"/>
@@ -1359,7 +1398,7 @@
         <p>Experienced preparers handling individual and business returns across all major form types. Workpapers, multi-state returns, extensions, and amended filings prepared review-ready.</p>
       </div>
       <!-- Service 2 -->
-      <div class="service-card">
+      <div class="service-card anim fade-up d2">
         <div class="service-card-icon" aria-hidden="true">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 32V14L20 6L32 14V32" stroke="#0D6E6E" stroke-width="1.5" stroke-linejoin="round"/>
@@ -1371,7 +1410,7 @@
         <p>Bank reconciliations, AP/AR processing, month-end close, and catch-up clean-up projects. Your books delivered accurate and on schedule.</p>
       </div>
       <!-- Service 3 -->
-      <div class="service-card">
+      <div class="service-card anim fade-up d3">
         <div class="service-card-icon" aria-hidden="true">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 30L15 22L22 26L30 16L36 20" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1383,7 +1422,7 @@
         <p>Financial statement preparation, GL review, payroll support, and trial balance work. Staff accountants who integrate into your monthly workflow.</p>
       </div>
       <!-- Service 4 -->
-      <div class="service-card">
+      <div class="service-card anim fade-up d4">
         <div class="service-card-icon" aria-hidden="true">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="28" height="24" stroke="#0D6E6E" stroke-width="1.5"/>
@@ -1398,7 +1437,7 @@
     </div>
 
     <!-- Forms We Handle -->
-    <div class="forms-block">
+    <div class="forms-block anim fade-up">
       <span class="label">Forms We Handle</span>
       <div class="forms-badges" role="list" aria-label="Supported tax forms">
         <span class="form-badge" role="listitem">1040</span>
@@ -1424,13 +1463,13 @@
 =================================================== -->
 <section id="software" class="section-pad" aria-labelledby="software-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header anim fade-up">
       <span class="label">Software Proficiency</span>
       <div class="teal-line" style="margin: 12px auto 0;"></div>
       <h2 id="software-heading" style="margin-top: 12px;">We Work Inside Your Existing Stack.</h2>
     </div>
 
-    <div class="software-grid" role="list" aria-label="Compatible software platforms">
+    <div class="software-grid anim fade-up" role="list" aria-label="Compatible software platforms">
       <div class="sw-badge" role="listitem">Drake</div>
       <div class="sw-badge" role="listitem">ProSeries</div>
       <div class="sw-badge" role="listitem">Lacerte</div>
@@ -1455,7 +1494,7 @@
 =================================================== -->
 <section id="process" class="section-pad" aria-labelledby="process-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header anim fade-up">
       <span class="label">The Process</span>
       <div class="teal-line" style="margin: 12px auto 0;"></div>
       <h2 id="process-heading" style="margin-top: 12px;">From Discovery to Delivered Returns — in Days, Not Weeks.</h2>
@@ -1463,7 +1502,7 @@
 
     <div class="process-steps" role="list">
       <!-- Step 1 -->
-      <div class="step-card" role="listitem">
+      <div class="step-card anim scale-in d1" role="listitem">
         <span class="step-num">01 · DISCOVERY</span>
         <div class="step-icon" aria-hidden="true">
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1475,7 +1514,7 @@
         <p>Define roles, confirm software access, map your review workflow, and establish communication cadence before work begins.</p>
       </div>
       <!-- Step 2 -->
-      <div class="step-card" role="listitem">
+      <div class="step-card anim scale-in d2" role="listitem">
         <span class="step-num">02 · INTAKE</span>
         <div class="step-icon" aria-hidden="true">
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1487,7 +1526,7 @@
         <p>Clients upload documents via your encrypted portal. No SSNs by email. Full compliance with IRS Publication 4557 protocols.</p>
       </div>
       <!-- Step 3 -->
-      <div class="step-card" role="listitem">
+      <div class="step-card anim scale-in d3" role="listitem">
         <span class="step-num">03 · PREPARE</span>
         <div class="step-icon" aria-hidden="true">
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1500,7 +1539,7 @@
         <p>PT Global's preparer drafts the return or completes the books inside your software. All work is flagged for your final review.</p>
       </div>
       <!-- Step 4 -->
-      <div class="step-card" role="listitem">
+      <div class="step-card anim scale-in d4" role="listitem">
         <span class="step-num">04 · SIGN-OFF</span>
         <div class="step-icon" aria-hidden="true">
           <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1521,7 +1560,7 @@
 =================================================== -->
 <section id="control" class="section-pad" aria-labelledby="control-heading">
   <div class="container">
-    <div class="control-inner">
+    <div class="control-inner anim fade-up">
       <div>
         <span class="label" style="color: #FFFFFF;">Division of Responsibility</span>
         <div class="teal-line" style="background-color: #4ECDC4;"></div>
@@ -1576,7 +1615,7 @@
 =================================================== -->
 <section id="roles" class="section-pad" aria-labelledby="roles-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header anim fade-up">
       <span class="label">Available Roles</span>
       <div class="teal-line" style="margin: 12px auto 0;"></div>
       <h2 id="roles-heading" style="margin-top: 12px;">Meet Your Extended Team.</h2>
@@ -1584,7 +1623,7 @@
 
     <div class="roles-grid">
       <!-- Role 1 -->
-      <div class="role-card">
+      <div class="role-card anim fade-up d1">
         <div class="role-icon" aria-hidden="true">
           <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="22" cy="16" r="8" stroke="#0D6E6E" stroke-width="1.5"/>
@@ -1599,7 +1638,7 @@
         </div>
       </div>
       <!-- Role 2 -->
-      <div class="role-card">
+      <div class="role-card anim fade-up d2">
         <div class="role-icon" aria-hidden="true">
           <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="10" width="28" height="24" stroke="#0D6E6E" stroke-width="1.5"/>
@@ -1615,7 +1654,7 @@
         </div>
       </div>
       <!-- Role 3 -->
-      <div class="role-card">
+      <div class="role-card anim fade-up d3">
         <div class="role-icon" aria-hidden="true">
           <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 36V14L22 6L36 14V36" stroke="#0D6E6E" stroke-width="1.5" stroke-linejoin="round"/>
@@ -1630,7 +1669,7 @@
         </div>
       </div>
       <!-- Role 4 -->
-      <div class="role-card">
+      <div class="role-card anim fade-up d4">
         <div class="role-icon" aria-hidden="true">
           <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="8" y="8" width="28" height="28" stroke="#0D6E6E" stroke-width="1.5"/>
@@ -1645,7 +1684,7 @@
         </div>
       </div>
       <!-- Role 5 -->
-      <div class="role-card">
+      <div class="role-card anim fade-up d5">
         <div class="role-icon" aria-hidden="true">
           <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M10 32L18 22L25 27L33 16L38 20" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1678,19 +1717,19 @@
 
     <div class="pricing-cards">
       <!-- Model 1 -->
-      <div class="pricing-card">
+      <div class="pricing-card anim fade-up d1">
         <span class="label">Model 01</span>
         <h3>Dedicated Monthly Placement</h3>
         <p>One professional assigned to your firm on a flat monthly fee. Predictable cost, consistent output, and a preparer who knows your clients.</p>
       </div>
       <!-- Model 2 -->
-      <div class="pricing-card">
+      <div class="pricing-card anim fade-up d2">
         <span class="label">Model 02</span>
         <h3>Per-Return Pricing</h3>
         <p>Pay only for completed returns. Ideal for firms that need overflow support during peak season without a long-term commitment.</p>
       </div>
       <!-- Model 3 -->
-      <div class="pricing-card">
+      <div class="pricing-card anim fade-up d3">
         <span class="label">Model 03</span>
         <h3>Seasonal Surge Support</h3>
         <p>Activate capacity for tax season and wind down after April 15th. Built for firms that need flexible, volume-based coverage.</p>
@@ -1709,7 +1748,7 @@
 =================================================== -->
 <section id="security" class="section-pad" aria-labelledby="security-heading">
   <div class="container">
-    <div class="security-grid">
+    <div class="security-grid anim fade-up">
       <div>
         <span class="label">Data Security</span>
         <div class="teal-line"></div>
@@ -1785,32 +1824,32 @@
 <!-- OUR TEAM -->
 <section id="team" class="section-pad" aria-labelledby="team-heading" style="background: var(--navy);">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header anim fade-up">
       <span class="label" style="color: #4ECDC4;">Our Team</span>
       <div class="teal-line" style="margin: 12px auto 0; background-color: #4ECDC4;"></div>
       <h2 id="team-heading" style="margin-top: 12px; color: var(--white);">The People Behind Every Placement</h2>
       <p style="margin-top: 12px; color: #D6DFE8; font-size: 16px; line-height: 26px;">A focused team of staffing professionals who know the CPA and tax world from the inside.</p>
     </div>
     <div class="team-grid">
-      <div class="team-card">
+      <div class="team-card anim fade-up d1">
         <div class="team-avatar">MK</div>
         <div class="team-name">Mike Kowalczyk</div>
         <div class="team-role">Founder &amp; Managing Director</div>
         <p class="team-bio">Leads PT Global's client relationships and placement strategy. Deep expertise in CPA-firm staffing and tax-season workforce planning.</p>
       </div>
-      <div class="team-card">
+      <div class="team-card anim fade-up d2">
         <div class="team-avatar">PR</div>
         <div class="team-name">Pablo Rosales</div>
         <div class="team-role">Head of Talent Acquisition</div>
         <p class="team-bio">Oversees candidate sourcing, vetting, and placement operations. Ensures every shortlist meets PT Global's exacting tax-firm standards.</p>
       </div>
-      <div class="team-card">
+      <div class="team-card anim fade-up d3">
         <div class="team-avatar">MA</div>
         <div class="team-name">Manuel Altamirano</div>
         <div class="team-role">Client Success Manager</div>
         <p class="team-bio">Manages firm relationships post-placement, ensuring seamless onboarding and long-term fit between placed staff and client workflows.</p>
       </div>
-      <div class="team-card">
+      <div class="team-card anim fade-up d4">
         <div class="team-avatar">MV</div>
         <div class="team-name">Mariana Virreira</div>
         <div class="team-role">Talent Coordinator</div>
@@ -1823,19 +1862,37 @@
 <!-- COMPANY PHOTOS -->
 <section class="section-pad" aria-label="PT Global office photos" style="background: var(--warm);">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header anim fade-up">
       <span class="label">Our Firm</span>
       <div class="teal-line" style="margin: 12px auto 0;"></div>
       <h2 style="margin-top: 12px;">A Closer Look at PT Global</h2>
       <p style="margin-top: 12px; font-size: 15px; color: var(--charcoal);">Real photos will be added here. These placeholders will be replaced with actual company images.</p>
     </div>
     <div class="photo-gallery">
-      <div class="photo-placeholder"><span>Team photo —<br>Miami headquarters</span></div>
-      <div class="photo-placeholder"><span>Placement team —<br>candidate review session</span></div>
-      <div class="photo-placeholder"><span>Client discovery call —<br>CPA firm onboarding</span></div>
-      <div class="photo-placeholder"><span>Office environment —<br>PT Global workspace</span></div>
-      <div class="photo-placeholder"><span>Team event —<br>company culture</span></div>
-      <div class="photo-placeholder"><span>Tax season operations —<br>peak deployment</span></div>
+      <div class="photo-placeholder anim scale-in d1">
+        <div class="photo-placeholder-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="14" r="6" stroke="#0D6E6E" stroke-width="1.5"/><path d="M6 32C6 25.4 11.4 20 18 20C24.6 20 30 25.4 30 32" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span>Team photo —<br>Miami headquarters</span>
+      </div>
+      <div class="photo-placeholder anim scale-in d2">
+        <div class="photo-placeholder-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="8" width="28" height="20" stroke="#0D6E6E" stroke-width="1.5"/><path d="M4 14H32M12 8V28" stroke="#0D6E6E" stroke-width="1.5"/></svg></div>
+        <span>Placement team —<br>candidate review session</span>
+      </div>
+      <div class="photo-placeholder anim scale-in d3">
+        <div class="photo-placeholder-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="6" width="28" height="22" stroke="#0D6E6E" stroke-width="1.5"/><path d="M4 12H32M12 28L18 22L24 28" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+        <span>Client discovery call —<br>CPA firm onboarding</span>
+      </div>
+      <div class="photo-placeholder anim scale-in d4">
+        <div class="photo-placeholder-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M6 30V16L18 8L30 16V30" stroke="#0D6E6E" stroke-width="1.5" stroke-linejoin="round"/><rect x="13" y="20" width="10" height="10" stroke="#0D6E6E" stroke-width="1.5"/></svg></div>
+        <span>Office environment —<br>PT Global workspace</span>
+      </div>
+      <div class="photo-placeholder anim scale-in d5">
+        <div class="photo-placeholder-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="13" stroke="#0D6E6E" stroke-width="1.5"/><path d="M12 18L16 22L24 14" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span>Team event —<br>company culture</span>
+      </div>
+      <div class="photo-placeholder anim scale-in d6">
+        <div class="photo-placeholder-icon"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M6 26L12 18L18 22L24 12L30 16" stroke="#0D6E6E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 32H30" stroke="#0D6E6E" stroke-width="1.5"/></svg></div>
+        <span>Tax season operations —<br>peak deployment</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1844,7 +1901,7 @@
 <!-- TESTIMONIALS -->
 <section id="testimonials" class="section-pad" aria-labelledby="testimonials-heading">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header anim fade-up">
       <span class="label">Client Feedback</span>
       <div class="teal-line" style="margin: 12px auto 0;"></div>
       <h2 id="testimonials-heading" style="margin-top: 12px;">Trusted by CPA Firm Owners.</h2>
@@ -1852,7 +1909,7 @@
 
     <div class="testimonial-cards">
       <!-- T1 -->
-      <div class="testimonial-card">
+      <div class="testimonial-card anim scale-in d1">
         <span class="quote-mark" aria-hidden="true">"</span>
         <p>PT Global helped us add reliable tax-season support without slowing down our internal team. The preparer was up to speed in days, not weeks.</p>
         <div class="testimonial-author">
@@ -1864,7 +1921,7 @@
         </div>
       </div>
       <!-- T2 -->
-      <div class="testimonial-card">
+      <div class="testimonial-card anim scale-in d2">
         <span class="quote-mark" aria-hidden="true">"</span>
         <p>The candidates understood tax workflows and communicated professionally from day one. No hand-holding required — they knew what review-ready means.</p>
         <div class="testimonial-author">
@@ -1876,7 +1933,7 @@
         </div>
       </div>
       <!-- T3 -->
-      <div class="testimonial-card">
+      <div class="testimonial-card anim scale-in d3">
         <span class="quote-mark" aria-hidden="true">"</span>
         <p>Having bilingual preparers who understand Drake was a game changer for our Hispanic clients. The quality of work matched what we expected from a senior preparer.</p>
         <div class="testimonial-author">
@@ -1895,7 +1952,7 @@
 <!-- BLOG / RESOURCES -->
 <section id="resources" class="section-pad" aria-labelledby="resources-heading" style="background: var(--warm);">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header anim fade-up">
       <span class="label">Insights &amp; Guides</span>
       <div class="teal-line" style="margin: 12px auto 0;"></div>
       <h2 id="resources-heading" style="margin-top: 12px;">Insights for Smarter Staffing.</h2>
@@ -1904,7 +1961,7 @@
 
     <div class="blog-cards">
       <!-- Post 1 — AICPA -->
-      <div class="blog-card">
+      <div class="blog-card anim fade-up d1">
         <span class="label" style="color: var(--teal);">Tax Staffing · AICPA</span>
         <h3>Staffing Your Firm for Busy Season</h3>
         <p>AICPA's guide on capacity planning for CPA firms during tax season — from evaluating workload to hiring temporary staff strategically.</p>
@@ -1912,7 +1969,7 @@
         <a href="https://www.journalofaccountancy.com/issues/2020/jan/cpa-firm-staffing-solutions.html" target="_blank" rel="noopener noreferrer" class="blog-link" aria-label="Read AICPA article on staffing your firm for busy season">Read More →</a>
       </div>
       <!-- Post 2 — Accounting Today -->
-      <div class="blog-card">
+      <div class="blog-card anim fade-up d2">
         <span class="label" style="color: var(--teal);">Hiring Strategy · Accounting Today</span>
         <h3>The Case for Outsourced Tax Preparation</h3>
         <p>Accounting Today explores how mid-size CPA firms are using outsourced tax prep to handle volume surges without expanding permanent headcount.</p>
@@ -1920,7 +1977,7 @@
         <a href="https://www.accountingtoday.com/news/the-new-normal-of-tax-outsourcing" target="_blank" rel="noopener noreferrer" class="blog-link" aria-label="Read Accounting Today article on outsourced tax preparation">Read More →</a>
       </div>
       <!-- Post 3 — Thomson Reuters -->
-      <div class="blog-card">
+      <div class="blog-card anim fade-up d3">
         <span class="label" style="color: var(--teal);">Operations · Thomson Reuters</span>
         <h3>How to Scale Your Accounting Firm's Capacity</h3>
         <p>Thomson Reuters' Tax &amp; Accounting blog covers practical approaches to scaling firm capacity — including staffing models, technology, and workflow design.</p>
@@ -2155,6 +2212,20 @@
         });
       });
     });
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  (function() {
+    var ao = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          ao.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.anim').forEach(function(el) { ao.observe(el); });
+  })();
+
   function switchContactTab(tab) {
     var firmForm = document.getElementById('firmContactForm');
     var candForm = document.getElementById('candidateContactForm');
