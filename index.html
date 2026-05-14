@@ -734,45 +734,6 @@
     }
 
     
-    #pricing {
-      background: var(--warm);
-    }
-    .pricing-intro {
-      max-width: 640px;
-      margin: 0 auto 48px;
-      text-align: center;
-    }
-    .pricing-intro p {
-      font-size: 17px;
-      line-height: 26px;
-      color: var(--charcoal);
-      margin-top: 16px;
-    }
-    .pricing-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-    .pricing-card {
-      background: var(--white);
-      border: 1px solid var(--border-subtle);
-      padding: 32px;
-      position: relative;
-    }
-    .pricing-card::before,
-    .pricing-card::after {
-      content: '';
-      position: absolute;
-      width: 14px;
-      height: 14px;
-    }
-    .pricing-card::before { top: 0; left: 0; border-top: 2px solid var(--teal); border-left: 2px solid var(--teal); }
-    .pricing-card::after  { bottom: 0; right: 0; border-bottom: 2px solid var(--teal); border-right: 2px solid var(--teal); }
-    .pricing-card .label { margin-bottom: 16px; display: block; color: var(--teal); }
-    .pricing-card h3 { font-size: 20px; margin-bottom: 12px; }
-    .pricing-card p { font-size: 15px; line-height: 22px; color: var(--charcoal); }
-    .pricing-cta { text-align: center; }
 
     
     #security {
@@ -1033,7 +994,6 @@
       .control-inner { grid-template-columns: 1fr; gap: 40px; }
       .control-columns { grid-template-columns: 1fr; }
       .roles-grid { grid-template-columns: 1fr 1fr; }
-      .pricing-cards { grid-template-columns: 1fr; }
       .security-grid { grid-template-columns: 1fr; gap: 40px; }
       .testimonial-cards { grid-template-columns: 1fr; }
       .blog-cards { grid-template-columns: 1fr; }
@@ -1201,7 +1161,6 @@
     <ul class="nav-links" id="nav-menu" role="list">
       <li><a href="#services">Services</a></li>
       <li><a href="#process">How It Works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#control">Why PT Global</a></li>
       <li><a href="#team">Our Team</a></li>
       <li><a href="#resources">Resources</a></li>
@@ -1236,7 +1195,7 @@
 
       <!-- Trust strip -->
       <div class="trust-strip hero-enter e5" aria-label="Firm credentials">
-        <span class="trust-badge">[ 100+ Placements ]</span>
+        <span class="trust-badge">[ 90+ Placements ]</span>
         <span class="trust-badge">[ 7+ CPA Firms Served ]</span>
         <span class="trust-badge">[ Tax Season Ready ]</span>
         <span class="trust-badge">[ Bilingual ENG / SPA ]</span>
@@ -1249,7 +1208,7 @@
         <p class="hero-card-label">Current Deployment Overview</p>
         <div class="hero-stat">
           <span class="hero-stat-label">Active Placements</span>
-          <span class="hero-stat-val"><span class="teal">100+</span> Professionals</span>
+          <span class="hero-stat-val"><span class="teal">90+</span> Professionals</span>
         </div>
         <div class="hero-stat">
           <span class="hero-stat-label">Forms Supported</span>
@@ -1732,46 +1691,6 @@
 
 
 <!-- ===================================================
-     PRICING PREVIEW
-=================================================== -->
-<section id="pricing" class="section-pad" aria-labelledby="pricing-heading">
-  <div class="container">
-    <div class="pricing-intro">
-      <span class="label">Engagement Models</span>
-      <div class="teal-line" style="margin: 12px auto 0;"></div>
-      <h2 id="pricing-heading" style="margin-top: 12px;">Transparent Engagement Models.</h2>
-      <p>We offer flexible pricing based on the role, volume, and duration. Most firms start with a dedicated preparer or per-return pricing. No minimum commitment, no hidden fees.</p>
-    </div>
-
-    <div class="pricing-cards">
-      <!-- Model 1 -->
-      <div class="pricing-card fade-up d1">
-        <span class="label">Model 01</span>
-        <h3>Dedicated Monthly Placement</h3>
-        <p>One professional assigned to your firm on a flat monthly fee. Predictable cost, consistent output, and a preparer who knows your clients.</p>
-      </div>
-      <!-- Model 2 -->
-      <div class="pricing-card fade-up d2">
-        <span class="label">Model 02</span>
-        <h3>Per-Return Pricing</h3>
-        <p>Pay only for completed returns. Ideal for firms that need overflow support during peak season without a long-term commitment.</p>
-      </div>
-      <!-- Model 3 -->
-      <div class="pricing-card fade-up d3">
-        <span class="label">Model 03</span>
-        <h3>Seasonal Surge Support</h3>
-        <p>Activate capacity for tax season and wind down after April 15th. Built for firms that need flexible, volume-based coverage.</p>
-      </div>
-    </div>
-
-    <div class="pricing-cta">
-      <a href="#cta-final" class="btn btn-secondary">See Detailed Pricing</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ===================================================
      SECURITY & COMPLIANCE
 =================================================== -->
 <section id="security" class="section-pad" aria-labelledby="security-heading">
@@ -2214,7 +2133,6 @@
         <p class="footer-col-title">Company</p>
         <ul>
           <li><a href="#process">How It Works</a></li>
-          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#control">Why PT Global</a></li>
           <li><a href="#cta-final">Contact Us</a></li>
         </ul>
@@ -2435,8 +2353,6 @@
   });
 </script>
 
-<!-- Tidio Chatbot -->
-<script src="//code.tidio.co/rapn6b9ozv3ag2o7cauvm2ckbittf3op.js" async></script>
 
 </body>
 </html>
