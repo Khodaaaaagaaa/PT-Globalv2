@@ -583,18 +583,15 @@
       user-select: none;
     }
     .custom-check input[type="checkbox"] {
-      position: absolute;
-      opacity: 0;
-      width: 0;
-      height: 0;
-      pointer-events: none;
+      display: none;
     }
     .custom-check-box {
       width: 18px;
       height: 18px;
+      min-width: 18px;
       border: 1.5px solid var(--border-subtle);
       background: var(--white);
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
@@ -620,8 +617,9 @@
       color: var(--charcoal);
       font-weight: 400;
       line-height: 1.4;
+      text-transform: none;
+      letter-spacing: 0;
     }
-    /* Privacy row check */
     .form-check-row {
       display: flex;
       align-items: flex-start;
@@ -630,7 +628,7 @@
       cursor: pointer;
     }
     .form-check-row .custom-check-box { margin-top: 2px; }
-    .form-check-row span { font-size: 13px; color: var(--charcoal); line-height: 1.5; }
+    .form-check-row span { font-size: 13px; color: var(--charcoal); line-height: 1.5; font-family: var(--font-body); font-weight: 400; text-transform: none; letter-spacing: 0; }
 
     
     #software {
@@ -1234,7 +1232,7 @@
     </ul>
 
     <!-- CTA button -->
-    <a href="#cta-final" class="btn btn-primary nav-cta" aria-label="Build Your Team">Build Your Team</a>
+    <a href="#cta-final" class="btn btn-primary nav-cta" aria-label="Book a free consultation">Book a Free Consultation</a>
 
     <!-- Hamburger -->
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
@@ -1780,7 +1778,7 @@
           </div>
 
           <div class="form-field">
-            <label>What services do you offer your clients? <span style="font-size:11px;color:#9CA3AF;">(select all that apply)</span></label>
+            <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--charcoal);margin-bottom:8px;">What services do you offer your clients? <span style="font-size:10px;color:#9CA3AF;text-transform:none;letter-spacing:0;">(select all that apply)</span></div>
             <div class="custom-check-wrap">
               <label class="custom-check">
                 <input type="checkbox" name="q_services" value="bookkeeping" />
