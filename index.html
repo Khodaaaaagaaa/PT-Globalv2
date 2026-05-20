@@ -335,7 +335,7 @@
       position: relative;
       background-color: var(--navy);
       overflow: hidden;
-      padding: 120px 0 96px;
+      padding: 72px 0 60px;
     }
     /* Subtle bracket pattern overlay */
     #hero::before {
@@ -367,7 +367,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 64px;
-      align-items: center;
+      align-items: start;
     }
     .hero-content {}
     .hero-label {
@@ -399,9 +399,9 @@
       flex-wrap: wrap;
     }
     .trust-strip {
-      margin-top: 72px;
-      border-top: 1px solid rgba(78,205,196,0.25);
-      padding-top: 32px;
+      margin-top: 0;
+      border-top: none;
+      padding-top: 0;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -418,15 +418,16 @@
     }
     .hero-visual {
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 20px;
     }
     .hero-card {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(78,205,196,0.25);
-      padding: 40px;
+      padding: 36px;
       width: 100%;
-      max-width: 400px;
     }
     .hero-card-label {
       font-family: var(--font-mono);
@@ -1250,18 +1251,11 @@
   <div class="hero-inner">
     <div class="hero-content">
       <p class="hero-label hero-enter e1" aria-hidden="true">Full-Time Accounting Talent · Integrated Into Your Firm</p>
-      <h1 id="hero-heading" class="hero-enter e2">Full-Time Accounting Talent, Integrated Into Your Firm.</h1>
-      <p class="hero-sub hero-enter e3">PT Global sources, screens, and places full-time tax and accounting professionals who work inside your systems, learn your software quickly, and become part of your firm’s daily workflow.</p>
+      <h1 id="hero-heading" class="hero-enter e2">Full-Time Accounting Talent Built for CPA Firms.</h1>
+      <p class="hero-sub hero-enter e3">PT Global sources, screens, and places full-time tax preparers, bookkeepers, and accounting professionals directly into your firm — so your team grows without the hiring friction.</p>
       <div class="hero-ctas hero-enter e4">
         <a href="#cta-final" class="btn btn-hero-primary">Build Your Team</a>
         <a href="#cta-final" class="btn btn-outline-white">Join Our Talent Pool</a>
-      </div>
-
-      <!-- Trust strip -->
-      <div class="trust-strip hero-enter e5" aria-label="Firm credentials">
-        <span class="trust-badge">[ CPA Firm Specialists ]</span>
-        <span class="trust-badge">[ Serving U.S. Firms Nationwide ]</span>
-        <span class="trust-badge">[ Bilingual ENG / SPA ]</span>
       </div>
     </div>
 
@@ -1281,6 +1275,11 @@
           <span class="hero-stat-label">Languages</span>
           <span class="hero-stat-val">English · Spanish</span>
         </div>
+      </div>
+      <div class="trust-strip hero-enter e5" aria-label="Firm credentials" style="margin-top:0; border-top:1px solid rgba(78,205,196,0.2); padding-top:16px;">
+        <span class="trust-badge">[ CPA Firm Specialists ]</span>
+        <span class="trust-badge">[ Serving U.S. Firms Nationwide ]</span>
+        <span class="trust-badge">[ Bilingual ENG / SPA ]</span>
       </div>
     </div>
   </div>
@@ -1316,7 +1315,7 @@
       <div class="problem-copy">
         <span class="label">The Challenge</span>
         <div class="teal-line"></div>
-        <h2 id="problem-heading">Workload Growth Shouldn’t Mean CPA Burnout.</h2>
+        <h2 id="problem-heading">Tax Season Overload Shouldn't Mean CPA Burnout.</h2>
         <p style="margin-top: 20px;">Finding qualified tax staff takes time you don't have. Generalist agencies don't understand CPA workflows, filing deadlines, or what full-time team integration actually means. You need capacity built around your firm — not a rotating contractor.</p>
       </div>
       <div class="pain-cards">
@@ -1422,7 +1421,7 @@
 <section id="services" class="section-pad" aria-labelledby="services-heading">
   <div class="container">
     <div class="section-header fade-up">
-      <span class="label">Roles We Help You Build</span>
+      <span class="label">What We Deliver</span>
       <div class="teal-line" style="margin: 12px auto 0;"></div>
       <h2 id="services-heading" style="margin-top: 12px;">Staffing Built Around Your Firm's Actual Needs.</h2>
     </div>
@@ -1740,7 +1739,7 @@
       <!-- Right: qualification form — slides in from right -->
       <div class="fade-up d1" style="background: var(--white); border: 1px solid var(--border-subtle); padding: 36px;">
         <div id="contactFormWrap">
-          <div style="font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 6px;">Build Your Integrated Team</div>
+          <div style="font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 6px;">Offshore Team Hiring</div>
           <p style="font-size: 13px; color: #6B7280; margin-bottom: 24px;">Answer a few quick questions so we can prepare for your call.</p>
 
           <div class="form-row-2">
