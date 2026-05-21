@@ -1978,30 +1978,54 @@
   })();
 
   /* QUALIFICATION FORM — conditional submit */
-  function submitQualForm() {
-    var email   = document.getElementById('q_email').value.trim();
-    var revenue = document.getElementById('q_revenue').value;
-    var size    = document.getElementById('q_size').value;
-    var stage   = document.getElementById('q_stage').value;
-    var offshore= document.getElementById('q_offshore').value;
-    var privacy = document.getElementById('q_privacy').checked;
+function submitQualForm() {
+    var email    = document.getElementById('q_email').value.trim();
+    var revenue  = document.getElementById('q_revenue').value;
+    var size     = document.getElementById('q_size').value;
+    var stage    = document.getElementById('q_stage').value;
+    var offshore = document.getElementById('q_offshore').value;
+    var privacy  = document.getElementById('q_privacy').checked;
 
-    if (!email) { alert('Please enter your email address.'); return; }
+    if (!email)    { alert('Please enter your email address.'); return; }
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { alert('Please enter a valid email.'); return; }
-    if (!revenue) { alert('Please select your firm\'s annual revenue.'); return; }
-    if (!size)    { alert('Please select your firm size.'); return; }
-    if (!stage)   { alert('Please select where you are in the process.'); return; }
-    if (!offshore){ alert('Please answer the offshore experience question.'); return; }
-    if (!privacy) { alert('Please accept the Privacy Policy.'); return; }
+    if (!revenue)  { alert('Please select your firm\'s annual revenue.'); return; }
+    if (!size)     { alert('Please select your firm size.'); return; }
+    if (!stage)    { alert('Please select where you are in the process.'); return; }
+    if (!offshore) { alert('Please answer the offshore experience question.'); return; }
+    if (!privacy)  { alert('Please accept the Privacy Policy.'); return; }
 
-    document.getElementById('contactFormWrap').style.display = 'none';
+    // Construir el FormData con todos los campos
+    var data = new FormData();
+    data.append('q_fname',    document.getElementById('q_fname').value.trim());
+    data.append('q_lname',    document.getElementById('q_lname').value.trim());
+    data.append('q_email',    email);
+    data.append('q_phone',    document.getElementById('q_phone').value.trim());
+    data.append('q_revenue',  revenue);
+    data.append('q_size',     size);
+    data.append('q_stage',    stage);
+    data.append('q_offshore', offshore);
+    data.append('q_challenge',document.getElementById('q_challenge').value.trim());
 
-    if (revenue === 'low') {
-      document.getElementById('contactSuccessLow').style.display = 'block';
-    } else {
-      document.getElementById('contactSuccessHigh').style.display = 'block';
-    }
-  }
+    // Checkboxes de servicios (pueden ser varios)
+    document.querySelectorAll('input[name="q_services"]:checked').forEach(function(cb) {
+        data.append('q_services[]', cb.value);
+    });
+
+    // Enviar al PHP
+    fetch('submit.php', { method: 'POST', body: data })
+        .then(function(r) { return r.json(); })
+        .then(function(res) {
+            document.getElementById('contactFormWrap').style.display = 'none';
+            if (res.qualified) {
+                document.getElementById('contactSuccessHigh').style.display = 'block';
+            } else {
+                document.getElementById('contactSuccessLow').style.display = 'block';
+            }
+        })
+        .catch(function() {
+            alert('Something went wrong. Please try again.');
+        });
+}
 
   /* keep switchContactTab stub so hero button doesn't throw */
   function switchContactTab() {}
