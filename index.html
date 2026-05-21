@@ -2012,15 +2012,38 @@ function submitQualForm() {
     });
 
     // Enviar al PHP
-    fetch('submit.php', { method: 'POST', body: data })
+    fetch('https://formspree.io/f/xkoerreq', { method: 'POST', body: data })
         .then(function(r) { return r.json(); })
         .then(function(res) {
-            document.getElementById('contactFormWrap').style.display = 'none';
-            if (res.qualified) {
-                document.getElementById('contactSuccessHigh').style.display = 'block';
-            } else {
-                document.getElementById('contactSuccessLow').style.display = 'block';
-            }
+            // Construir FormData con todos los campos
+    var data = new FormData();
+    data.append('q_fname',     document.getElementById('q_fname').value.trim());
+    data.append('q_lname',     document.getElementById('q_lname').value.trim());
+    data.append('q_email',     email);
+    data.append('q_phone',     document.getElementById('q_phone').value.trim());
+    data.append('q_revenue',   revenue);
+    data.append('q_size',      size);
+    data.append('q_stage',     stage);
+    data.append('q_offshore',  offshore);
+    data.append('q_challenge', document.getElementById('q_challenge').value.trim());
+    document.querySelectorAll('input[name="q_services"]:checked').forEach(function(cb) {
+      data.append('q_services[]', cb.value);
+    });
+
+    fetch('https://formspree.io/f/xkoerreq', { method: 'POST', body: data })
+      .then(function(r) { return r.json(); })
+      .then(function() {
+        document.getElementById('contactFormWrap').style.display = 'none';
+        if (revenue === 'low') {
+          document.getElementById('contactSuccessLow').style.display = 'block';
+        } else {
+          document.getElementById('contactSuccessHigh').style.display = 'block';
+        }
+      })
+      .catch(function() {
+        alert('Something went wrong. Please try again.');
+      });
+  }
         })
         .catch(function() {
             alert('Something went wrong. Please try again.');
