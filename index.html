@@ -815,135 +815,6 @@
     }
 
     
-
-    
-    #security {
-      background: var(--white);
-      border-top: 2px solid var(--teal);
-    }
-    .security-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-    .security-items { display: flex; flex-direction: column; gap: 16px; }
-    .security-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    .check-icon {
-      flex-shrink: 0;
-      width: 22px;
-      height: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 2px;
-    }
-    .security-item p { font-size: 16px; line-height: 24px; }
-    .security-badge {
-      background: var(--warm);
-      border: 1px solid var(--border-subtle);
-      padding: 32px;
-      margin-top: 24px;
-    }
-    .security-badge .label { margin-bottom: 8px; display: block; }
-    .security-badge p { font-size: 14px; line-height: 20px; color: var(--charcoal); }
-
-    
-    #testimonials {
-      background: var(--white);
-      border-top: 1px solid var(--border-subtle);
-    }
-    .testimonial-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .testimonial-card {
-      border: 1px solid var(--border-subtle);
-      padding: 32px;
-      position: relative;
-    }
-    .quote-mark {
-      font-family: var(--font-heading);
-      font-size: 48px;
-      line-height: 1;
-      color: var(--teal);
-      margin-bottom: 16px;
-      display: block;
-    }
-    .testimonial-card p {
-      font-size: 16px;
-      line-height: 26px;
-      color: var(--charcoal);
-      margin-bottom: 28px;
-      font-style: italic;
-    }
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .author-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--warm);
-      border: 1px solid var(--border-subtle);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .author-avatar span {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--navy);
-    }
-    .author-name {
-      font-weight: 500;
-      font-size: 14px;
-      color: var(--navy);
-      display: block;
-    }
-    .author-title { font-size: 13px; color: #555E6B; }
-
-    
-    #resources {
-      background: var(--warm);
-    }
-    .blog-cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-    .blog-card {
-      background: var(--white);
-      border: 1px solid var(--border-subtle);
-      padding: 32px;
-    }
-    .blog-card .label { margin-bottom: 8px; display: block; color: var(--teal); }
-    .blog-card h3 { font-size: 19px; line-height: 27px; margin-bottom: 12px; }
-    .blog-card p { font-size: 15px; line-height: 22px; color: var(--charcoal); margin-bottom: 20px; }
-    .blog-link {
-      font-family: var(--font-body);
-      font-weight: 500;
-      font-size: 14px;
-      color: var(--teal);
-      border-bottom: 1px solid var(--teal);
-      padding-bottom: 2px;
-      transition: color 0.2s;
-      display: inline-block;
-    }
-    .blog-link:hover { color: var(--navy); border-color: var(--navy); }
-    .resources-cta { text-align: center; }
-
-    
     #cta-final {
       background: var(--navy);
       padding: 96px 0;
@@ -1075,7 +946,6 @@
       .control-inner { grid-template-columns: 1fr; gap: 40px; }
       .control-columns { grid-template-columns: 1fr; }
       .roles-grid { grid-template-columns: 1fr 1fr; }
-      .security-grid { grid-template-columns: 1fr; gap: 40px; }
       .testimonial-cards { grid-template-columns: 1fr; }
       .blog-cards { grid-template-columns: 1fr; }
       .software-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1083,6 +953,11 @@
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
       .trust-strip { flex-direction: column; align-items: flex-start; }
+
+      /* Fix for the two-column model (PT Global Handles / Your Firm Retains) */
+      .two-col {
+        grid-template-columns: 1fr !important;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1297,28 +1172,7 @@
   </div>
 </section>
 
-
-<!-- TRUSTED BY STRIP -->
-<section id="trusted-by" aria-label="Companies PT Global works with" style="background: var(--navy); border-top: none; border-bottom: none; padding: 36px 0;">
-  <div class="container">
-    <div style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap; justify-content: center;">
-      <span style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.45); white-space: nowrap; flex-shrink: 0;">Trusted By</span>
-      <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.15); flex-shrink: 0;"></div>
-      <div style="display: flex; align-items: center; gap: 36px; flex-wrap: wrap; justify-content: center;">
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: -0.2px; transition: color 0.2s;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">Parsi &amp; Company</span>
-        <span style="color: rgba(255,255,255,0.15); font-size: 18px; font-weight: 300;">|</span>
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: -0.2px; transition: color 0.2s;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">MLS Tax Group</span>
-        <span style="color: rgba(255,255,255,0.15); font-size: 18px; font-weight: 300;">|</span>
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: -0.2px; transition: color 0.2s;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">Foster CPA</span>
-        <span style="color: rgba(255,255,255,0.15); font-size: 18px; font-weight: 300;">|</span>
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: -0.2px; transition: color 0.2s;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">Summit ATS</span>
-        <span style="color: rgba(255,255,255,0.15); font-size: 18px; font-weight: 300;">|</span>
-        <span style="font-family: var(--font-heading); font-weight: 700; font-size: 15px; color: rgba(255,255,255,0.85); letter-spacing: -0.2px; transition: color 0.2s;" onmouseover="this.style.color='#4ECDC4'" onmouseout="this.style.color='rgba(255,255,255,0.85)'">U.S. CPA Firms Nationwide</span>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- TRUSTED BY SECTION - ELIMINADO SEGÚN FEEDBACK DE MIKE -->
 
 <!-- PROBLEM SECTION -->
 <section id="problem" class="section-pad" aria-labelledby="problem-heading">
@@ -1658,98 +1512,9 @@
   </div>
 </section>
 
-<!-- SECURITY & CONFIDENTIALITY -->
-<section id="security" class="section-pad" aria-labelledby="security-heading" style="background: var(--navy);">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="label" style="color: #4ECDC4;">Security &amp; Confidentiality</span>
-      <div class="teal-line" style="margin: 12px auto 0; background-color: #4ECDC4;"></div>
-      <h2 id="security-heading" style="margin-top: 12px; color: var(--white);">Your Client's Data is Protected at Every Step</h2>
-      <p style="margin-top: 16px; color: #D6DFE8; font-size: 17px; line-height: 28px; max-width: 640px; margin-left: auto; margin-right: auto;">PT Global understands that CPA firms handle sensitive financial information. Every placement is made with data security and professional confidentiality as a baseline requirement.</p>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;" class="two-col">
-      <div class="fade-up d1" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(78,205,196,0.2); padding: 32px;">
-        <div style="color: #4ECDC4; margin-bottom: 16px;">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 3L4 8V16C4 22.6 9.4 28.8 16 30C22.6 28.8 28 22.6 28 16V8L16 3Z" stroke="#4ECDC4" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 16L14 19L21 12" stroke="#4ECDC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3 style="font-size: 17px; color: var(--white); margin-bottom: 10px;">Confidentiality Agreements</h3>
-        <p style="font-size: 14px; color: #9BAFC4; line-height: 1.7;">All placed professionals sign confidentiality agreements covering client data, financial records, and proprietary firm information before beginning any engagement.</p>
-      </div>
-      <div class="fade-up d2" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(78,205,196,0.2); padding: 32px;">
-        <div style="color: #4ECDC4; margin-bottom: 16px;">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="12" width="24" height="16" rx="1" stroke="#4ECDC4" stroke-width="1.5"/><path d="M10 12V9C10 5.7 12.7 3 16 3C19.3 3 22 5.7 22 9V12" stroke="#4ECDC4" stroke-width="1.5" stroke-linecap="round"/><circle cx="16" cy="20" r="2" fill="#4ECDC4"/></svg>
-        </div>
-        <h3 style="font-size: 17px; color: var(--white); margin-bottom: 10px;">IRS Publication 4557 Alignment</h3>
-        <p style="font-size: 14px; color: #9BAFC4; line-height: 1.7;">PT Global's placement process is designed with IRS Pub. 4557 safeguards in mind — secure document handling, access control, and data protection protocols aligned to tax firm compliance standards.</p>
-      </div>
-      <div class="fade-up d3" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(78,205,196,0.2); padding: 32px;">
-        <div style="color: #4ECDC4; margin-bottom: 16px;">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="#4ECDC4" stroke-width="1.5"/><path d="M16 10V16L20 18" stroke="#4ECDC4" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3 style="font-size: 17px; color: var(--white); margin-bottom: 10px;">Controlled Access</h3>
-        <p style="font-size: 14px; color: #9BAFC4; line-height: 1.7;">Your firm controls all system access — software credentials, portal access, and document permissions are managed entirely by your team. PT Global placed staff operate within the access you define.</p>
-      </div>
-      <div class="fade-up d4" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(78,205,196,0.2); padding: 32px;">
-        <div style="color: #4ECDC4; margin-bottom: 16px;">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M6 8H26V24H6V8Z" stroke="#4ECDC4" stroke-width="1.5"/><path d="M6 12H26M12 8V12" stroke="#4ECDC4" stroke-width="1.5"/><path d="M11 17H16M11 20H21" stroke="#4ECDC4" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h3 style="font-size: 17px; color: var(--white); margin-bottom: 10px;">Professional Standards</h3>
-        <p style="font-size: 14px; color: #9BAFC4; line-height: 1.7;">Candidates are screened for professional conduct, communication reliability, and familiarity with CPA-firm confidentiality expectations — not just technical skills.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- SECURITY & CONFIDENTIALITY - ELIMINADO SEGÚN FEEDBACK DE MIKE -->
 
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="section-pad" aria-labelledby="testimonials-heading">
-  <div class="container">
-    <div class="section-header fade-up">
-      <span class="label">Client Feedback</span>
-      <div class="teal-line" style="margin: 12px auto 0;"></div>
-      <h2 id="testimonials-heading" style="margin-top: 12px;">What Firms Say</h2>
-    </div>
-
-    <div class="testimonial-cards">
-      <!-- T1 -->
-      <div class="testimonial-card scale-in d1">
-        <span class="quote-mark" aria-hidden="true">"</span>
-        <p>PT Global helped us add reliable staffing support without slowing down our internal team. The candidate understood our workflows from day one — it felt like they had always been part of the firm.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true"><span>FP</span></div>
-          <div>
-            <span class="author-name">Firm Partner</span>
-            <span class="author-title caption">CPA Firm · Texas</span>
-          </div>
-        </div>
-      </div>
-      <!-- T2 -->
-      <div class="testimonial-card scale-in d2">
-        <span class="quote-mark" aria-hidden="true">"</span>
-        <p>The candidates understood tax workflows and communicated professionally from day one. No hand-holding required — they knew what review-ready means.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true"><span>MP</span></div>
-          <div>
-            <span class="author-name">Managing Partner</span>
-            <span class="author-title caption">Tax Practice · Florida</span>
-          </div>
-        </div>
-      </div>
-      <!-- T3 -->
-      <div class="testimonial-card scale-in d3">
-        <span class="quote-mark" aria-hidden="true">"</span>
-        <p>Having bilingual preparers who understand Drake was a game changer for our Hispanic clients. The quality of work matched what we expected from a senior preparer.</p>
-        <div class="testimonial-author">
-          <div class="author-avatar" aria-hidden="true"><span>EA</span></div>
-          <div>
-            <span class="author-name">EA Firm Owner</span>
-            <span class="author-title caption">Enrolled Agent Practice · California</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- TESTIMONIALS - ELIMINADO SEGÚN FEEDBACK DE MIKE -->
 
 <section id="cta-final" class="section-pad" aria-labelledby="contact-heading" style="background: var(--white); border-top: 2px solid var(--teal);">
   <div class="container">
