@@ -394,6 +394,41 @@
       .hero-btns { flex-direction: column; }
       .hero-btns .btn { text-align: center; }
     }
+    /* Floating CTA button for mobile */
+    .float-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 40px;
+      padding: 14px 24px;
+      font-family: var(--font-b);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+      z-index: 1000;
+      display: none; /* hidden by default, shown only on mobile via media query */
+      transition: transform 0.2s ease, background 0.2s;
+    }
+    .float-cta:hover {
+      transform: scale(1.02);
+      background: var(--goldL);
+    }
+    @media (max-width: 768px) {
+      .float-cta {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+    }
+    /* Optional: add a little icon (SVG) */
+    .float-cta svg {
+      width: 18px;
+      height: 18px;
+    }
   </style>
 </head>
 <body>
@@ -868,8 +903,21 @@
     </div>
   </div>
 </footer>
-
+<button class="float-cta" id="floatContactBtn">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  Contact us
+</button>
 <script>
+// Floating contact button scroll to form
+  var floatBtn = document.getElementById('floatContactBtn');
+  if (floatBtn) {
+    floatBtn.addEventListener('click', function() {
+      var formSection = document.getElementById('cta-final');
+      if (formSection) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
 /* ── NAV TOGGLE ── */
 (function(){
   var toggle=document.getElementById('nav-toggle');
