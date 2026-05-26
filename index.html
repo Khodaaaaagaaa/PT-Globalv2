@@ -24,7 +24,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Inter:wght@400;500&family=DM+Mono:wght@400&display=swap" /></noscript>
   
   <style>
-    /* ========== RESET Y VARIABLES ========== */
+    /* ========== RESET Y VARIABLES (todo igual que original) ========== */
     :root {
       --navy:        #1B3A5C;
       --teal:        #0D6E6E;
@@ -82,7 +82,7 @@
       margin: 16px 0 24px;
     }
 
-    /* Botones */
+    /* Botones (sin emojis) */
     .btn {
       display: inline-block;
       font-family: var(--font-body);
@@ -215,7 +215,7 @@
     .hero-sub { color: #D6DFE8; font-size: 20px; line-height: 30px; margin-bottom: 40px; max-width: 480px; }
     .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
 
-    /* Trust badges (corregido) */
+    /* Trust badges: formato con corchetes, color teal, sin emojis */
     .trust-strip {
       display: flex;
       flex-wrap: wrap;
@@ -259,7 +259,7 @@
     .pain-card h3 { font-size: 18px; margin-bottom: 6px; }
     .pain-card p { font-size: 15px; line-height: 22px; }
 
-    /* Who, Services, Process, Team (estructura simplificada pero completa) */
+    /* Who, Services, Process, Team */
     .who-cards, .services-grid, .process-steps, .team-grid {
       display: grid;
       gap: 24px;
@@ -339,7 +339,7 @@
     .footer-col a { display: block; font-size: 14px; margin-bottom: 10px; color: #B8C4CE; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; flex-wrap: wrap; }
 
-    /* Botón flotante móvil */
+    /* Botón flotante móvil (sin emoji) */
     .floating-cta {
       display: none;
       position: fixed;
@@ -392,6 +392,20 @@
     .d3 { transition-delay: 0.24s; }
     .d4 { transition-delay: 0.32s; }
     .cta-wrapper { text-align: center; margin-top: 40px; }
+    .form-badge {
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--white);
+      border: 1.5px solid var(--teal);
+      padding: 12px 28px;
+      min-width: 100px;
+      text-align: center;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
@@ -440,11 +454,11 @@
           <div class="hero-stat"><span class="hero-stat-label">Software Proficiency</span><span class="hero-stat-val">Drake</span></div>
           <div class="hero-stat"><span class="hero-stat-label">Languages</span><span class="hero-stat-val">English · Spanish</span></div>
         </div>
-        <!-- Trust badges corregidos -->
+        <!-- Badges con corchetes, exactamente como en el diseño original -->
         <div class="trust-strip hero-enter e5">
-          <span class="trust-badge">CPA Firm Specialists</span>
-          <span class="trust-badge">Serving U.S. Firms Nationwide</span>
-          <span class="trust-badge">Bilingual ENG / SPA</span>
+          <span class="trust-badge">[ CPA Firm Specialists ]</span>
+          <span class="trust-badge">[ Serving U.S. Firms Nationwide ]</span>
+          <span class="trust-badge">[ Bilingual ENG / SPA ]</span>
         </div>
       </div>
     </div>
@@ -456,9 +470,9 @@
       <div class="problem-grid">
         <div><span class="label">The Challenge</span><div class="teal-line"></div><h2>Tax Season Overload Shouldn't Mean CPA Burnout</h2><p>Finding qualified tax staff takes time you don't have. Generalist agencies don't understand CPA workflows, filing deadlines, or what full-time team integration actually means. You need capacity built around your firm — not a rotating contractor.</p></div>
         <div class="pain-cards">
-          <div class="pain-card"><h3>⏱️ Hiring Takes Too Long</h3><p>Recruiting and screening a qualified tax preparer takes weeks your firm doesn't have — especially heading into filing season.</p></div>
-          <div class="pain-card"><h3>🎯 Generic Agencies Miss the Mark</h3><p>Most staffing firms don't understand Drake, CPA workflows, or the difference between a 1065 and a 1120-S. You end up training the people who were supposed to be ready.</p></div>
-          <div class="pain-card"><h3>📈 Growth Creates Capacity Risk</h3><p>Taking on more clients without the right team creates quality risk, missed deadlines, and partner burnout. Scaling requires people — fast.</p></div>
+          <div class="pain-card"><h3>Hiring Takes Too Long</h3><p>Recruiting and screening a qualified tax preparer takes weeks your firm doesn't have — especially heading into filing season.</p></div>
+          <div class="pain-card"><h3>Generic Agencies Miss the Mark</h3><p>Most staffing firms don't understand Drake, CPA workflows, or the difference between a 1065 and a 1120-S. You end up training the people who were supposed to be ready.</p></div>
+          <div class="pain-card"><h3>Growth Creates Capacity Risk</h3><p>Taking on more clients without the right team creates quality risk, missed deadlines, and partner burnout. Scaling requires people — fast.</p></div>
         </div>
       </div>
       <div class="cta-wrapper"><a href="#cta-final" class="btn btn-primary">Get staffing now →</a></div>
@@ -488,7 +502,7 @@
         <div class="service-card"><h3>Administrative Staff Placement</h3><p>Tax admin, client communication, document collection, portal management, and workflow support roles placed full-time into your firm to keep operations running smoothly.</p></div>
         <div class="service-card"><h3>Candidate Sourcing & Vetting</h3><p>End-to-end: role intake, sourcing, screening, skills assessment, and shortlist delivery. You review the finalists — PT Global handles everything that comes before that.</p></div>
       </div>
-      <div class="forms-block" style="background:var(--warm); padding:40px; text-align:center; margin-bottom:40px;"><span class="label">Forms We Handle</span><div class="forms-badges" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:20px;"><span class="form-badge" style="padding:12px 28px; border:1.5px solid var(--teal);">1040</span><span class="form-badge">1065</span><span class="form-badge">1120</span><span class="form-badge">1120-S</span></div></div>
+      <div class="forms-block" style="background:var(--warm); padding:40px; text-align:center; margin-bottom:40px;"><span class="label">Forms We Handle</span><div class="forms-badges" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:20px;"><span class="form-badge">1040</span><span class="form-badge">1065</span><span class="form-badge">1120</span><span class="form-badge">1120-S</span></div></div>
       <div class="cta-wrapper"><a href="#cta-final" class="btn btn-primary">Request Staff Now →</a></div>
     </div>
   </section>
@@ -541,9 +555,9 @@
           <span class="label" style="color:var(--teal);">Get In Touch</span><div class="teal-line"></div>
           <h2 style="color:var(--navy);">Build Your Team With PT Global</h2>
           <p style="margin:16px 0 32px;">We source, screen, and place full-time tax and accounting professionals into CPA firms across the U.S. The first step is a short conversation — no obligation.</p>
-          <div><strong>📧 Email:</strong> <a href="mailto:contact@ptgteam.com" style="color:var(--teal);">contact@ptgteam.com</a></div>
-          <div style="margin-top:12px;"><strong>📍 Headquarters:</strong> Miami, FL — Serving CPA Firms Nationwide</div>
-          <div style="margin-top:12px;"><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/company/ptgteam/" target="_blank" style="color:var(--teal);">linkedin.com/company/ptgteam</a></div>
+          <div><strong>Email:</strong> <a href="mailto:contact@ptgteam.com" style="color:var(--teal);">contact@ptgteam.com</a></div>
+          <div style="margin-top:12px;"><strong>Headquarters:</strong> Miami, FL — Serving CPA Firms Nationwide</div>
+          <div style="margin-top:12px;"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/ptgteam/" target="_blank" style="color:var(--teal);">linkedin.com/company/ptgteam</a></div>
         </div>
         <div class="fade-up d1" style="border:1px solid var(--border-subtle); padding:36px;">
           <div id="contactFormWrap">
@@ -581,9 +595,9 @@
   </div>
 </footer>
 
-<a href="#cta-final" class="floating-cta">📞 Contact us</a>
+<a href="#cta-final" class="floating-cta">Contact us</a>
 
-<!-- Privacy modal (simplificado) -->
+<!-- Privacy modal -->
 <div id="privacy-policy" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:2000; align-items:center; justify-content:center;" onclick="if(event.target===this)hidePrivacyPolicy()">
   <div style="background:white; max-width:500px; padding:32px; margin:20px;"><h2>Privacy Policy</h2><p>We collect your name, email, phone, and firm details solely to respond to your inquiry. We do not sell or share your data. You may request deletion at contact@ptgteam.com.</p><button onclick="hidePrivacyPolicy()" style="margin-top:16px; padding:8px 20px;">Close</button></div>
 </div>
@@ -601,7 +615,6 @@
   const faders = document.querySelectorAll('.fade-up, .scale-in, .hero-enter');
   const observer = new IntersectionObserver(entries => entries.forEach(e => e.isIntersecting && (e.target.classList.add('visible'), observer.unobserve(e.target))), { threshold: 0.1 });
   faders.forEach(el => observer.observe(el));
-  // Hero entrance manual
   document.querySelectorAll('.hero-enter').forEach(el => el.classList.add('in'));
 
   // Form submit
