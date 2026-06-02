@@ -1030,7 +1030,7 @@ function submitFirm(){
   ['First Name','Last Name','Email Address','Phone Number','Annual Revenue','Firm Size','Hiring Stage','Remote Experience','Biggest Challenge'].forEach(function(id){
     data.append(id,document.getElementById(id).value.trim());
   });
-  fetch('https://formspree.io/f/xkoerreq',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+  fetch('https://formspree.io/f/xgoqgzvk',{method:'POST',body:data,headers:{'Accept':'application/json'}})
     .then(function(r){
       if(r.ok){
         document.getElementById('formContent').style.display='none';
