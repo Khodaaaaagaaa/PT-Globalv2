@@ -821,16 +821,16 @@
               <div class="form-box-title">Join Our Talent Pool</div>
               <p class="form-box-sub">Tell us about your background and we'll match you with the right firm.</p>
               <div class="form-row2">
-                <div class="fg"><label class="fl" for="c_fname">First Name</label><input type="text" id="c_fname" class="fi" placeholder="Maria" autocomplete="given-name" /></div>
-                <div class="fg"><label class="fl" for="c_lname">Last Name</label><input type="text" id="c_lname" class="fi" placeholder="Garcia" autocomplete="family-name" /></div>
+                <div class="fg"><label class="fl" for="c_First Name">First Name</label><input type="text" id="c_First Name" class="fi" placeholder="Maria" autocomplete="given-name" /></div>
+                <div class="fg"><label class="fl" for="c_Last Name">Last Name</label><input type="text" id="c_Last Name" class="fi" placeholder="Garcia" autocomplete="family-name" /></div>
               </div>
-              <div class="fg"><label class="fl" for="c_email">Email Address *</label><input type="email" id="c_email" class="fi" placeholder="maria@email.com" required autocomplete="email" /></div>
-              <div class="fg"><label class="fl" for="c_phone">Phone Number</label><input type="tel" id="c_phone" class="fi" placeholder="+1 (305) 000-0000" autocomplete="tel" inputmode="numeric" onkeydown="return isPhoneKey(event)" onpaste="return handlePhonePaste(event,this)" /></div>
-              <div class="fg"><label class="fl" for="c_role">Role Type</label><select id="c_role" class="fs"><option value="">Select…</option><option>Tax Preparer</option><option>Enrolled Agent</option><option>Bookkeeper</option><option>Tax Admin / Document Support</option><option>Staff Accountant</option></select></div>
-              <div class="fg"><label class="fl" for="c_exp">Experience Level</label><select id="c_exp" class="fs"><option value="">Select…</option><option>Entry level (0–2 years)</option><option>Mid-level (2–5 years)</option><option>Senior (5+ years)</option></select></div>
-              <div class="fg"><label class="fl" for="c_software">Primary Software</label><select id="c_software" class="fs"><option value="">Select…</option><option>Drake</option><option>ProSeries</option><option>Lacerte</option><option>TaxDome</option><option>QuickBooks</option><option>Multiple / Other</option></select></div>
-              <div class="fg"><label class="fl" for="c_msg">Tell Us About Your Background</label><textarea id="c_msg" class="fta" placeholder="Years of experience, types of returns prepared, software skills…"></textarea></div>
-              <label class="fcheck"><input type="checkbox" id="c_privacy" required /><span class="fcheck-box"></span><span class="fcheck-label">I agree to PT Global's <a onclick="openPrivacy();return false;" href="#">Privacy Policy</a> and consent to being contacted about placement opportunities.</span></label>
+              <div class="fg"><label class="fl" for="c_Email Address">Email Address *</label><input type="email" id="c_Email Address" class="fi" placeholder="maria@email.com" required autocomplete="email" /></div>
+              <div class="fg"><label class="fl" for="c_Phone Number">Phone Number</label><input type="tel" id="c_Phone Number" class="fi" placeholder="+1 (305) 000-0000" autocomplete="tel" inputmode="numeric" onkeydown="return isPhoneKey(event)" onpaste="return handlePhonePaste(event,this)" /></div>
+              <div class="fg"><label class="fl" for="c_Role Type">Role Type</label><select id="c_Role Type" class="fs"><option value="">Select…</option><option>Tax Preparer</option><option>Enrolled Agent</option><option>Bookkeeper</option><option>Tax Admin / Document Support</option><option>Staff Accountant</option></select></div>
+              <div class="fg"><label class="fl" for="c_Experience Level">Experience Level</label><select id="c_Experience Level" class="fs"><option value="">Select…</option><option>Entry level (0–2 years)</option><option>Mid-level (2–5 years)</option><option>Senior (5+ years)</option></select></div>
+              <div class="fg"><label class="fl" for="c_Primary Software">Primary Software</label><select id="c_Primary Software" class="fs"><option value="">Select…</option><option>Drake</option><option>ProSeries</option><option>Lacerte</option><option>TaxDome</option><option>QuickBooks</option><option>Multiple / Other</option></select></div>
+              <div class="fg"><label class="fl" for="c_Background">Tell Us About Your Background</label><textarea id="c_Background" class="fta" placeholder="Years of experience, types of returns prepared, software skills…"></textarea></div>
+              <label class="fcheck"><input type="checkbox" id="c_Privacy" required /><span class="fcheck-box"></span><span class="fcheck-label">I agree to PT Global's <a onclick="openPrivacy();return false;" href="#">Privacy Policy</a> and consent to being contacted about placement opportunities.</span></label>
               <button class="fsubmit" style="background:var(--teal);" onclick="submitCand()">Submit Application →</button>
             </div>
           </div>
@@ -1042,13 +1042,33 @@ function submitFirm(){
 
 /* ── FORM SUBMIT CANDIDATE ── */
 function submitCand(){
-  var email=document.getElementById('c_email').value.trim();
-  var privacy=document.getElementById('c_privacy').checked;
+  var email=document.getElementById('c_Email Address').value.trim();
+  var privacy=document.getElementById('c_Privacy').checked;
   if(!email){alert('Please enter your email address.');return;}
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){alert('Please enter a valid email.');return;}
   if(!privacy){alert('Please accept the Privacy Policy.');return;}
-  document.getElementById('formContent').style.display='none';
-  document.getElementById('successCand').style.display='block';
+  var data=new FormData();
+  [
+    ['First Name','c_First Name'],
+    ['Last Name','c_Last Name'],
+    ['Email Address','c_Email Address'],
+    ['Phone Number','c_Phone Number'],
+    ['Role Type','c_Role Type'],
+    ['Experience Level','c_Experience Level'],
+    ['Primary Software','c_Primary Software'],
+    ['Background','c_Background']
+  ].forEach(function(pair){
+    var el=document.getElementById(pair[1]);
+    if(el)data.append(pair[0],el.value.trim());
+  });
+  fetch('https://formspree.io/f/xkoerreq',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+    .then(function(r){
+      if(r.ok){
+        document.getElementById('formContent').style.display='none';
+        document.getElementById('successCand').style.display='block';
+      }else{alert('There was a problem. Please email us at contact@ptgteam.com');}
+    })
+    .catch(function(){alert('Network error. Please email us at contact@ptgteam.com');});
 }
 
 /* ── PRIVACY MODAL ── */
