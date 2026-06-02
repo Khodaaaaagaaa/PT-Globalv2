@@ -75,16 +75,16 @@
     ══════════════════════════════ */
     #site-header { position: sticky; top: 0; z-index: 1000; background: #fff; border-bottom: 2px solid var(--teal); box-shadow: 0 1px 8px rgba(0,0,0,.06); }
     .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 68px; display: flex; align-items: center; }
-    /* Logo left */
-    .logo-lockup { display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
+    /* Logo left — CHANGE 1: increased logo size for desktop */
+    .logo-lockup { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
     .logo-mark { display: flex; align-items: center; }
-    .logo-brk { display: inline-block; width: 7px; height: 30px; border-top: 2.5px solid var(--teal); border-bottom: 2.5px solid var(--teal); }
-    .logo-brk-l { border-left: 2.5px solid var(--teal); margin-right: 3px; }
-    .logo-brk-r { border-right: 2.5px solid var(--teal); margin-left: 3px; }
-    .logo-pt { font-family: var(--font-h); font-weight: 700; font-size: 17px; color: var(--navy); }
+    .logo-brk { display: inline-block; width: 8px; height: 36px; border-top: 2.5px solid var(--teal); border-bottom: 2.5px solid var(--teal); }
+    .logo-brk-l { border-left: 2.5px solid var(--teal); margin-right: 4px; }
+    .logo-brk-r { border-right: 2.5px solid var(--teal); margin-left: 4px; }
+    .logo-pt { font-family: var(--font-h); font-weight: 700; font-size: 21px; color: var(--navy); }
     .logo-text { display: flex; flex-direction: column; }
-    .logo-name { font-family: var(--font-h); font-weight: 700; font-size: 17px; color: var(--navy); }
-    .logo-tag { font-family: var(--font-m); font-size: 7.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); }
+    .logo-name { font-family: var(--font-h); font-weight: 700; font-size: 21px; color: var(--navy); }
+    .logo-tag { font-family: var(--font-m); font-size: 8.5px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--teal); }
     /* Center links */
     .nav-links { display: flex; align-items: center; gap: 2rem; flex: 1; justify-content: center; }
     .nav-links a { font-size: .88rem; font-weight: 500; color: var(--text); transition: color .2s; }
@@ -410,7 +410,7 @@
       cursor: pointer;
       box-shadow: 0 4px 12px rgba(0,0,0,0.25);
       z-index: 1000;
-      display: none; /* hidden by default, shown only on mobile via media query */
+      display: none;
       transition: transform 0.2s ease, background 0.2s;
     }
     .float-cta:hover {
@@ -424,7 +424,6 @@
         gap: 8px;
       }
     }
-    /* Optional: add a little icon (SVG) */
     .float-cta svg {
       width: 18px;
       height: 18px;
@@ -606,9 +605,11 @@
         <ul class="svc-list"><li>Skills &amp; software assessment</li><li>Communication &amp; reliability screening</li><li>Shortlist delivery within days</li><li>Post-placement follow-up</li></ul>
       </div>
     </div>
-    <!-- FORMS BLOCK: only "Forms We Handle" (Software section removed) -->
+
+    <!-- CHANGE 2: Forms block — updated copy to reflect tax savings & penalty avoidance objective -->
     <div class="forms-block fade-up">
       <span class="sec-eye">Forms We Handle</span>
+      <p style="font-size:.88rem;color:var(--g5);margin-top:.6rem;margin-bottom:0;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7;">Our staff apply their expertise across these return types to help your clients save on taxes and avoid penalties — not just file on time.</p>
       <div class="forms-badges">
         <span class="form-badge">1040</span>
         <span class="form-badge">1065</span>
@@ -696,11 +697,14 @@
             <h4>Your Standards</h4>
             <p>Quality control, deadlines, and communication norms stay with your firm. We place — you lead.</p>
           </div>
+
+          <!-- CHANGE 3: Direct Communication card — removed "No account managers in between", updated to POC model -->
           <div class="te-card">
             <div class="te-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
             <h4>Direct Communication</h4>
-            <p>No account managers in between. Your team member communicates directly with your partners and clients.</p>
+            <p>Your placed team member works directly within your firm. A dedicated PT Global point of contact stays available to monitor team performance and address any concerns.</p>
           </div>
+
           <div class="te-card te-card-wide">
             <div class="te-quote">"</div>
             <p>Our people don't work <em>for</em> PT Global. They work <em>with</em> your firm — as a real extension of your team, with full ownership of what they do.</p>
@@ -754,7 +758,8 @@
       <span class="sec-eye sec-eye-light">Our Team</span>
       <div class="teal-line teal-line-center" style="background:var(--tealL);"></div>
       <h2 id="team-heading" class="sec-h2 sec-h2-light">The People Behind Every Placement</h2>
-      <p class="sec-sub sec-sub-light" style="margin-top:.75rem;">A focused team of staffing professionals who know CPA firms, tax workflows, and what full-time integration actually requires.</p>
+      <!-- CHANGE 4: Updated subtitle to reflect PTG's real value prop — helping clients pay less tax -->
+      <p class="sec-sub sec-sub-light" style="margin-top:.75rem;">Our team brings deep tax knowledge to every placement — so your staff don't just file returns, they help your clients pay less tax and avoid costly penalties.</p>
     </div>
     <div class="team-grid">
       <div class="team-card fade-up d1"><div class="team-avatar">MK</div><div class="team-name">Mike Kowalczyk</div><div class="team-role">Founder &amp; Managing Director</div><p class="team-bio">Leads PT Global's client relationships and placement strategy. Deep expertise in CPA-firm staffing and tax-season workforce planning.</p></div>
@@ -903,10 +908,12 @@
     </div>
   </div>
 </footer>
+
 <button class="float-cta" id="floatContactBtn">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
   Contact us
 </button>
+
 <script>
 // Floating contact button scroll to form
   var floatBtn = document.getElementById('floatContactBtn');
