@@ -802,17 +802,17 @@
               <div class="form-box-title">Build Your Accounting Team</div>
               <p class="form-box-sub">Answer a few quick questions so we can prepare for your call.</p>
               <div class="form-row2">
-                <div class="fg"><label class="fl" for="q_fname">First Name</label><input type="text" id="q_fname" class="fi" placeholder="James" autocomplete="given-name" /></div>
-                <div class="fg"><label class="fl" for="q_lname">Last Name</label><input type="text" id="q_lname" class="fi" placeholder="Miller" autocomplete="family-name" /></div>
+                <div class="fg"><label class="fl" for="First Name">First Name</label><input type="text" id="First Name" class="fi" placeholder="James" autocomplete="given-name" /></div>
+                <div class="fg"><label class="fl" for="Last Name">Last Name</label><input type="text" id="Last Name" class="fi" placeholder="Miller" autocomplete="family-name" /></div>
               </div>
-              <div class="fg"><label class="fl" for="q_email">Email Address *</label><input type="email" id="q_email" class="fi" placeholder="james@yourfirm.com" required autocomplete="email" /></div>
-              <div class="fg"><label class="fl" for="q_phone">Phone Number</label><input type="tel" id="q_phone" class="fi" placeholder="+1 (305) 000-0000" autocomplete="tel" inputmode="numeric" onkeydown="return isPhoneKey(event)" onpaste="return handlePhonePaste(event,this)" /></div>
-              <div class="fg"><label class="fl" for="q_revenue">Firm's Annual Revenue? *</label><select id="q_revenue" class="fs" required><option value="">Select…</option><option value="low">$0 — $250,000</option><option value="mid">$250,000 — $500,000</option><option value="high">$500,000 — $1,000,000</option><option value="top">$1,000,000+</option></select></div>
-              <div class="fg"><label class="fl" for="q_size">Firm Size (including yourself)? *</label><select id="q_size" class="fs" required><option value="">Select…</option><option>Just me</option><option>1–5</option><option>5–10</option><option>10+</option></select></div>
-              <div class="fg"><label class="fl" for="q_stage">Where Are You in the Hiring Process? *</label><select id="q_stage" class="fs" required><option value="">Select…</option><option>Ready to move forward (within 30–60 days)</option><option>Seriously considering, still researching</option><option>Early stages, just exploring</option></select></div>
-              <div class="fg"><label class="fl" for="q_remote">Have You Hired Remote Staff Before? *</label><select id="q_remote" class="fs" required><option value="">Select…</option><option>Yes, and it went well</option><option>Yes, but it didn't work out</option><option>No, this would be my first time</option></select></div>
-              <div class="fg"><label class="fl" for="q_challenge">Biggest Challenge in Your Firm Right Now?</label><textarea id="q_challenge" class="fta" placeholder="Tell us in your own words…"></textarea></div>
-              <label class="fcheck"><input type="checkbox" id="q_privacy" required /><span class="fcheck-box"></span><span class="fcheck-label">I agree to PT Global's <a onclick="openPrivacy();return false;" href="#">Privacy Policy</a> and consent to being contacted.</span></label>
+              <div class="fg"><label class="fl" for="Email Address">Email Address *</label><input type="email" id="Email Address" class="fi" placeholder="james@yourfirm.com" required autocomplete="email" /></div>
+              <div class="fg"><label class="fl" for="Phone Number">Phone Number</label><input type="tel" id="Phone Number" class="fi" placeholder="+1 (305) 000-0000" autocomplete="tel" inputmode="numeric" onkeydown="return isPhoneKey(event)" onpaste="return handlePhonePaste(event,this)" /></div>
+              <div class="fg"><label class="fl" for="Annual Revenue">Firm's Annual Revenue? *</label><select id="Annual Revenue" class="fs" required><option value="">Select…</option><option value="$0 — $250,000">$0 — $250,000</option><option value="$250,000 — $500,000">$250,000 — $500,000</option><option value="$500,000 — $1,000,000">$500,000 — $1,000,000</option><option value="$1,000,000+">$1,000,000+</option></select></div>
+              <div class="fg"><label class="fl" for="Firm Size">Firm Size (including yourself)? *</label><select id="Firm Size" class="fs" required><option value="">Select…</option><option>Just me</option><option>1–5</option><option>5–10</option><option>10+</option></select></div>
+              <div class="fg"><label class="fl" for="Hiring Stage">Where Are You in the Hiring Process? *</label><select id="Hiring Stage" class="fs" required><option value="">Select…</option><option>Ready to move forward (within 30–60 days)</option><option>Seriously considering, still researching</option><option>Early stages, just exploring</option></select></div>
+              <div class="fg"><label class="fl" for="Remote Experience">Have You Hired Remote Staff Before? *</label><select id="Remote Experience" class="fs" required><option value="">Select…</option><option>Yes, and it went well</option><option>Yes, but it didn't work out</option><option>No, this would be my first time</option></select></div>
+              <div class="fg"><label class="fl" for="Biggest Challenge">Biggest Challenge in Your Firm Right Now?</label><textarea id="Biggest Challenge" class="fta" placeholder="Tell us in your own words…"></textarea></div>
+              <label class="fcheck"><input type="checkbox" id="Privacy" required /><span class="fcheck-box"></span><span class="fcheck-label">I agree to PT Global's <a onclick="openPrivacy();return false;" href="#">Privacy Policy</a> and consent to being contacted.</span></label>
               <button class="fsubmit" onclick="submitFirm()">Submit →</button>
             </div>
 
@@ -1013,12 +1013,12 @@ function switchTab(tab){
 
 /* ── FORM SUBMIT FIRM ── */
 function submitFirm(){
-  var email=document.getElementById('q_email').value.trim();
-  var revenue=document.getElementById('q_revenue').value;
-  var size=document.getElementById('q_size').value;
-  var stage=document.getElementById('q_stage').value;
-  var remote=document.getElementById('q_remote').value;
-  var privacy=document.getElementById('q_privacy').checked;
+  var email=document.getElementById('Email Address').value.trim();
+  var revenue=document.getElementById('Annual Revenue').value;
+  var size=document.getElementById('Firm Size').value;
+  var stage=document.getElementById('Hiring Stage').value;
+  var remote=document.getElementById('Remote Experience').value;
+  var privacy=document.getElementById('Privacy').checked;
   if(!email){alert('Please enter your email address.');return;}
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){alert('Please enter a valid email.');return;}
   if(!revenue){alert('Please select your firm\'s annual revenue.');return;}
@@ -1027,14 +1027,14 @@ function submitFirm(){
   if(!remote){alert('Please answer the remote staff experience question.');return;}
   if(!privacy){alert('Please accept the Privacy Policy.');return;}
   var data=new FormData();
-  ['q_fname','q_lname','q_email','q_phone','q_revenue','q_size','q_stage','q_remote','q_challenge'].forEach(function(id){
+  ['First Name','Last Name','Email Address','Phone Number','Annual Revenue','Firm Size','Hiring Stage','Remote Experience','Biggest Challenge'].forEach(function(id){
     data.append(id,document.getElementById(id).value.trim());
   });
   fetch('https://formspree.io/f/xkoerreq',{method:'POST',body:data,headers:{'Accept':'application/json'}})
     .then(function(r){
       if(r.ok){
         document.getElementById('formContent').style.display='none';
-        document.getElementById(revenue==='low'?'successLow':'successHigh').style.display='block';
+        document.getElementById(revenue==='$0 — $250,000'?'successLow':'successHigh').style.display='block';
       }else{alert('There was a problem. Please email us at contact@ptgteam.com');}
     })
     .catch(function(){alert('Network error. Please email us at contact@ptgteam.com');});
