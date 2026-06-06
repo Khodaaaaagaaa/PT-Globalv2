@@ -121,7 +121,7 @@
     .cta-band { background: var(--teal); padding: 24px 0; }
     .cta-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
     .cta-band p { font-size: 1rem; color: #fff; font-weight: 600; }
-    .cta-band span { font-size: .88rem; color: rgba(255,255,255,.8); }
+    .cta-band span { font-size: .88rem; color: #fff; }
     .btn-white { background: #fff; color: var(--navy); border-color: #fff; }
     .btn-white:hover { background: var(--off); }
     .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
@@ -140,7 +140,7 @@
     .te-pillars { display: flex; flex-direction: column; gap: 1.5rem; }
     .te-pillar { display: flex; gap: 1rem; align-items: flex-start; }
     .te-pillar-icon { flex-shrink: 0; width: 38px; height: 38px; background: rgba(13,138,138,.15); border: 1px solid rgba(13,138,138,.25); border-radius: var(--r); display: flex; align-items: center; justify-content: center; color: var(--tealL); }
-    .te-pillar h4 { font-family: var(--font-h); font-size: .97rem; color: #fff; margin-bottom: 3px; }
+    .te-pillar-title { display: block; font-family: var(--font-h); font-size: .97rem; color: #fff; margin-bottom: 3px; font-weight: 700; line-height: 1.15; }
     .te-pillar p { font-size: .85rem; color: rgba(255,255,255,.52); line-height: 1.65; }
     .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
     .team-card { background: rgba(255,255,255,.04); border: 1px solid rgba(13,138,138,.18); border-radius: var(--rL); padding: 1.75rem 1.5rem; text-align: center; transition: border-color .3s, transform .28s; }
@@ -373,15 +373,15 @@
         <div class="te-pillars">
           <div class="te-pillar">
             <div class="te-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <div><h4>Integrated, Not Outsourced</h4><p>Your placed staff works inside your software, follows your processes, and is accountable to your firm — not to a third-party manager.</p></div>
+            <div><span class="te-pillar-title">Integrated, Not Outsourced</span><p>Your placed staff works inside your software, follows your processes, and is accountable to your firm — not to a third-party manager.</p></div>
           </div>
           <div class="te-pillar">
             <div class="te-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-            <div><h4>Ownership of the Operational</h4><p>Your team member takes real ownership of their role — they don't just execute tasks, they own the workflow and deliver results you can rely on.</p></div>
+            <div><span class="te-pillar-title">Ownership of the Operational</span><p>Your team member takes real ownership of their role — they don't just execute tasks, they own the workflow and deliver results you can rely on.</p></div>
           </div>
           <div class="te-pillar">
             <div class="te-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-            <div><h4>Built for the Long Term</h4><p>We don't staff for one-off projects. Every placement is designed for long-term fit — professionals who grow with your firm, season after season.</p></div>
+            <div><span class="te-pillar-title">Built for the Long Term</span><p>We don't staff for one-off projects. Every placement is designed for long-term fit — professionals who grow with your firm, season after season.</p></div>
           </div>
         </div>
       </div>
@@ -399,11 +399,11 @@
       <p class="sec-sub sec-sub-light" style="margin-top:.75rem;">Our team brings deep tax knowledge to every placement — so your staff don't just file returns, they help your clients pay less tax and avoid costly penalties.</p>
     </div>
     <div class="team-grid">
-      <div class="team-card fade-up d1"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Mike K.jpg" alt="Mike Kowalczyk" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;" /></div><div class="team-name">Mike Kowalczyk</div><div class="team-role">Founder &amp; Managing Director</div><p class="team-bio">Leads PT Global's client relationships and placement strategy. Deep expertise in CPA-firm staffing and tax-season workforce planning.</p></div>
-      <div class="team-card fade-up d2"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Pablo.jpeg" alt="Pablo Rosales" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Pablo Rosales</div><div class="team-role">Head of Talent Acquisition</div><p class="team-bio">Oversees candidate sourcing, vetting, and placement operations. Ensures every shortlist meets PT Global's exacting tax-firm standards.</p></div>
-      <div class="team-card fade-up d3"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="M10.png" alt="Manuel Altamirano" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Manuel Altamirano</div><div class="team-role">Training Manager</div><p class="team-bio">Manages firm relationships post-placement, ensuring seamless onboarding and long-term fit between placed staff and client workflows.</p></div>
-      <div class="team-card fade-up d4"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Mariana V.jpeg" alt="Mariana Virreira" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Mariana Virreira</div><div class="team-role">Talent Coordinator</div><p class="team-bio">Coordinates candidate screening pipelines and maintains PT Global's pre-vetted talent pool ready for rapid deployment.</p></div>
-      <div class="team-card fade-up d1"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Mario.jpg" alt="Mario" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Mario</div><div class="team-role">Client Success Manager</div><p class="team-bio">Ensures seamless onboarding and long-term fit between placed staff and client workflows, serving as the primary point of contact post-placement.</p></div>
+      <div class="team-card fade-up d1"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Mike K.jpg" alt="Mike Kowalczyk" width="70" height="70" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;" /></div><div class="team-name">Mike Kowalczyk</div><div class="team-role">Founder &amp; Managing Director</div><p class="team-bio">Leads PT Global's client relationships and placement strategy. Deep expertise in CPA-firm staffing and tax-season workforce planning.</p></div>
+      <div class="team-card fade-up d2"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Pablo.jpeg" alt="Pablo Rosales" width="70" height="70" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Pablo Rosales</div><div class="team-role">Head of Talent Acquisition</div><p class="team-bio">Oversees candidate sourcing, vetting, and placement operations. Ensures every shortlist meets PT Global's exacting tax-firm standards.</p></div>
+      <div class="team-card fade-up d3"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="M10.png" alt="Manuel Altamirano" width="70" height="70" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Manuel Altamirano</div><div class="team-role">Training Manager</div><p class="team-bio">Manages firm relationships post-placement, ensuring seamless onboarding and long-term fit between placed staff and client workflows.</p></div>
+      <div class="team-card fade-up d4"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Mariana V.jpeg" alt="Mariana Virreira" width="70" height="70" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Mariana Virreira</div><div class="team-role">Talent Coordinator</div><p class="team-bio">Coordinates candidate screening pipelines and maintains PT Global's pre-vetted talent pool ready for rapid deployment.</p></div>
+      <div class="team-card fade-up d1"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Mario.jpg" alt="Mario" width="70" height="70" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Mario</div><div class="team-role">Client Success Manager</div><p class="team-bio">Ensures seamless onboarding and long-term fit between placed staff and client workflows, serving as the primary point of contact post-placement.</p></div>
     </div>
   </div>
 </section>
@@ -439,7 +439,7 @@
                 <div class="fg"><label class="fl" for="Last Name">Last Name</label><input type="text" id="Last Name" class="fi" placeholder="Miller" autocomplete="family-name" /></div>
               </div>
               <div class="fg"><label class="fl" for="Email Address">Email Address *</label><input type="email" id="Email Address" class="fi" placeholder="james@yourfirm.com" required autocomplete="email" /></div>
-              <div class="fg"><label class="fl" for="Phone Number">Phone Number</label><input type="tel" id="Phone Number" class="fi" placeholder="+1 (305) 000-0000" autocomplete="tel" inputmode="numeric" onkeydown="return isPhoneKey(event)" onpaste="return handlePhonePaste(event,this)" /></div>
+              <div class="fg"><label class="fl" for="Phone Number">Phone Number</label><input type="tel" id="Phone Number" class="fi" placeholder="+1 (305) 000-0000" autocomplete="tel" inputmode="numeric" onkeydown="return isPhoneKey(event)" /></div>
               <div class="fg"><label class="fl" for="Annual Revenue">Firm's Annual Revenue? *</label><select id="Annual Revenue" class="fs" required><option value="">Select…</option><option value="$0 — $250,000">$0 — $250,000</option><option value="$250,000 — $500,000">$250,000 — $500,000</option><option value="$500,000 — $1,000,000">$500,000 — $1,000,000</option><option value="$1,000,000+">$1,000,000+</option></select></div>
               <div class="fg"><label class="fl" for="Firm Size">Firm Size (including yourself)? *</label><select id="Firm Size" class="fs" required><option value="">Select…</option><option>Just me</option><option>1–5</option><option>5–10</option><option>10+</option></select></div>
               <div class="fg"><label class="fl" for="Hiring Stage">Where Are You in the Hiring Process? *</label><select id="Hiring Stage" class="fs" required><option value="">Select…</option><option>Ready to move forward (within 30–60 days)</option><option>Seriously considering, still researching</option><option>Early stages, just exploring</option></select></div>
@@ -456,7 +456,7 @@
                 <div class="fg"><label class="fl" for="c_Last Name">Last Name</label><input type="text" id="c_Last Name" class="fi" placeholder="Garcia" autocomplete="family-name" /></div>
               </div>
               <div class="fg"><label class="fl" for="c_Email Address">Email Address *</label><input type="email" id="c_Email Address" class="fi" placeholder="maria@email.com" required autocomplete="email" /></div>
-              <div class="fg"><label class="fl" for="c_Phone Number">Phone Number</label><input type="tel" id="c_Phone Number" class="fi" placeholder="+1 (305) 000-0000" autocomplete="tel" inputmode="numeric" onkeydown="return isPhoneKey(event)" onpaste="return handlePhonePaste(event,this)" /></div>
+              <div class="fg"><label class="fl" for="c_Phone Number">Phone Number</label><input type="tel" id="c_Phone Number" class="fi" placeholder="+1 (305) 000-0000" autocomplete="tel" inputmode="numeric" onkeydown="return isPhoneKey(event)" /></div>
               <div class="fg"><label class="fl" for="c_Role Type">Role Type</label><select id="c_Role Type" class="fs"><option value="">Select…</option><option>Tax Preparer</option><option>Enrolled Agent</option><option>Bookkeeper</option><option>Tax Admin / Document Support</option><option>Staff Accountant</option></select></div>
               <div class="fg"><label class="fl" for="c_Experience Level">Experience Level</label><select id="c_Experience Level" class="fs"><option value="">Select…</option><option>Entry level (0–2 years)</option><option>Mid-level (2–5 years)</option><option>Senior (5+ years)</option></select></div>
               <div class="fg"><label class="fl" for="c_Primary Software">Primary Software</label><select id="c_Primary Software" class="fs"><option value="">Select…</option><option>Drake</option><option>ProSeries</option><option>Lacerte</option><option>TaxDome</option><option>QuickBooks</option><option>Multiple / Other</option></select></div>
