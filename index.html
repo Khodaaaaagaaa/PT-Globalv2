@@ -9,14 +9,11 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="PT Global — Full-Time Talent for CPA Firms" />
   <meta property="og:description" content="PT Global places full-time tax and accounting professionals inside U.S. CPA firms as integrated team members." />
-
   <link rel="icon" type="image/png" href="PTG_favicon.png" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
   <noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet" /></noscript>
-
   <style>
     :root {
       --navy:     #0F1F35;
@@ -39,14 +36,12 @@
       --font-b:   'DM Sans', sans-serif;
       --font-m:   'DM Mono', monospace;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-b); color: var(--text); background: var(--white); line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     a { text-decoration: none; color: inherit; }
     ul { list-style: none; }
     h1,h2,h3,h4 { font-family: var(--font-h); line-height: 1.15; }
-
     .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
     .section { padding: 96px 0; }
     .section-off { background: var(--off); }
@@ -60,8 +55,6 @@
     .sec-sub { font-size: .97rem; color: var(--g5); line-height: 1.8; }
     .sec-sub-light { color: rgba(255,255,255,.55); }
     .sec-header { text-align: center; max-width: 620px; margin: 0 auto 3.5rem; }
-
-    /* ── BUTTONS ── */
     .btn { display: inline-block; font-family: var(--font-b); font-weight: 600; font-size: .92rem; padding: 12px 26px; border-radius: var(--r); cursor: pointer; transition: background .22s, color .22s, border-color .22s, transform .18s; border: 2px solid transparent; white-space: nowrap; }
     .btn-gold { background: var(--gold); color: var(--navy); border-color: var(--gold); }
     .btn-gold:hover { background: var(--goldL); border-color: var(--goldL); transform: translateY(-1px); }
@@ -71,13 +64,8 @@
     .btn-outline-white:hover { background: rgba(255,255,255,.1); border-color: #fff; }
     .btn-outline-navy { background: transparent; color: var(--navy); border-color: var(--navy); }
     .btn-outline-navy:hover { background: var(--navy); color: #fff; }
-
-    /* ══════════════════════════════
-       NAV
-    ══════════════════════════════ */
     #site-header { position: sticky; top: 0; z-index: 1000; background: #fff; border-bottom: 2px solid var(--teal); box-shadow: 0 1px 8px rgba(0,0,0,.06); }
     .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 68px; display: flex; align-items: center; }
-    /* Logo left — CHANGE 1: increased logo size for desktop */
     .logo-lockup { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
     .logo-mark { display: flex; align-items: center; }
     .logo-brk { display: inline-block; width: 8px; height: 36px; border-top: 2.5px solid var(--teal); border-bottom: 2.5px solid var(--teal); }
@@ -87,48 +75,24 @@
     .logo-text { display: flex; flex-direction: column; }
     .logo-name { font-family: var(--font-h); font-weight: 700; font-size: 21px; color: var(--navy); }
     .logo-tag { font-family: var(--font-m); font-size: 8.5px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--teal); }
-    /* Center links */
     .nav-links { display: flex; align-items: center; gap: 2rem; flex: 1; justify-content: center; }
     .nav-links a { font-size: .88rem; font-weight: 500; color: var(--text); transition: color .2s; }
     .nav-links a:hover { color: var(--teal); }
-    /* Right CTA */
     .nav-cta-wrap { flex-shrink: 0; }
     .nav-cta { font-size: .88rem !important; padding: 10px 22px !important; }
-
-    /* Mobile */
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 5px; }
     .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--navy); border-radius: 1px; transition: .25s; }
-
     @media (max-width: 900px) {
       .nav-links { display: none; }
       .nav-cta-wrap { display: none; }
       .nav-toggle { display: flex; margin-left: auto; }
-      .nav-links.open {
-        display: flex; flex-direction: column; align-items: stretch;
-        position: absolute; top: 68px; left: 0; right: 0;
-        background: #fff; padding: 20px 24px 28px;
-        border-bottom: 2px solid var(--teal);
-        gap: 6px; z-index: 999;
-        box-shadow: 0 8px 28px rgba(0,0,0,.1);
-      }
+      .nav-links.open { display: flex; flex-direction: column; align-items: stretch; position: absolute; top: 68px; left: 0; right: 0; background: #fff; padding: 20px 24px 28px; border-bottom: 2px solid var(--teal); gap: 6px; z-index: 999; box-shadow: 0 8px 28px rgba(0,0,0,.1); }
       .nav-links.open a { font-size: 1rem; padding: 10px 0; border-bottom: 1px solid var(--g1); }
-      .nav-links.open .nav-mobile-cta {
-        display: block; margin-top: 12px;
-        background: var(--gold); color: var(--navy); border-color: var(--gold);
-        text-align: center; padding: 14px; font-size: 1rem; font-weight: 600; border-radius: var(--r);
-      }
+      .nav-links.open .nav-mobile-cta { display: block; margin-top: 12px; background: var(--gold); color: var(--navy); border-color: var(--gold); text-align: center; padding: 14px; font-size: 1rem; font-weight: 600; border-radius: var(--r); }
       .nav-links.open .nav-mobile-cta:hover { background: var(--goldL); }
     }
-
-    /* ══════════════════════════════
-       HERO
-    ══════════════════════════════ */
     .hero { background: var(--navy); padding: 100px 0 80px; position: relative; overflow: hidden; }
-    .hero::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background-image: linear-gradient(rgba(10,110,110,.04) 1px,transparent 1px), linear-gradient(90deg,rgba(10,110,110,.04) 1px,transparent 1px);
-      background-size: 72px 72px;
-    }
+    .hero::before { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(rgba(10,110,110,.04) 1px,transparent 1px), linear-gradient(90deg,rgba(10,110,110,.04) 1px,transparent 1px); background-size: 72px 72px; }
     .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
     .hero-label { display: inline-flex; align-items: center; gap: 8px; background: rgba(10,110,110,.18); border: 1px solid rgba(13,138,138,.4); border-radius: 2px; padding: 5px 14px; font-family: var(--font-m); font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--tealL); margin-bottom: 1.4rem; }
     .hero-label::before { content: ''; width: 6px; height: 6px; background: var(--tealL); border-radius: 50%; }
@@ -138,39 +102,28 @@
     .hero-stats { display: flex; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.1); }
     .hstat-n { font-family: var(--font-h); font-size: 2rem; font-weight: 700; color: var(--tealL); }
     .hstat-l { font-family: var(--font-m); font-size: .68rem; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.45); margin-top: 3px; }
-
-    /* Hero card */
     .hero-card { background: var(--navy2); border: 1px solid rgba(13,138,138,.25); border-radius: var(--rL); padding: 2rem; }
     .hc-eyebrow { font-family: var(--font-m); font-size: .68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--tealL); margin-bottom: .75rem; }
     .hc-title { font-family: var(--font-h); font-size: 1.25rem; color: #fff; margin-bottom: 1.5rem; font-weight: 700; }
-    /* Roles filled centered */
     .hc-roles-total { text-align: center; background: rgba(10,110,110,.15); border: 1px solid rgba(13,138,138,.22); border-radius: var(--r); padding: 1.1rem; margin-bottom: 1.5rem; }
     .hc-roles-n { font-family: var(--font-h); font-size: 2.2rem; font-weight: 700; color: var(--tealL); }
     .hc-roles-l { font-size: .78rem; color: rgba(255,255,255,.5); margin-top: 3px; }
-    /* Progress bars */
     .hc-prog { margin-bottom: 10px; }
     .hc-prog:last-child { margin-bottom: 0; }
     .hc-prog-row { display: flex; justify-content: space-between; font-size: .72rem; color: rgba(255,255,255,.7); margin-bottom: 5px; }
     .hc-bar { height: 3px; background: rgba(255,255,255,.08); border-radius: 2px; overflow: hidden; }
     .hc-fill { height: 100%; background: var(--teal); border-radius: 2px; width: 0; transition: width 1.3s var(--ease); }
-    /* Badge inside card */
     .hc-badge-wrap { display: flex; justify-content: flex-end; margin-top: 1.25rem; }
     .hc-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--teal); border-radius: var(--r); padding: 8px 16px; box-shadow: 0 6px 20px rgba(10,110,110,.3); }
     .hc-badge-dot { width: 7px; height: 7px; background: #5fffbb; border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.35)} }
     .hc-badge-text { font-family: var(--font-m); font-size: .72rem; font-weight: 600; color: #fff; letter-spacing: .3px; }
-
-    /* ── CTA BAND ── */
     .cta-band { background: var(--teal); padding: 24px 0; }
     .cta-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
     .cta-band p { font-size: 1rem; color: #fff; font-weight: 600; }
     .cta-band span { font-size: .88rem; color: rgba(255,255,255,.8); }
     .btn-white { background: #fff; color: var(--navy); border-color: #fff; }
     .btn-white:hover { background: var(--off); }
-
-    /* ══════════════════════════════
-       PROBLEM
-    ══════════════════════════════ */
     .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .problem-copy h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--navy); margin-bottom: .75rem; }
     .problem-copy p { font-size: .95rem; line-height: 1.8; color: var(--g5); }
@@ -179,52 +132,8 @@
     .pain-icon { flex-shrink: 0; color: var(--teal); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; }
     .pain-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: 4px; }
     .pain-card p { font-size: .88rem; line-height: 1.7; color: var(--g5); }
-
-    /* ══════════════════════════════
-       WHO
-    ══════════════════════════════ */
-    .who-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-    .who-card { border: 1px solid var(--g1); border-top: 3px solid var(--teal); padding: 2rem; }
-    .who-card h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: .6rem; }
-    .who-card p { font-size: .88rem; line-height: 1.75; color: var(--g5); margin-bottom: 1rem; }
-    .who-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .who-tag { font-family: var(--font-m); font-size: .68rem; letter-spacing: .5px; text-transform: uppercase; color: var(--teal); background: var(--tealPale); border: 1px solid rgba(10,110,110,.2); padding: 3px 9px; border-radius: 2px; }
-
-    /* ══════════════════════════════
-       SERVICES
-    ══════════════════════════════ */
-    .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
-    .svc-card { background: #fff; border: 1px solid var(--g1); padding: 2rem; display: flex; flex-direction: column; gap: .75rem; transition: border-color .25s; }
-    .svc-card:hover { border-color: var(--teal); }
-    .svc-icon { color: var(--teal); }
-    .svc-card h3 { font-size: 1.1rem; color: var(--navy); }
-    .svc-card p { font-size: .88rem; line-height: 1.75; color: var(--g5); }
-    .svc-list { display: flex; flex-direction: column; gap: 4px; }
-    .svc-list li { font-size: .83rem; color: var(--g5); padding-left: 1rem; position: relative; }
-    .svc-list li::before { content: '—'; position: absolute; left: 0; color: var(--teal); }
-    .forms-block { background: var(--off); padding: 2.5rem 2rem; text-align: center; }
-    .forms-badges { display: flex; flex-wrap: wrap; gap: .75rem; justify-content: center; margin-top: 1.2rem; }
-    .form-badge { font-family: var(--font-m); font-size: .85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); background: #fff; border: 1.5px solid var(--teal); padding: 10px 22px; border-radius: 2px; }
-
-    /* ══════════════════════════════
-       PROCESS
-    ══════════════════════════════ */
-    .process-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; position: relative; }
-    .process-steps::before { content: ''; position: absolute; top: 26px; left: 12%; right: 12%; height: 1px; background: var(--teal); opacity: .2; z-index: 0; }
-    .step-card { position: relative; z-index: 1; background: #fff; border: 1px solid var(--g1); padding: 1.75rem 1.5rem; }
-    .step-card::before, .step-card::after { content: ''; position: absolute; width: 12px; height: 12px; }
-    .step-card::before { top: 0; left: 0; border-top: 2px solid var(--teal); border-left: 2px solid var(--teal); }
-    .step-card::after { bottom: 0; right: 0; border-bottom: 2px solid var(--teal); border-right: 2px solid var(--teal); }
-    .step-num { font-family: var(--font-m); font-size: .68rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); margin-bottom: .9rem; display: block; }
-    .step-icon { color: var(--teal); margin-bottom: .9rem; }
-    .step-card h3 { font-size: 1rem; color: var(--navy); margin-bottom: .4rem; }
-    .step-card p { font-size: .83rem; line-height: 1.65; color: var(--g5); }
-
-    /* ══════════════════════════════
-       TEAM EXTENSION
-    ══════════════════════════════ */
     #team-extension { background: var(--navy); }
-    .te-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .te-inner { display: grid; grid-template-columns: 1fr; gap: 5rem; align-items: start; }
     .te-eyebrow { font-family: var(--font-m); font-size: .72rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--tealL); margin-bottom: .9rem; }
     .te-inner h2 { color: #fff; font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 1rem; }
     .te-intro { font-size: .97rem; line-height: 1.85; color: rgba(255,255,255,.62); margin-bottom: 2.2rem; }
@@ -233,37 +142,6 @@
     .te-pillar-icon { flex-shrink: 0; width: 38px; height: 38px; background: rgba(13,138,138,.15); border: 1px solid rgba(13,138,138,.25); border-radius: var(--r); display: flex; align-items: center; justify-content: center; color: var(--tealL); }
     .te-pillar h4 { font-family: var(--font-h); font-size: .97rem; color: #fff; margin-bottom: 3px; }
     .te-pillar p { font-size: .85rem; color: rgba(255,255,255,.52); line-height: 1.65; }
-    .te-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .te-card { background: rgba(255,255,255,.05); border: 1px solid rgba(13,138,138,.18); border-radius: var(--rL); padding: 1.6rem; }
-    .te-card-icon { color: var(--tealL); margin-bottom: .85rem; }
-    .te-card h4 { font-family: var(--font-h); font-size: .95rem; color: #fff; margin-bottom: 5px; }
-    .te-card p { font-size: .82rem; color: rgba(255,255,255,.5); line-height: 1.65; }
-    .te-card-wide { grid-column: span 2; background: rgba(10,110,110,.18); border-color: rgba(13,138,138,.35); }
-    .te-quote { font-family: var(--font-h); font-size: 2rem; color: var(--tealL); line-height: 1; margin-bottom: .6rem; }
-    .te-card-wide p { font-size: .93rem; color: rgba(255,255,255,.72); line-height: 1.75; }
-
-    /* ══════════════════════════════
-       CONTROL
-    ══════════════════════════════ */
-    .control-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; }
-    .ctrl-dark { background: var(--navy); padding: 2.5rem; border-radius: var(--r); }
-    .ctrl-light { background: var(--off); border: 1px solid var(--g1); padding: 2.5rem; border-radius: var(--r); }
-    .ctrl-label { font-family: var(--font-m); font-size: .68rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; }
-    .ctrl-dark .ctrl-label { color: var(--tealL); }
-    .ctrl-light .ctrl-label { color: var(--teal); }
-    .ctrl-dark h3 { color: #fff; font-size: 1.2rem; margin-bottom: 1.2rem; }
-    .ctrl-light h3 { color: var(--navy); font-size: 1.2rem; margin-bottom: 1.2rem; }
-    .ctrl-list { display: flex; flex-direction: column; gap: .85rem; }
-    .ctrl-list li { display: flex; gap: .75rem; font-size: .88rem; line-height: 1.55; }
-    .ctrl-dark .ctrl-list li { color: rgba(255,255,255,.72); }
-    .ctrl-light .ctrl-list li { color: var(--g5); }
-    .ctrl-arrow { flex-shrink: 0; margin-top: 2px; font-size: .85rem; }
-    .ctrl-dark .ctrl-arrow { color: var(--tealL); }
-    .ctrl-light .ctrl-arrow { color: var(--teal); }
-
-    /* ══════════════════════════════
-       OUR TEAM
-    ══════════════════════════════ */
     .team-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; }
     .team-card { background: rgba(255,255,255,.04); border: 1px solid rgba(13,138,138,.18); border-radius: var(--rL); padding: 1.75rem 1.5rem; text-align: center; transition: border-color .3s, transform .28s; }
     .team-card:hover { border-color: rgba(13,138,138,.4); transform: translateY(-3px); }
@@ -271,10 +149,6 @@
     .team-name { font-family: var(--font-h); font-size: .97rem; color: #fff; font-weight: 700; margin-bottom: 3px; }
     .team-role { font-family: var(--font-m); font-size: .65rem; letter-spacing: 1px; text-transform: uppercase; color: var(--tealL); margin-bottom: .75rem; }
     .team-bio { font-size: .82rem; color: rgba(255,255,255,.5); line-height: 1.65; }
-
-    /* ══════════════════════════════
-       CONTACT
-    ══════════════════════════════ */
     .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .contact-info-label { font-family: var(--font-m); font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: .75rem; }
     .contact-info .teal-line { margin-bottom: 1.25rem; }
@@ -285,8 +159,6 @@
     .cd-label { font-family: var(--font-m); font-size: .62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--g3); margin-bottom: 1px; }
     .cd-val { font-size: .88rem; color: var(--text); font-weight: 500; }
     .cd-val a { color: var(--teal); }
-
-    /* Form box */
     .form-box { background: #fff; border: 1px solid var(--g1); border-radius: var(--rL); padding: 2.2rem; box-shadow: 0 4px 24px rgba(0,0,0,.06); }
     .form-tabs { display: flex; border: 1px solid var(--g1); border-radius: var(--r); overflow: hidden; margin-bottom: 1.5rem; }
     .form-tab { flex: 1; padding: 10px 8px; border: none; font-family: var(--font-b); font-size: .85rem; font-weight: 600; cursor: pointer; transition: background .2s, color .2s; }
@@ -301,7 +173,6 @@
     .fi:focus, .fs:focus, .fta:focus { border-color: var(--teal); background: #fff; }
     .fta { resize: vertical; min-height: 90px; }
     .fs { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6760' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; cursor: pointer; }
-    /* Checkboxes */
     .fcheck { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 1.25rem; cursor: pointer; }
     .fcheck input[type="checkbox"] { display: none; }
     .fcheck-box { width: 16px; height: 16px; min-width: 16px; border: 1.5px solid var(--g1); background: #fff; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; border-radius: 3px; transition: background .15s, border-color .15s; }
@@ -314,10 +185,6 @@
     .form-success { display: none; text-align: center; padding: 2.5rem 1rem; }
     .form-success h3 { font-family: var(--font-h); font-size: 1.3rem; color: var(--navy); margin: .75rem 0 .4rem; }
     .form-success p { font-size: .85rem; color: var(--g5); }
-
-    /* ══════════════════════════════
-       PRIVACY MODAL
-    ══════════════════════════════ */
     .modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(15,31,53,.82); overflow-y: auto; }
     .modal-overlay.open { display: block; }
     .modal-box { background: #fff; max-width: 720px; margin: 48px auto; position: relative; border-radius: var(--r); overflow: hidden; }
@@ -337,12 +204,8 @@
     .modal-footer { border-top: 1px solid var(--g1); padding-top: 1.25rem; text-align: center; }
     .modal-footer button { background: var(--navy); color: #fff; border: none; padding: 12px 32px; font-family: var(--font-b); font-size: .92rem; font-weight: 600; cursor: pointer; border-radius: var(--r); transition: background .2s; }
     .modal-footer button:hover { background: var(--teal); }
-
-    /* ══════════════════════════════
-       FOOTER
-    ══════════════════════════════ */
     #footer { background: #1A1714; padding: 56px 0 24px; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,.07); }
     .footer-brand p { font-size: .83rem; color: rgba(255,255,255,.5); line-height: 1.75; margin-top: .75rem; max-width: 260px; }
     .fc-title { font-family: var(--font-m); font-size: .65rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--tealL); margin-bottom: .9rem; }
     .fc ul { display: flex; flex-direction: column; gap: .55rem; }
@@ -350,24 +213,14 @@
     .fc a:hover { color: var(--off); }
     .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; }
     .footer-legal { font-size: .75rem; color: rgba(255,255,255,.4); }
-    .footer-social { display: flex; gap: .6rem; }
     .social-link { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; border-radius: var(--r); transition: border-color .2s; color: rgba(255,255,255,.5); }
     .social-link:hover { border-color: var(--tealL); color: var(--tealL); }
-
-    /* ══════════════════════════════
-       ANIMATIONS
-    ══════════════════════════════ */
     .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .65s var(--ease), transform .65s var(--ease); will-change: opacity, transform; }
     .fade-up.visible { opacity: 1; transform: none; }
     .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
-
-    /* ══════════════════════════════
-       RESPONSIVE
-    ══════════════════════════════ */
     @media (max-width: 1024px) {
       .hero-inner { grid-template-columns: 1fr; }
       .hero-card { max-width: 520px; }
-      .te-inner { grid-template-columns: 1fr; gap: 3rem; }
       .team-grid { grid-template-columns: repeat(2,1fr); }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -375,13 +228,6 @@
       .section { padding: 64px 0; }
       .container { padding: 0 1.25rem; }
       .problem-grid, .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
-      .who-grid { grid-template-columns: 1fr; }
-      .svc-grid { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr 1fr; gap: 1rem; }
-      .process-steps::before { display: none; }
-      .te-cards { grid-template-columns: 1fr; }
-      .te-card-wide { grid-column: span 1; }
-      .control-cols { grid-template-columns: 1fr; }
       .form-row2 { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
@@ -391,51 +237,18 @@
       .modal-body { padding: 1.75rem 1.5rem 1.5rem; }
     }
     @media (max-width: 480px) {
-      .process-steps { grid-template-columns: 1fr; }
       .team-grid { grid-template-columns: 1fr; }
       .hero-btns { flex-direction: column; }
       .hero-btns .btn { text-align: center; }
     }
-    /* Floating CTA button for mobile */
-    .float-cta {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--gold);
-      color: var(--navy);
-      border: none;
-      border-radius: 40px;
-      padding: 14px 24px;
-      font-family: var(--font-b);
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      z-index: 1000;
-      display: none;
-      transition: transform 0.2s ease, background 0.2s;
-    }
-    .float-cta:hover {
-      transform: scale(1.02);
-      background: var(--goldL);
-    }
-    @media (max-width: 768px) {
-      .float-cta {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-    }
-    .float-cta svg {
-      width: 18px;
-      height: 18px;
-    }
-
+    .float-cta { position: fixed; bottom: 20px; right: 20px; background: var(--gold); color: var(--navy); border: none; border-radius: 40px; padding: 14px 24px; font-family: var(--font-b); font-weight: 700; font-size: 0.9rem; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25); z-index: 1000; display: none; transition: transform 0.2s ease, background 0.2s; }
+    .float-cta:hover { transform: scale(1.02); background: var(--goldL); }
+    @media (max-width: 768px) { .float-cta { display: flex; align-items: center; gap: 8px; } }
+    .float-cta svg { width: 18px; height: 18px; }
   </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════ HEADER ══════════════════════════════ -->
 <header id="site-header" role="banner">
   <nav class="nav-inner" aria-label="Main navigation">
     <a href="/" class="logo-lockup" aria-label="PT Global">
@@ -449,20 +262,14 @@
         <span class="logo-tag">Full-Time Talent</span>
       </div>
     </a>
-
     <ul class="nav-links" id="nav-menu">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#process">How It Works</a></li>
       <li><a href="#our-team">Our Team</a></li>
       <li><a href="#cta-final">Contact Us</a></li>
-      <!-- Mobile only CTA -->
       <li><a href="#cta-final" class="nav-mobile-cta" style="display:none;">Build Your Team</a></li>
     </ul>
-
     <div class="nav-cta-wrap">
       <a href="#cta-final" class="btn btn-navy nav-cta">Build Your Team</a>
     </div>
-
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -471,11 +278,10 @@
 
 <main>
 
-<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+<!-- HERO -->
 <section class="hero" id="home" aria-labelledby="hero-heading">
   <div class="container">
     <div class="hero-inner">
-      <!-- Left -->
       <div>
         <div class="hero-label">Full-Time Accounting Talent · Integrated Into Your Firm</div>
         <h1 class="hero-h1" id="hero-heading">Full-Time Accounting Talent Built for CPA Firms</h1>
@@ -490,18 +296,14 @@
           <div><div class="hstat-n" data-target="100" data-suffix="%">0%</div><div class="hstat-l">Tax Niche Focus</div></div>
         </div>
       </div>
-
-      <!-- Right: single hero card -->
       <div>
         <div class="hero-card">
           <div class="hc-eyebrow">Active Placement</div>
           <div class="hc-title">Placement Overview</div>
-          <!-- Roles Filled centered -->
           <div class="hc-roles-total">
             <div class="hc-roles-n">100+</div>
             <div class="hc-roles-l">Roles Filled</div>
           </div>
-          <!-- Progress bars coherent with 100+ -->
           <div class="hc-prog">
             <div class="hc-prog-row"><span>Tax Preparers</span><span>62/65 placed</span></div>
             <div class="hc-bar"><div class="hc-fill" data-width="95%"></div></div>
@@ -514,7 +316,6 @@
             <div class="hc-prog-row"><span>Bookkeeper</span><span>15/15 placed</span></div>
             <div class="hc-bar"><div class="hc-fill" data-width="100%"></div></div>
           </div>
-          <!-- Badge inside card -->
           <div class="hc-badge-wrap">
             <div class="hc-badge">
               <div class="hc-badge-dot"></div>
@@ -530,7 +331,7 @@
 <!-- CTA BAND 1 -->
 <div class="cta-band"><div class="container"><div class="cta-band-inner"><div><p>Ready to add full-time tax staff to your firm?</p><span>No obligation — just a short conversation.</span></div><a href="#cta-final" class="btn btn-white">Get Started Today →</a></div></div></div>
 
-<!-- ══════════════════════════════ PROBLEM ══════════════════════════════ -->
+<!-- PROBLEM -->
 <section class="section section-off" id="problem" aria-labelledby="problem-heading">
   <div class="container">
     <div class="problem-grid">
@@ -547,7 +348,7 @@
         </div>
         <div class="pain-card fade-up d2">
           <div class="pain-icon"><svg width="28" height="28" viewBox="0 0 36 36" fill="none"><rect x="6" y="6" width="24" height="28" stroke="currentColor" stroke-width="1.5"/><path d="M12 14H24M12 20H20M12 26H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <div><h3>Generic Agencies Miss the Mark</h3><p>Most staffing firms don't understand Drake, CPA workflows, or the difference between a 1065 and a 1120-S. You end up training the people who were supposed to be ready.</p></div>
+          <div><h3>Generic Agencies Miss the Mark</h3><p>Most staffing firms don't understand Tax Software, CPA workflows, or the difference between a 1065 and a 1120-S. You end up training the people who were supposed to be ready.</p></div>
         </div>
         <div class="pain-card fade-up d3">
           <div class="pain-icon"><svg width="28" height="28" viewBox="0 0 36 36" fill="none"><path d="M6 28L13 20L18 24L25 14L30 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 10H30V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
@@ -558,100 +359,10 @@
   </div>
 </section>
 
-<!-- ══════════════════════════════ WHO ══════════════════════════════ -->
-<section class="section" id="who" aria-labelledby="who-heading">
-  <div class="container">
-    <div class="sec-header fade-up">
-      <span class="sec-eye">Who We Serve</span>
-      <div class="teal-line teal-line-center"></div>
-      <h2 id="who-heading" class="sec-h2">Built Exclusively for Tax &amp; Accounting Firms</h2>
-    </div>
-    <div class="who-grid">
-      <div class="who-card fade-up d1"><h3>CPA Firms</h3><p>Full-time tax preparers and accountants placed directly into your team — ready for your workflows, your software, and your standards from day one.</p><div class="who-tags"><span class="who-tag">1–50 Staff</span><span class="who-tag">Seasonal Surge</span><span class="who-tag">Year-Round</span></div></div>
-      <div class="who-card fade-up d2"><h3>EA Practices</h3><p>EA-aware staff who understand the nuance of enrolled agent practices — from complex multi-state filings to high-volume 1040 seasons — placed as part of your team.</p><div class="who-tags"><span class="who-tag">High Volume</span><span class="who-tag">IRS Aligned</span><span class="who-tag">Deadline-Driven</span></div></div>
-      <div class="who-card fade-up d3"><h3>Bookkeeping &amp; Advisory Firms</h3><p>Bookkeepers and accounting support who integrate into your close cycle, client communication workflow, and monthly delivery process.</p><div class="who-tags"><span class="who-tag">Bookkeeping</span><span class="who-tag">Tax Admin</span><span class="who-tag">Back-Office</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════ SERVICES ══════════════════════════════ -->
-<section class="section section-off" id="services" aria-labelledby="services-heading">
-  <div class="container">
-    <div class="sec-header fade-up">
-      <span class="sec-eye">What We Deliver</span>
-      <div class="teal-line teal-line-center"></div>
-      <h2 id="services-heading" class="sec-h2">Staffing Built Around Your Firm's Actual Needs</h2>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-card fade-up d1">
-        <div class="svc-icon"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="4" width="28" height="32" stroke="currentColor" stroke-width="1.5"/><path d="M12 13H28M12 19H28M12 25H22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <h3>Full-Time Tax Staff Placement</h3>
-        <p>Tax preparers, CPAs, and EAs placed full-time into your firm. They work inside your software, follow your workflow, and become part of your team — not a temporary fix.</p>
-        <ul class="svc-list"><li>Tax Preparers (individual &amp; business returns)</li><li>CPAs &amp; Enrolled Agents</li><li>Senior Tax Reviewers</li><li>Tax Associates &amp; Junior Preparers</li></ul>
-      </div>
-      <div class="svc-card fade-up d2">
-        <div class="svc-icon"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><path d="M8 32V14L20 6L32 14V32" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><rect x="14" y="22" width="12" height="10" stroke="currentColor" stroke-width="1.5"/></svg></div>
-        <h3>Bookkeeping &amp; Accounting Placement</h3>
-        <p>Full-time bookkeepers and staff accountants placed inside your firm. Bank reconciliations, month-end close, AP/AR, and catch-up projects — integrated into your existing process.</p>
-        <ul class="svc-list"><li>Bookkeepers (QuickBooks, Xero, QBO)</li><li>Staff Accountants</li><li>AP / AR Specialists</li><li>Payroll Support Assistants</li></ul>
-      </div>
-      <div class="svc-card fade-up d3">
-        <div class="svc-icon"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><path d="M8 30L15 22L22 26L30 16L36 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 10H35V14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <h3>Administrative Staff Placement</h3>
-        <p>Tax admin, client communication, document collection, portal management, and workflow support roles placed full-time into your firm to keep operations running smoothly.</p>
-        <ul class="svc-list"><li>Client Communication Assistants</li><li>Document Collection &amp; Portal Managers</li><li>Office &amp; Workflow Support</li><li>Tax Admin Coordinators</li></ul>
-      </div>
-      <div class="svc-card fade-up d4">
-        <div class="svc-icon"><svg width="36" height="36" viewBox="0 0 40 40" fill="none"><rect x="6" y="8" width="28" height="24" stroke="currentColor" stroke-width="1.5"/><path d="M6 16H34" stroke="currentColor" stroke-width="1.5"/><path d="M14 8V16M22 8V16" stroke="currentColor" stroke-width="1.5"/></svg></div>
-        <h3>Candidate Sourcing &amp; Vetting</h3>
-        <p>End-to-end: role intake, sourcing, screening, skills assessment, and shortlist delivery. You review the finalists — PT Global handles everything that comes before that.</p>
-        <ul class="svc-list"><li>Skills &amp; software assessment</li><li>Communication &amp; reliability screening</li><li>Shortlist delivery within days</li><li>Post-placement follow-up</li></ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CTA BAND 2 -->
 <div class="cta-band"><div class="container"><div class="cta-band-inner"><div><p>Tired of hiring friction every tax season?</p><span>PT Global places your next full-time team member — fast.</span></div><a href="#cta-final" class="btn btn-white">Build Your Team →</a></div></div></div>
 
-<!-- ══════════════════════════════ PROCESS ══════════════════════════════ -->
-<section class="section" id="process" aria-labelledby="process-heading">
-  <div class="container">
-    <div class="sec-header fade-up">
-      <span class="sec-eye">The Process</span>
-      <div class="teal-line teal-line-center"></div>
-      <h2 id="process-heading" class="sec-h2">From First Conversation to Integrated Team Member</h2>
-    </div>
-    <div class="process-steps">
-      <div class="step-card fade-up d1">
-        <span class="step-num">01 · DISCOVER</span>
-        <div class="step-icon"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M23 23L30 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <h3>Discovery &amp; Setup</h3>
-        <p>We learn your firm — team size, workflow, software stack, the role you need, and what success looks like for you.</p>
-      </div>
-      <div class="step-card fade-up d2">
-        <span class="step-num">02 · SOURCE</span>
-        <div class="step-icon"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><path d="M10 28H26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M18 6V22M12 16L18 22L24 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Role Intake &amp; Sourcing</h3>
-        <p>We define the position, source from our pre-vetted candidate pool, and begin outreach to qualified professionals.</p>
-      </div>
-      <div class="step-card fade-up d3">
-        <span class="step-num">03 · SCREEN</span>
-        <div class="step-icon"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><rect x="6" y="6" width="20" height="24" stroke="currentColor" stroke-width="1.5"/><path d="M24 10L30 10L30 30L10 30" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 14H20M12 19H18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-        <h3>Screening &amp; Shortlist</h3>
-        <p>Every candidate is screened for skills, communication, software fit, and CPA-firm workflow experience before you see a single name.</p>
-      </div>
-      <div class="step-card fade-up d4">
-        <span class="step-num">04 · PLACE</span>
-        <div class="step-icon"><svg width="30" height="30" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="13" stroke="currentColor" stroke-width="1.5"/><path d="M12 18L16 22L24 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Placement &amp; Onboarding</h3>
-        <p>You select your hire. We support the transition with role expectations, software access checklist, and first-week follow-up.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════ TEAM EXTENSION ══════════════════════════════ -->
+<!-- TEAM EXTENSION -->
 <section class="section section-dark" id="team-extension" aria-labelledby="te-heading">
   <div class="container">
     <div class="te-inner">
@@ -662,9 +373,7 @@
         <div class="te-pillars">
           <div class="te-pillar">
             <div class="te-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <div class="te-pillar">
-              <div><h4>Integrated, Not Outsourced</h4><p>Your placed staff works inside your software, follows your processes, and is accountable to your firm — not to a third-party manager.</p></div>
-            </div>
+            <div><h4>Integrated, Not Outsourced</h4><p>Your placed staff works inside your software, follows your processes, and is accountable to your firm — not to a third-party manager.</p></div>
           </div>
           <div class="te-pillar">
             <div class="te-pillar-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
@@ -676,87 +385,25 @@
           </div>
         </div>
       </div>
-      <div>
-        <div class="te-cards">
-          <div class="te-card">
-            <div class="te-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
-            <h4>Inside Your Tools</h4>
-            <p>Your staff logs into your Drake, TaxDome, or QuickBooks — not a parallel system. Fully embedded from day one.</p>
-          </div>
-          <div class="te-card">
-            <div class="te-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-            <h4>Your Standards</h4>
-            <p>Quality control, deadlines, and communication norms stay with your firm. We place — you lead.</p>
-          </div>
-
-          <!-- CHANGE 3: Direct Communication card — removed "No account managers in between", updated to POC model -->
-          <div class="te-card">
-            <div class="te-card-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-            <h4>Direct Communication</h4>
-            <p>Your placed team member works directly within your firm. A dedicated PT Global point of contact stays available to monitor team performance and address any concerns.</p>
-          </div>
-
-          <div class="te-card te-card-wide">
-            <div class="te-quote">"</div>
-            <p>Our people don't work <em>for</em> PT Global. They work <em>with</em> your firm — as a real extension of your team, with full ownership of what they do.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════ CONTROL ══════════════════════════════ -->
-<section class="section" id="control" aria-label="How PT Global works">
-  <div class="container">
-    <div class="sec-header fade-up">
-      <span class="sec-eye">How It Works</span>
-      <div class="teal-line teal-line-center"></div>
-      <h2 class="sec-h2">PT Global Handles Sourcing. Your Firm Retains Control</h2>
-      <p class="sec-sub" style="margin-top:.75rem;">Full-time talent, integrated into your team — with a clear division of responsibility between PT Global and your firm.</p>
-    </div>
-    <div class="control-cols fade-up">
-      <div class="ctrl-dark">
-        <div class="ctrl-label">PT Global Handles</div>
-        <h3>The Staffing Work</h3>
-        <ul class="ctrl-list">
-          <li><span class="ctrl-arrow">→</span>Sourcing and screening candidates aligned to your firm's needs</li>
-          <li><span class="ctrl-arrow">→</span>Skills assessment, communication screening, and software fit</li>
-          <li><span class="ctrl-arrow">→</span>Shortlist delivery and placement coordination</li>
-          <li><span class="ctrl-arrow">→</span>Onboarding support and first-week follow-up</li>
-          <li><span class="ctrl-arrow">→</span>Replacement guarantee if placement doesn't work</li>
-        </ul>
-      </div>
-      <div class="ctrl-light">
-        <div class="ctrl-label">Your Firm Retains</div>
-        <h3>Full Control</h3>
-        <ul class="ctrl-list">
-          <li><span class="ctrl-arrow">→</span>Supervision, review, and final sign-off on all work</li>
-          <li><span class="ctrl-arrow">→</span>Your workflow, software stack, and quality standards</li>
-          <li><span class="ctrl-arrow">→</span>Full ownership of client relationships and tax authority</li>
-          <li><span class="ctrl-arrow">→</span>Control over team culture, communication norms, and deadlines</li>
-          <li><span class="ctrl-arrow">→</span>Final hiring decision on every candidate</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════════════════ OUR TEAM ══════════════════════════════ -->
+<!-- OUR TEAM -->
 <section class="section section-dark" id="our-team" aria-labelledby="team-heading" style="padding-top: 4rem; border-top: 1px solid rgba(13,138,138,.12); margin-top: 2rem;">
   <div class="container">
     <div class="sec-header fade-up">
       <span class="sec-eye sec-eye-light">Our Team</span>
       <div class="teal-line teal-line-center" style="background:var(--tealL);"></div>
       <h2 id="team-heading" class="sec-h2 sec-h2-light">Placement Is Where We Start. Your Clients' Success Is Where We Finish.</h2>
-      <!-- CHANGE 4: Updated subtitle to reflect PTG's real value prop — helping clients pay less tax -->
       <p class="sec-sub sec-sub-light" style="margin-top:.75rem;">Our team brings deep tax knowledge to every placement — so your staff don't just file returns, they help your clients pay less tax and avoid costly penalties.</p>
     </div>
     <div class="team-grid">
-      <div class="team-card fade-up d1"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Mike K.png" alt="Mike Kowalczyk" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Mike Kowalczyk</div><div class="team-role">Founder &amp; Managing Director</div><p class="team-bio">Leads PT Global's client relationships and placement strategy. Deep expertise in CPA-firm staffing and tax-season workforce planning.</p></div>
+      <div class="team-card fade-up d1"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Mike K.jpg" alt="Mike Kowalczyk" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%;" /></div><div class="team-name">Mike Kowalczyk</div><div class="team-role">Founder &amp; Managing Director</div><p class="team-bio">Leads PT Global's client relationships and placement strategy. Deep expertise in CPA-firm staffing and tax-season workforce planning.</p></div>
       <div class="team-card fade-up d2"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Pablo.jpeg" alt="Pablo Rosales" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Pablo Rosales</div><div class="team-role">Head of Talent Acquisition</div><p class="team-bio">Oversees candidate sourcing, vetting, and placement operations. Ensures every shortlist meets PT Global's exacting tax-firm standards.</p></div>
-      <div class="team-card fade-up d3"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="M10.png" alt="Manuel Altamirano" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Manuel Altamirano</div><div class="team-role">Client Success Manager</div><p class="team-bio">Manages firm relationships post-placement, ensuring seamless onboarding and long-term fit between placed staff and client workflows.</p></div>
+      <div class="team-card fade-up d3"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="M10.png" alt="Manuel Altamirano" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Manuel Altamirano</div><div class="team-role">Training Manager</div><p class="team-bio">Manages firm relationships post-placement, ensuring seamless onboarding and long-term fit between placed staff and client workflows.</p></div>
       <div class="team-card fade-up d4"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Mariana V.jpeg" alt="Mariana Virreira" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Mariana Virreira</div><div class="team-role">Talent Coordinator</div><p class="team-bio">Coordinates candidate screening pipelines and maintains PT Global's pre-vetted talent pool ready for rapid deployment.</p></div>
+      <div class="team-card fade-up d1"><div class="team-avatar" style="background:none;overflow:hidden;"><img src="Mario.jpg" alt="Mario" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /></div><div class="team-name">Mario</div><div class="team-role">Client Success Manager</div><p class="team-bio">Ensures seamless onboarding and long-term fit between placed staff and client workflows, serving as the primary point of contact post-placement.</p></div>
     </div>
   </div>
 </section>
@@ -764,11 +411,10 @@
 <!-- CTA BAND 3 -->
 <div class="cta-band"><div class="container"><div class="cta-band-inner"><div><p>Start building your team today.</p><span>Full-time, integrated, tax-ready talent — placed into your firm.</span></div><a href="#cta-final" class="btn btn-white">Contact Us →</a></div></div></div>
 
-<!-- ══════════════════════════════ CONTACT ══════════════════════════════ -->
+<!-- CONTACT -->
 <section class="section" id="cta-final" aria-labelledby="contact-heading">
   <div class="container">
     <div class="contact-wrap">
-      <!-- Left -->
       <div class="fade-up">
         <div class="contact-info-label">Get In Touch</div>
         <div class="teal-line"></div>
@@ -778,8 +424,6 @@
         <div class="cd"><div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="cd-label">Headquarters</div><div class="cd-val">USA — Serving CPA Firms Nationwide</div></div></div>
         <div class="cd"><div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="cd-label">LinkedIn</div><div class="cd-val"><a href="https://www.linkedin.com/company/ptgteam/" target="_blank" rel="noopener">linkedin.com/company/ptgteam</a></div></div></div>
       </div>
-
-      <!-- Right: form -->
       <div class="fade-up d1">
         <div class="form-box">
           <div id="formContent">
@@ -787,8 +431,6 @@
               <button class="form-tab active" id="tabFirm" onclick="switchTab('firm')">For Firms</button>
               <button class="form-tab" id="tabCand" onclick="switchTab('cand')">Join Our Talent Pool</button>
             </div>
-
-            <!-- FIRM -->
             <div id="firmForm">
               <div class="form-box-title">Build Your Accounting Team</div>
               <p class="form-box-sub">Answer a few quick questions so we can prepare for your call.</p>
@@ -806,8 +448,6 @@
               <label class="fcheck"><input type="checkbox" id="Privacy" required /><span class="fcheck-box"></span><span class="fcheck-label">I agree to PT Global's <a onclick="openPrivacy();return false;" href="#">Privacy Policy</a> and consent to being contacted.</span></label>
               <button class="fsubmit" onclick="submitFirm()">Submit →</button>
             </div>
-
-            <!-- CANDIDATE -->
             <div id="candForm" style="display:none;">
               <div class="form-box-title">Join Our Talent Pool</div>
               <p class="form-box-sub">Tell us about your background and we'll match you with the right firm.</p>
@@ -825,7 +465,6 @@
               <button class="fsubmit" style="background:var(--teal);" onclick="submitCand()">Submit Application →</button>
             </div>
           </div>
-
           <div class="form-success" id="successLow"><svg viewBox="0 0 52 52" fill="none" width="48" height="48"><circle cx="26" cy="26" r="25" stroke="#9CA3AF" stroke-width="2"/><path d="M18 26h16" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"/></svg><h3 style="color:var(--g5);">Thanks for your interest!</h3><p>We'll keep you on our list and reach out when the time is right.</p></div>
           <div class="form-success" id="successHigh"><svg viewBox="0 0 52 52" fill="none" width="48" height="48"><circle cx="26" cy="26" r="25" stroke="var(--teal)" stroke-width="2"/><polyline points="14,26 22,34 38,18" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round"/></svg><h3>You're all set!</h3><p style="margin-bottom:1.25rem;">Book your complimentary discovery call below.</p><a href="https://calendly.com/ptglobal" target="_blank" rel="noopener" class="fsubmit" style="display:inline-block;text-align:center;text-decoration:none;padding:12px 28px;">Book My Discovery Call →</a></div>
           <div class="form-success" id="successCand"><svg viewBox="0 0 52 52" fill="none" width="48" height="48"><circle cx="26" cy="26" r="25" stroke="var(--teal)" stroke-width="2"/><polyline points="14,26 22,34 38,18" stroke="var(--teal)" stroke-width="2.5" stroke-linecap="round"/></svg><h3>Application Received!</h3><p>Our team will review your profile and be in touch within 2 business days.</p></div>
@@ -837,7 +476,7 @@
 
 </main>
 
-<!-- ══════════════════════════════ PRIVACY MODAL ══════════════════════════════ -->
+<!-- PRIVACY MODAL -->
 <div class="modal-overlay" id="privacyModal" onclick="if(event.target===this)closePrivacy()">
   <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="pp-title">
     <div class="modal-header">
@@ -872,7 +511,7 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<!-- FOOTER -->
 <footer id="footer" role="contentinfo">
   <div class="container">
     <div class="footer-grid">
@@ -889,8 +528,7 @@
           </a>
         </div>
       </div>
-      <div class="fc"><p class="fc-title">Services</p><ul><li><a href="#services">Tax Staff Placement</a></li><li><a href="#services">Bookkeeping &amp; Accounting</a></li><li><a href="#services">Administrative Placement</a></li><li><a href="#services">Candidate Sourcing &amp; Vetting</a></li></ul></div>
-      <div class="fc"><p class="fc-title">Company</p><ul><li><a href="#process">How It Works</a></li><li><a href="#our-team">Our Team</a></li><li><a href="#cta-final">Contact Us</a></li></ul></div>
+      <div class="fc"><p class="fc-title">Company</p><ul><li><a href="#our-team">Our Team</a></li><li><a href="#cta-final">Contact Us</a></li></ul></div>
       <div class="fc"><p class="fc-title">For Candidates</p><ul><li><a href="#cta-final">Join Our Talent Pool</a></li><li><a onclick="openPrivacy();return false;" href="#" style="cursor:pointer;">Privacy Policy</a></li></ul></div>
     </div>
     <div class="footer-bottom">
@@ -906,103 +544,30 @@
 </button>
 
 <script>
-// Floating contact button scroll to form
-  var floatBtn = document.getElementById('floatContactBtn');
-  if (floatBtn) {
-    floatBtn.addEventListener('click', function() {
-      var formSection = document.getElementById('cta-final');
-      if (formSection) {
-        formSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  }
-/* ── NAV TOGGLE ── */
+var floatBtn=document.getElementById('floatContactBtn');
+if(floatBtn){floatBtn.addEventListener('click',function(){var f=document.getElementById('cta-final');if(f)f.scrollIntoView({behavior:'smooth'});});}
 (function(){
   var toggle=document.getElementById('nav-toggle');
   var menu=document.getElementById('nav-menu');
   if(!toggle||!menu)return;
   var open=false;
   var mobileCta=menu.querySelector('.nav-mobile-cta');
-  toggle.addEventListener('click',function(){
-    open=!open;
-    menu.classList.toggle('open',open);
-    toggle.setAttribute('aria-expanded',open);
-    if(mobileCta)mobileCta.style.display=open?'block':'none';
-  });
-  menu.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click',function(){
-      open=false;
-      menu.classList.remove('open');
-      toggle.setAttribute('aria-expanded','false');
-      if(mobileCta)mobileCta.style.display='none';
-    });
-  });
+  toggle.addEventListener('click',function(){open=!open;menu.classList.toggle('open',open);toggle.setAttribute('aria-expanded',open);if(mobileCta)mobileCta.style.display=open?'block':'none';});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){open=false;menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');if(mobileCta)mobileCta.style.display='none';});});
 })();
-
-/* ── SCROLL ANIMATIONS ── */
 (function(){
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
-  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el);});
 })();
-
-/* ── COUNTER ANIMATION ── */
 (function(){
-  function count(el,target,suffix){
-    var s=null,d=1600,fn=function(ts){
-      if(!s)s=ts;
-      var p=Math.min((ts-s)/d,1);
-      el.textContent=Math.floor(p*target)+suffix;
-      if(p<1)requestAnimationFrame(fn);
-    };
-    requestAnimationFrame(fn);
-  }
-  var co=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        e.target.querySelectorAll('[data-target]').forEach(function(el){
-          count(el,+el.dataset.target,el.dataset.suffix||'');
-        });
-        co.unobserve(e.target);
-      }
-    });
-  },{threshold:.5});
+  function count(el,target,suffix){var s=null,d=1600,fn=function(ts){if(!s)s=ts;var p=Math.min((ts-s)/d,1);el.textContent=Math.floor(p*target)+suffix;if(p<1)requestAnimationFrame(fn);};requestAnimationFrame(fn);}
+  var co=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll('[data-target]').forEach(function(el){count(el,+el.dataset.target,el.dataset.suffix||'');});co.unobserve(e.target);}});},{threshold:.5});
   var s=document.querySelector('.hero-stats');if(s)co.observe(s);
 })();
-
-/* ── PROGRESS BARS ── */
-setTimeout(function(){
-  document.querySelectorAll('.hc-fill[data-width]').forEach(function(b){b.style.width=b.dataset.width;});
-},600);
-
-/* ── PHONE VALIDATION ── */
-function isPhoneKey(e){
-  var ok=['Backspace','Delete','Tab','Escape','Enter','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];
-  if(ok.includes(e.key))return true;
-  if((e.ctrlKey||e.metaKey)&&['a','c','v','x','z'].includes(e.key.toLowerCase()))return true;
-  if(/^[0-9+\-\s\(\)]$/.test(e.key))return true;
-  e.preventDefault();return false;
-}
-function handlePhonePaste(e,input){
-  e.preventDefault();
-  var p=(e.clipboardData||window.clipboardData).getData('text');
-  var c=p.replace(/[^0-9+\-\s\(\)]/g,'');
-  var s=input.selectionStart,en=input.selectionEnd;
-  input.value=input.value.slice(0,s)+c+input.value.slice(en);
-  input.selectionStart=input.selectionEnd=s+c.length;
-  return false;
-}
-
-/* ── FORM TABS ── */
-function switchTab(tab){
-  var fF=document.getElementById('firmForm'),cF=document.getElementById('candForm');
-  var tF=document.getElementById('tabFirm'),tC=document.getElementById('tabCand');
-  if(tab==='firm'){fF.style.display='';cF.style.display='none';tF.classList.add('active');tC.classList.remove('active');}
-  else{fF.style.display='none';cF.style.display='';tC.classList.add('active');tF.classList.remove('active');}
-}
-
-/* ── FORM SUBMIT FIRM ── */
+setTimeout(function(){document.querySelectorAll('.hc-fill[data-width]').forEach(function(b){b.style.width=b.dataset.width;});},600);
+function isPhoneKey(e){var ok=['Backspace','Delete','Tab','Escape','Enter','ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'];if(ok.includes(e.key))return true;if((e.ctrlKey||e.metaKey)&&['a','c','v','x','z'].includes(e.key.toLowerCase()))return true;if(/^[0-9+\-\s\(\)]$/.test(e.key))return true;e.preventDefault();return false;}
+function handlePhonePaste(e,input){e.preventDefault();var p=(e.clipboardData||window.clipboardData).getData('text');var c=p.replace(/[^0-9+\-\s\(\)]/g,'');var s=input.selectionStart,en=input.selectionEnd;input.value=input.value.slice(0,s)+c+input.value.slice(en);input.selectionStart=input.selectionEnd=s+c.length;return false;}
+function switchTab(tab){var fF=document.getElementById('firmForm'),cF=document.getElementById('candForm');var tF=document.getElementById('tabFirm'),tC=document.getElementById('tabCand');if(tab==='firm'){fF.style.display='';cF.style.display='none';tF.classList.add('active');tC.classList.remove('active');}else{fF.style.display='none';cF.style.display='';tC.classList.add('active');tF.classList.remove('active');}}
 function submitFirm(){
   var email=document.getElementById('Email Address').value.trim();
   var revenue=document.getElementById('Annual Revenue').value;
@@ -1018,20 +583,11 @@ function submitFirm(){
   if(!remote){alert('Please answer the remote staff experience question.');return;}
   if(!privacy){alert('Please accept the Privacy Policy.');return;}
   var data=new FormData();
-  ['First Name','Last Name','Email Address','Phone Number','Annual Revenue','Firm Size','Hiring Stage','Remote Experience','Biggest Challenge'].forEach(function(id){
-    data.append(id,document.getElementById(id).value.trim());
-  });
+  ['First Name','Last Name','Email Address','Phone Number','Annual Revenue','Firm Size','Hiring Stage','Remote Experience','Biggest Challenge'].forEach(function(id){data.append(id,document.getElementById(id).value.trim());});
   fetch('https://formspree.io/f/xgoqgzvk',{method:'POST',body:data,headers:{'Accept':'application/json'}})
-    .then(function(r){
-      if(r.ok){
-        document.getElementById('formContent').style.display='none';
-        document.getElementById(revenue==='$0 — $250,000'?'successLow':'successHigh').style.display='block';
-      }else{alert('There was a problem. Please email us at Hello@PTGTeam.com');}
-    })
+    .then(function(r){if(r.ok){document.getElementById('formContent').style.display='none';document.getElementById(revenue==='$0 — $250,000'?'successLow':'successHigh').style.display='block';}else{alert('There was a problem. Please email us at Hello@PTGTeam.com');}})
     .catch(function(){alert('Network error. Please email us at Hello@PTGTeam.com');});
 }
-
-/* ── FORM SUBMIT CANDIDATE ── */
 function submitCand(){
   var email=document.getElementById('c_Email Address').value.trim();
   var privacy=document.getElementById('c_Privacy').checked;
@@ -1039,42 +595,14 @@ function submitCand(){
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){alert('Please enter a valid email.');return;}
   if(!privacy){alert('Please accept the Privacy Policy.');return;}
   var data=new FormData();
-  [
-    ['First Name','c_First Name'],
-    ['Last Name','c_Last Name'],
-    ['Email Address','c_Email Address'],
-    ['Phone Number','c_Phone Number'],
-    ['Role Type','c_Role Type'],
-    ['Experience Level','c_Experience Level'],
-    ['Primary Software','c_Primary Software'],
-    ['Background','c_Background']
-  ].forEach(function(pair){
-    var el=document.getElementById(pair[1]);
-    if(el)data.append(pair[0],el.value.trim());
-  });
+  [['First Name','c_First Name'],['Last Name','c_Last Name'],['Email Address','c_Email Address'],['Phone Number','c_Phone Number'],['Role Type','c_Role Type'],['Experience Level','c_Experience Level'],['Primary Software','c_Primary Software'],['Background','c_Background']].forEach(function(pair){var el=document.getElementById(pair[1]);if(el)data.append(pair[0],el.value.trim());});
   fetch('https://formspree.io/f/xkoerreq',{method:'POST',body:data,headers:{'Accept':'application/json'}})
-    .then(function(r){
-      if(r.ok){
-        document.getElementById('formContent').style.display='none';
-        document.getElementById('successCand').style.display='block';
-      }else{alert('There was a problem. Please email us at Hello@PTGTeam.com');}
-    })
+    .then(function(r){if(r.ok){document.getElementById('formContent').style.display='none';document.getElementById('successCand').style.display='block';}else{alert('There was a problem. Please email us at Hello@PTGTeam.com');}})
     .catch(function(){alert('Network error. Please email us at Hello@PTGTeam.com');});
 }
-
-/* ── PRIVACY MODAL ── */
-function openPrivacy(){
-  var m=document.getElementById('privacyModal');
-  m.classList.add('open');
-  document.body.style.overflow='hidden';
-  m.scrollTop=0;
-}
-function closePrivacy(){
-  document.getElementById('privacyModal').classList.remove('open');
-  document.body.style.overflow='';
-}
+function openPrivacy(){var m=document.getElementById('privacyModal');m.classList.add('open');document.body.style.overflow='hidden';m.scrollTop=0;}
+function closePrivacy(){document.getElementById('privacyModal').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closePrivacy();});
 </script>
-
 </body>
 </html>
